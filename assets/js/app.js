@@ -20,7 +20,7 @@ watchParty.config(function($routeProvider) {
   })
 
   .otherwise({
-    redirectTo: '/landing'
+    redirectTo: '/login'
     });
 
 });
