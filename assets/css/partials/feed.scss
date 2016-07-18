@@ -1,0 +1,54 @@
+#container-feed {
+  width: 100%;
+  max-width: 375px;
+  height: 667px;
+  background-color: #fff;
+  border: 1px solid $Main-Green;
+    nav {
+      background-color: $Main-Green;
+      width: 100%;
+      padding-bottom: .5em;
+      ul {
+        li {
+          display: inline-block;
+          h3 {
+            font-family: $Font-Header;
+            font-size: 28px;
+            vertical-align: middle;
+            color: #fff;
+            letter-spacing: 2px;
+            margin-left: 2.5em;
+          }
+          i {
+            font-size: 30px;
+            vertical-align: baseline;
+            padding-bottom: .5em;
+            margin-left: .5em;
+            color: #fff;
+          }
+          img {
+            height: 2.5em;
+            width: auto;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-left: .5em;
+            margin-top: .25em;
+            border: 1px solid #fff;
+
+          }
+
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+}

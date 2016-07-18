@@ -5,6 +5,7 @@ watchParty.config(function($routeProvider) {
 
   .when ('/login', {
     templateUrl: 'pages/login.html',
+    controller: 'loginCtrl'
   })
 
   .when ('/landing', {
@@ -20,7 +21,7 @@ watchParty.config(function($routeProvider) {
   })
 
   .otherwise({
-    redirectTo: '/landing'
+    redirectTo: '/login'
     });
 
 });
