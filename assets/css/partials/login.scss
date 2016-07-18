@@ -8,7 +8,7 @@
       width: 50%;
       // border: 1px solid white;
       margin: 0 auto;
-      padding-top: 50%;
+      padding-top: 40%;
       h1 {
         font-family: $Font-Header;
         font-size: 40px;
@@ -28,11 +28,23 @@
           margin-bottom: 1em;
           border: 2px solid #30BFAF;
           padding: .5em;
+        }::-webkit-input-placeholder {
+          font-family: $Font-Menu;
+          letter-spacing: 1.75px;
         }
         .password {
           margin-bottom: 1em;
           border: 2px solid #30BFAF;
           padding: .5em;
+        }
+        .go-login {
+          font-family: $Font-Menu;
+          font-size: 14px;
+          padding: 5px 15px;
+          background-color: #30BFAF;
+          border: none;
+          color: #fff;
+          cursor: pointer;
         }
     }
     .sign-up-inputs {
@@ -57,6 +69,10 @@
       .re-enter-password {
         @extend .first-name;
       }
+      .go-signup {
+        @extend .go-login;
+        background-color: #7DDBD0;
+      }
     }
     .buttons {
       // border: 1px solid white;
@@ -77,7 +93,7 @@
         font-family: $Font-Menu;
         font-size: 16px;
         padding: 10px 20px;
-        background-color: #7DDBD1;
+        background-color: #7DDBD0;
         // border: 1px solid #fff;
         border: none;
         color: #fff;

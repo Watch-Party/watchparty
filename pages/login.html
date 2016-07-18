@@ -3,18 +3,20 @@
     <h1>WATCH <br> PARTY</h1>
   </header>
 
-  <section class="login-inputs" ng-hide="hideLogin">
+  <section class="login-inputs" ng-hide="login">
     <input type="text" placeholder="username" class="username"></input>
     <input type="text" placeholder="password" class="password"></input>
+    <button class="go-login">GO <i class="fa fa-angle-right" aria-hidden="true"></i></button>
   </section>
 
-  <section class="sign-up-inputs" ng-hide="hideSignUp">
+  <section class="sign-up-inputs" ng-hide="signup">
     <input type="text" placeholder="first name" class="first-name"></input>
     <input type="text" placeholder="last name" class="last-name"></input>
     <input type="text" placeholder="email" class="email"></input>
     <input type="text" placeholder="username" class="username-signup"></input>
     <input type="text" placeholder="password" class="password-signup"></input>
     <input type="text" placeholder="re-enter password" class="re-enter-password"></input>
+    <button class="go-signup">SUBMIT <i class="fa fa-angle-right" aria-hidden="true"></i></button>
   </section>
 
 
@@ -22,8 +24,8 @@
 
 
   <section class="buttons">
-    <button class="login" ng-click="hideLogin=false">LOG IN</button>
-    <button class="sign-up" ng-click="hideSignUp=false">SIGN UP</button>
+    <button class="login" ng-click="showLogin()">LOG IN</button>
+    <button class="sign-up" ng-click="showSignup()">SIGN UP</button>
   </section>
 
 
