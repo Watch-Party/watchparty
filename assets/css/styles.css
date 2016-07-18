@@ -55,9 +55,22 @@ table {
     width: 50%;
     margin: 0 auto;
     padding-top: 40%; }
+    #container-login header p {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 1em;
+      margin-top: .5em; }
     #container-login header h1 {
       font-family: "Monoton", Verdana, sans-serif;
       font-size: 40px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.25; }
+    #container-login header h2 {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 22px;
       color: #fff;
       text-align: center;
       line-height: 1.25; }
@@ -80,7 +93,7 @@ table {
     #container-login .login-inputs .go-login, #container-login .sign-up-inputs .go-login, #container-login .sign-up-inputs .go-signup {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 14px;
-      padding: 5px 15px;
+      padding: 6px 15px;
       background-color: #30BFAF;
       border: none;
       color: #fff;
@@ -112,5 +125,28 @@ table {
       color: #fff;
       margin-left: .5em;
       cursor: pointer; }
+  #container-login .learn-more {
+    font-family: "Asap", Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    opacity: .75;
+    cursor: pointer; }
+  #container-login :hover {
+    opacity: 1; }
+  #container-login .about {
+    padding-top: 1em;
+    width: 60%;
+    margin: 0 auto;
+    font-family: "Asap", Helvetica, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-align: justify;
+    line-height: 1.5; }
+  #container-login .center {
+    text-align: center; }
 
 /*# sourceMappingURL=styles.css.map */
