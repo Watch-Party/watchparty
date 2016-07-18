@@ -50,7 +50,7 @@ table {
   width: 100%;
   max-width: 375px;
   height: 667px;
-  background-color: #1e776d; }
+  background-image: linear-gradient(130deg, #0e6452 0%, #1e776d 51%, #2b7078 75%); }
   #container-login header {
     width: 50%;
     margin: 0 auto;
@@ -61,21 +61,25 @@ table {
       color: #fff;
       text-align: center;
       line-height: 1.25; }
-  #container-login .login-inputs {
+  #container-login .login-inputs, #container-login .sign-up-inputs {
     width: 50%;
     margin: 0 auto;
     text-align: center;
     margin-top: 2.5em; }
-    #container-login .login-inputs .username {
+    #container-login .login-inputs .username, #container-login .sign-up-inputs .username {
       margin-bottom: 1em;
       border: 2px solid #30BFAF;
       padding: .5em; }
-    #container-login .login-inputs .password {
+    #container-login .login-inputs .password, #container-login .sign-up-inputs .password {
       margin-bottom: 1em;
       border: 2px solid #30BFAF;
       padding: .5em; }
+  #container-login .sign-up-inputs .first-name, #container-login .sign-up-inputs .last-name, #container-login .sign-up-inputs .email, #container-login .sign-up-inputs .username-signup, #container-login .sign-up-inputs .password-signup, #container-login .sign-up-inputs .re-enter-password {
+    margin-bottom: 1em;
+    border: 2px solid #30BFAF;
+    padding: .5em; }
   #container-login .buttons {
-    margin-top: 8em;
+    margin-top: 2em;
     text-align: center; }
     #container-login .buttons .login {
       font-family: "Asap", Helvetica, sans-serif;
@@ -84,7 +88,8 @@ table {
       background-color: #30BFAF;
       border: none;
       color: #fff;
-      margin-right: .5em; }
+      margin-right: .5em;
+      cursor: pointer; }
     #container-login .buttons .sign-up {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 16px;
@@ -92,6 +97,7 @@ table {
       background-color: #7DDBD1;
       border: none;
       color: #fff;
-      margin-left: .5em; }
+      margin-left: .5em;
+      cursor: pointer; }
 
 /*# sourceMappingURL=styles.css.map */

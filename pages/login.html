@@ -1,21 +1,29 @@
-<div id="container-login">
+<div id="container-login" ng-controller="loginCtrl">
   <header>
     <h1>WATCH <br> PARTY</h1>
   </header>
 
-  <section class="login-inputs">
+  <section class="login-inputs" ng-hide="hideLogin">
     <input type="text" placeholder="username" class="username"></input>
     <input type="text" placeholder="password" class="password"></input>
+  </section>
+
+  <section class="sign-up-inputs" ng-hide="hideSignUp">
+    <input type="text" placeholder="first name" class="first-name"></input>
+    <input type="text" placeholder="last name" class="last-name"></input>
+    <input type="text" placeholder="email" class="email"></input>
+    <input type="text" placeholder="username" class="username-signup"></input>
+    <input type="text" placeholder="password" class="password-signup"></input>
+    <input type="text" placeholder="re-enter password" class="re-enter-password"></input>
   </section>
 
 
 
 
 
-
   <section class="buttons">
-    <button class="login">LOG IN</button>
-    <button class="sign-up">SIGN UP</button>
+    <button class="login" ng-click="hideLogin=false">LOG IN</button>
+    <button class="sign-up" ng-click="hideSignUp=false">SIGN UP</button>
   </section>
 
 

@@ -5,6 +5,7 @@ watchParty.config(function($routeProvider) {
 
   .when ('/login', {
     templateUrl: 'pages/login.html',
+    controller: 'loginCtrl'
   })
 
   .when ('/landing', {
