@@ -1,0 +1,248 @@
+#landingContainer {
+  height: 667px;
+  width: 375px;
+  border: 1px solid black;
+  font-family: $Font-Menu;
+  overflow-y: auto;
+  .navMenu{
+    // display: inline-block;
+    width: 100%;
+    background: linear-gradient(white, #e0e0e0);
+    color: $Main-Green;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    li{
+      display: inline-block;
+      font-size: 2.5em;
+    }
+    .menu{
+    float: left;
+    font-size: 2em;
+    padding-left: 10px;
+    }
+    .avatar{
+      float: left;
+      padding-left: 5px;
+      img {
+      height: 35px;
+      width: 35px;
+    }
+    }
+    .logo {
+      // display: flex;
+      // justify-content: center;
+      vertical-align: top;
+      // width: 25%;
+      // margin-left: 29%;
+    }
+    .search{
+      float: right;
+      font-size: 2em;
+      padding-right: 10px;
+    }
+  }
+  .sideMenu{
+    position: absolute;
+    height: 575px;
+    width: 125px;
+    background: linear-gradient(#e0e0e0, white);
+    // border: 1px solid black;
+    margin-top: -1px;
+    z-index: 2;
+    overflow: auto;
+      li{
+        height: 75px;
+        width: 75px;
+        border: 1px solid black;
+        margin: 15px 0px 25px 25px;
+      }
+  }
+
+  .roomButtons{
+    position: absolute;
+    height: 610px;
+    overflow-x: scroll;
+    width: 375px;
+    li{
+      text-align: center;
+      height: 33%;
+      margin: 0;
+      border: .1px solid transparent;
+      p{
+        color: white;
+        margin-top: 50px;
+        font-size: 5em;
+        letter-spacing: -5px;
+      }
+    }
+    // li:hover{
+    //   p{
+    //     color: $Main-Green;
+    //     font-size: 2.5em;
+    //     text-align: left;
+    //     letter-spacing: -2px;
+    //     margin-top: 30px;
+    //   }
+    // }
+    .liveButton{
+      p{
+        color: white;
+      }
+
+      // background-color: #34cfbe;
+    background-color: $Main-Green;
+
+    }
+    .upcoming{
+      background: $Main-Green;
+      .upcomingDeets{
+        display: inline-block;
+        font-size: 1.5em;
+        background: #e0e0e0;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        height: 150px;
+        width: 45%;
+        border: 1px solid white;
+        vertical-align: top;
+      }
+    }
+    .delayedButton {
+      // background-color: #a1e7e0;
+      background-color: #e38c44;
+
+    }
+    .delayRoom{
+      background-color: #e38c44;
+      width: 100%;
+      .recentResults{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: center;
+        font-size: 1.25em;
+        border-bottom: 1px solid $Main-Green;
+      }
+      .showSelect{
+        display: inline-block;
+        width: 32%;
+        vertical-align: top;
+        height: 125px;
+        border: 1px solid white;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .seasonResults{
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .episodeResults{
+          font-size: 1.25em;
+          color: white;
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          margin-bottom: 25px;
+      }
+      .startRoom{
+        a{
+          text-decoration: none;
+          .startButton{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.5em;
+            padding-top: 15px;
+            width: 50%;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid white;
+            background: white;
+            color: $Main-Green;
+
+          }
+        }
+      }
+
+      .bumper{
+        height: 25px;
+      }
+    }
+
+
+    .hybridButton{
+      //background-color:#5dcfc3 ;
+      background: linear-gradient(#e33f3f, #fd4747); /* Standard syntax */
+    }
+    .hybridRoom{
+      width: 100%;
+      background: linear-gradient(#fd4747, #e33f3f); /* Standard syntax */
+      input{
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        // margin: 20px;
+        margin-bottom: 20px;
+      }
+      .hybridSelect{
+        display: inline-block;
+        width: 32%;
+        vertical-align: top;
+        height: 125px;
+        border: 1px solid white;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      .seasonResults{
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .episodeResults{
+          font-size: 1.25em;
+          color: white;
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          margin-bottom: 25px;
+      }
+      .startRoom{
+        a{
+          text-decoration: none;
+          .startButton{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.5em;
+            padding-top: 15px;
+            width: 50%;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid white;
+            background: white;
+            color: $Main-Green;
+
+          }
+        }
+      }
+      .bumper{
+        height: 25px;
+      }
+    }
+  }
+
+}
