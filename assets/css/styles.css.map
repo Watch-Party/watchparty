@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACF,MAAM,EAAE,KAAK;EACb,KAAK,EAAE,KAAK",
+"sources": ["partials/landing.scss"],
+"names": [],
+"file": "styles.css"
+}
