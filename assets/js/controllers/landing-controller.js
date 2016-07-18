@@ -4,9 +4,14 @@ watchParty.controller('landingController', function($scope, $http){
   $scope.delayRoomHide= true;
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
+  $scope.hybridRoomHide = true;
+  $scope.hybridName = '';
+  var hybridChannelName = '';
+
 
   $scope.menuFunc = function(){
     $scope.menuShow = !$scope.menuShow;
+    console.log(hybridChannelName)
     }
   $scope.upcomingFunc = function(){
     $scope.upcomingHide=!$scope.upcomingHide;
@@ -22,6 +27,13 @@ watchParty.controller('landingController', function($scope, $http){
   $scope.showSelectFunc = function(){
     $scope.showSelectHide= true;
     $scope.seasonHide = false;
+  }
+  $scope.hybridRoomFunc = function(){
+    $scope.hybridRoomHide=!$scope.hybridRoomHide;
+  }
+  $scope.hybridStartFunc = function(){
+    hybridChannelName = $scope.hybridName
+    console.log(hybridChannelName);
   }
 
 

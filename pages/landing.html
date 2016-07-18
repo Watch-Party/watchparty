@@ -63,7 +63,33 @@
       </div>
 
 
-    <li class="hybridButton"><p>Hybrid</p></li>
-
+    <li class="hybridButton" ng-click="hybridRoomFunc()"><p>Hybrid</p></li>
+      <div class="hybridRoom" ng-hide="hybridRoomHide">
+        <input type="text" placeholder="Name your Channel" ng-model="hybridName"></input>
+        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
+          <p>Game of Thrones</p>
+        </div>
+        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
+          <p>The Walking Dead</p>
+        </div>
+        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
+          <p>The Left Overs</p>
+        </div>
+        <p class="seasonResults">Season
+          <select class="seasonOptions">
+            <option value=1>1</option>
+          </select>
+        </p>
+        <p class="episodeResults">Episode
+          <select class="seasonOptions">
+            <option value=1>1</option>
+          </select>
+        </p>
+        <div class="startRoom" ng-click="hybridStartFunc()">
+          <a href="#/feed"><p class="startButton">Start Channel</p></a>
+        </div>
+        <div class="bumper">
+        </div>
+      </div>
   </ul>
 </div>

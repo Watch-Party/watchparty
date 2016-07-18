@@ -181,8 +181,67 @@
     .hybridButton{
       //background-color:#5dcfc3 ;
       background: linear-gradient(#e33f3f, #fd4747); /* Standard syntax */
+    }
+    .hybridRoom{
+      width: 100%;
+      background: linear-gradient(#fd4747, #e33f3f); /* Standard syntax */
+      input{
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        // margin: 20px;
+        margin-bottom: 20px;
+      }
+      .hybridSelect{
+        display: inline-block;
+        width: 32%;
+        vertical-align: top;
+        height: 125px;
+        border: 1px solid white;
+        margin-top: 50px;
+        margin-bottom: 20px;
+      }
+      .seasonResults{
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px;
+      }
+      .episodeResults{
+          font-size: 1.25em;
+          color: white;
+          width: 50%;
+          margin-left: auto;
+          margin-right: auto;
+          text-align: center;
+          margin-bottom: 25px;
+      }
+      .startRoom{
+        a{
+          text-decoration: none;
+          .startButton{
+            text-align: center;
+            vertical-align: middle;
+            font-size: 1.5em;
+            padding-top: 15px;
+            width: 50%;
+            height: 35px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid white;
+            background: white;
+            color: $Main-Green;
 
-
+          }
+        }
+      }
+      .bumper{
+        height: 25px;
+      }
     }
   }
 
