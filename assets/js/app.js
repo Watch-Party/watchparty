@@ -1,4 +1,4 @@
-var watchParty = angular.module('watchParty', ['ngRoute']);
+var watchParty = angular.module('watchParty', ['ngRoute','ngAnimate']);
 
 watchParty.config(function($routeProvider) {
   $routeProvider
@@ -9,6 +9,7 @@ watchParty.config(function($routeProvider) {
 
   .when ('/landing', {
     templateUrl: 'pages/landing.html',
+    controller: 'landingController'
   })
 
   .when ('/profile', {

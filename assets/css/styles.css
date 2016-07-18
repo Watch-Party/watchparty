@@ -49,11 +49,12 @@ table {
   height: 667px;
   width: 375px;
   border: 1px solid black;
-  font-family: "Asap", Helvetica, sans-serif; }
+  font-family: "Asap", Helvetica, sans-serif;
+  overflow-y: auto; }
   #landingContainer .navMenu {
     width: 100%;
-    background-color: #1e776d;
-    color: white;
+    background: linear-gradient(white, #e0e0e0);
+    color: #1e776d;
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px; }
@@ -64,14 +65,36 @@ table {
       float: left;
       font-size: 2em;
       padding-left: 10px; }
+    #landingContainer .navMenu .avatar {
+      float: left;
+      padding-left: 5px; }
+      #landingContainer .navMenu .avatar img {
+        height: 35px;
+        width: 35px; }
     #landingContainer .navMenu .logo {
       vertical-align: top; }
     #landingContainer .navMenu .search {
       float: right;
       font-size: 2em;
       padding-right: 10px; }
+  #landingContainer .sideMenu {
+    position: absolute;
+    height: 575px;
+    width: 125px;
+    background: linear-gradient(#e0e0e0, white);
+    margin-top: -1px;
+    z-index: 2;
+    overflow: auto; }
+    #landingContainer .sideMenu li {
+      height: 75px;
+      width: 75px;
+      border: 1px solid black;
+      margin: 15px 0px 25px 25px; }
   #landingContainer .roomButtons {
-    height: 610px; }
+    position: absolute;
+    height: 610px;
+    overflow-x: scroll;
+    width: 375px; }
     #landingContainer .roomButtons li {
       text-align: center;
       height: 33%;
@@ -82,14 +105,77 @@ table {
         margin-top: 50px;
         font-size: 5em;
         letter-spacing: -5px; }
-    #landingContainer .roomButtons li:hover p {
-      color: #1e776d; }
     #landingContainer .roomButtons .liveButton {
-      background-color: #34cfbe; }
+      background-color: #1e776d; }
+      #landingContainer .roomButtons .liveButton p {
+        color: white; }
+    #landingContainer .roomButtons .upcoming {
+      background: #1e776d; }
+      #landingContainer .roomButtons .upcoming .upcomingDeets {
+        display: inline-block;
+        font-size: 1.5em;
+        background: #e0e0e0;
+        margin-left: 5px;
+        margin-bottom: 5px;
+        height: 150px;
+        width: 45%;
+        border: 1px solid white;
+        vertical-align: top; }
     #landingContainer .roomButtons .delayedButton {
       background-color: #e38c44; }
+    #landingContainer .roomButtons .delayRoom {
+      background-color: #e38c44;
+      width: 100%; }
+      #landingContainer .roomButtons .delayRoom .recentResults {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: center;
+        font-size: 1.25em;
+        border-bottom: 1px solid #1e776d; }
+      #landingContainer .roomButtons .delayRoom .showSelect {
+        display: inline-block;
+        width: 32%;
+        vertical-align: top;
+        height: 125px;
+        border: 1px solid white;
+        margin-top: 20px;
+        margin-bottom: 20px; }
+      #landingContainer .roomButtons .delayRoom .seasonResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .delayRoom .episodeResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .delayRoom .startRoom a {
+        text-decoration: none; }
+        #landingContainer .roomButtons .delayRoom .startRoom a .startButton {
+          text-align: center;
+          vertical-align: middle;
+          font-size: 1.5em;
+          padding-top: 15px;
+          width: 50%;
+          height: 35px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid white;
+          background: white;
+          color: #1e776d; }
+      #landingContainer .roomButtons .delayRoom .bumper {
+        height: 25px; }
     #landingContainer .roomButtons .hybridButton {
-      background: linear-gradient(#ac3125, #fd4747);
+      background: linear-gradient(#e33f3f, #fd4747);
       /* Standard syntax */ }
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,13 +1,68 @@
 <div id="landingContainer">
   <div class="navBar">
     <ul class="navMenu">
-      <li class="menu"><i class="fa fa-bars" aria-hidden="true"></i></li>
+      <li class="menu" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
+      <li class="avatar"><img src="https://pbs.twimg.com/profile_images/711983895407960064/liIRSoxx.jpg"/></li>
       <li class="logo">WP</li>
       <li class="search"><i class="fa fa-search" aria-hidden="true"></i></li>
   </div>
+  <div class="sideMenu" ng-hide="menuShow">
+    <ul class="menuButton">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+
+    </ul>
+  </div>
   <ul class="roomButtons">
-    <li class="liveButton"><p>Live</p></li>
-    <li class="delayedButton"><p>Delayed</p></li>
+    <!-- <div class="liveButtonBg"> -->
+    <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
+    <!-- </div> -->
+      <div class="upcoming" ng-click="upcomingFunc()" ng-hide="upcomingHide">
+        <div class="upcomingDeets" ng-click="enterRoomFunc()">Game of Thrones</div>
+        <div class="upcomingDeets">The Walking Dead</div>
+        <div class="upcomingDeets">The Left Overs</div>
+        <div class="upcomingDeets">Game of Thrones</div>
+        <div class="upcomingDeets">The Walking Dead</div>
+        <div class="upcomingDeets">The Left Overs</div>
+        <div class="upcomingDeets">Game of Thrones</div>
+        <div class="upcomingDeets">The Walking Dead</div>
+        <div class="upcomingDeets">The Left Overs</div>
+      </div>
+    <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p></li>
+      <div class="delayRoom" ng-hide="delayRoomHide">
+        <p class="recentResults" ng-hide="showSelectHide">Your Recent Shows</p>
+        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
+          <p>Game of Thrones</p>
+        </div>
+        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
+          <p>The Walking Dead</p>
+        </div>
+        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
+          <p>The Left Overs</p>
+        </div>
+        <div class="seasonSelect" ng-hide="seasonHide">
+          <p class="seasonResults">Season
+            <select class="seasonOptions">
+              <option value=1>1</option>
+            </select>
+          </p>
+          <p class="episodeResults">Episode
+            <select class="seasonOptions">
+              <option value=1>1</option>
+            </select>
+          </p>
+          <div class="startRoom">
+            <a href="#/feed"><p class="startButton">Start Channel</p></a>
+          </div>
+          <div class="bumper">
+          </div>
+        </div>
+      </div>
+
+
     <li class="hybridButton"><p>Hybrid</p></li>
 
   </ul>
