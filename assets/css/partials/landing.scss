@@ -6,15 +6,26 @@
   overflow-y: auto;
   .navMenu{
     // display: inline-block;
+    font-family: Monoton;
     width: 100%;
-    background: linear-gradient(white, #e0e0e0);
-    color: $Main-Green;
+    background: linear-gradient(#4a4a4a, #313131);
+    color: #30bfaf;
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px;
     li{
       display: inline-block;
       font-size: 2.5em;
+      input{
+        margin-left: -35px;
+        color: #30bfaf;
+        font-size: .4em;
+        width: 150%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid #30bfaf;
+      }
     }
     .menu{
     float: left;
@@ -46,16 +57,27 @@
     position: absolute;
     height: 575px;
     width: 125px;
-    background: linear-gradient(#e0e0e0, white);
+    background: linear-gradient(#313131, #4a4a4a);
     // border: 1px solid black;
     margin-top: -1px;
     z-index: 2;
+    padding-top: 15px;
     overflow: auto;
       li{
-        height: 75px;
-        width: 75px;
-        border: 1px solid black;
-        margin: 15px 0px 25px 25px;
+        height: 125px;
+        width: 125px;
+        color: white;
+        // border: 1px solid black;
+        //margin-top: 12px;
+        cursor: pointer;
+        p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.25em;
+        }
+        i {
+          font-size: 3em;
+        }
       }
   }
 
@@ -97,15 +119,26 @@
     .upcoming{
       background: $Main-Green;
       .upcomingDeets{
-        display: inline-block;
-        font-size: 1.5em;
-        background: #e0e0e0;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        height: 150px;
-        width: 45%;
-        border: 1px solid white;
+        // display: inline-block;
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        // border: 1px solid black;
         vertical-align: top;
+
+      }
+      .upcomingBumper{
+        background: $Main-Green;
+        height: 10px;
+        width: 100%;
       }
     }
     .delayedButton {
@@ -126,13 +159,25 @@
         border-bottom: 1px solid $Main-Green;
       }
       .showSelect{
-        display: inline-block;
-        width: 32%;
+        // display: inline-block;
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        // border: 1px solid black;
         vertical-align: top;
-        height: 125px;
-        border: 1px solid white;
-        margin-top: 20px;
-        margin-bottom: 20px;
+      }
+      .delayBumper{
+        background: #e38c44;
+        height: 10px;
+        width: 100%;
       }
       .seasonResults{
         font-size: 1.25em;
@@ -194,13 +239,20 @@
         margin-bottom: 20px;
       }
       .hybridSelect{
-        display: inline-block;
-        width: 32%;
+        // display: inline-block;
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        // border: 1px solid black;
         vertical-align: top;
-        height: 125px;
-        border: 1px solid white;
-        margin-top: 50px;
-        margin-bottom: 20px;
       }
       .seasonResults{
         font-size: 1.25em;
