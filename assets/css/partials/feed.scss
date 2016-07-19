@@ -11,32 +11,105 @@
       ul {
         li {
           display: inline-block;
+          vertical-align: middle;
           h3 {
             font-family: $Font-Header;
             font-size: 28px;
-            vertical-align: middle;
+            // vertical-align: bottom;
             color: #fff;
             letter-spacing: 2px;
             margin-left: 2.5em;
+            margin-top: .2em;
+            // border: 1px solid white;
           }
           i {
-            font-size: 30px;
-            vertical-align: baseline;
+            font-size: 32px;
+            // vertical-align: sub;
             padding-bottom: .5em;
             margin-left: .5em;
             color: #fff;
+            // border: 1px solid white;
+            height: .5em;
+            cursor: pointer;
           }
           img {
             height: 2.5em;
             width: auto;
             border-radius: 50%;
-            vertical-align: middle;
+            // vertical-align: middle;
             margin-left: .5em;
             margin-top: .25em;
             border: 1px solid #fff;
 
           }
 
+        }
+      }
+    }
+    .message-bar {
+      width: 100%;
+      max-width: 375px;
+      background-color: $Main-Green;
+      padding: 1em 0 1em 0;
+      border-top: 1px solid #fff;
+      position: fixed;
+      bottom: 30.3%;
+      vertical-align: middle;
+      .add {
+        display: inline-block;
+        padding: 5px 10px;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+        margin-left: 1em;
+        i {
+          color: $Main-Green;
+          font-size: 14px;
+        }
+      }
+      form {
+        display: inline-block;
+        input {
+          padding: .5em 1.5em;
+          margin-left: 6em;
+        }
+        .submit-btn {
+          padding: 5px 15px;
+          border: none;
+          background-color: #fff;
+          cursor: pointer;
+          margin-left: 4em;
+          i {
+            color: $Main-Green;
+            font-size: 16px;
+            font-weight: bolder;
+          }
+        }
+      }
+    }
+    .post {
+      ul {
+        display: inline-block;
+        li {
+          border: 2px solid $Main-Green;
+          font-family: $Font-Posts;
+          display: inline-block;
+          width: 90%;
+          margin: 0 auto;
+          img {
+            height: 2em;
+            width: auto;
+            display: inline-block;
+          }
+          .post-avatar {
+            border-radius: 50%;
+            display: inline-block;
+          }
+          p {
+            width: 75%;
+            text-align: justify;
+            display: inline-block;
+          }
         }
       }
     }

@@ -57,28 +57,82 @@ table {
     width: 100%;
     padding-bottom: .5em; }
     #container-feed nav ul li {
-      display: inline-block; }
+      display: inline-block;
+      vertical-align: middle; }
       #container-feed nav ul li h3 {
         font-family: "Monoton", Verdana, sans-serif;
         font-size: 28px;
-        vertical-align: middle;
         color: #fff;
         letter-spacing: 2px;
-        margin-left: 2.5em; }
+        margin-left: 2.5em;
+        margin-top: .2em; }
       #container-feed nav ul li i {
-        font-size: 30px;
-        vertical-align: baseline;
+        font-size: 32px;
         padding-bottom: .5em;
         margin-left: .5em;
-        color: #fff; }
+        color: #fff;
+        height: .5em;
+        cursor: pointer; }
       #container-feed nav ul li img {
         height: 2.5em;
         width: auto;
         border-radius: 50%;
-        vertical-align: middle;
         margin-left: .5em;
         margin-top: .25em;
         border: 1px solid #fff; }
+  #container-feed .message-bar {
+    width: 100%;
+    max-width: 375px;
+    background-color: #1e776d;
+    padding: 1em 0 1em 0;
+    border-top: 1px solid #fff;
+    position: fixed;
+    bottom: 30.3%;
+    vertical-align: middle; }
+    #container-feed .message-bar .add {
+      display: inline-block;
+      padding: 5px 10px;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      margin-left: 1em; }
+      #container-feed .message-bar .add i {
+        color: #1e776d;
+        font-size: 14px; }
+    #container-feed .message-bar form {
+      display: inline-block; }
+      #container-feed .message-bar form input {
+        padding: .5em 1.5em;
+        margin-left: 6em; }
+      #container-feed .message-bar form .submit-btn {
+        padding: 5px 15px;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+        margin-left: 4em; }
+        #container-feed .message-bar form .submit-btn i {
+          color: #1e776d;
+          font-size: 16px;
+          font-weight: bolder; }
+  #container-feed .post ul {
+    display: inline-block; }
+    #container-feed .post ul li {
+      border: 2px solid #1e776d;
+      font-family: "David Libre", Verdana, sans-serif;
+      display: inline-block;
+      width: 90%;
+      margin: 0 auto; }
+      #container-feed .post ul li img {
+        height: 2em;
+        width: auto;
+        display: inline-block; }
+      #container-feed .post ul li .post-avatar {
+        border-radius: 50%;
+        display: inline-block; }
+      #container-feed .post ul li p {
+        width: 75%;
+        text-align: justify;
+        display: inline-block; }
 
 #container-login {
   width: 100%;
