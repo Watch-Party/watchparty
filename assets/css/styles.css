@@ -132,22 +132,29 @@ table {
         margin: 0 auto;
         padding: .75em; }
         #container-feed .post ul li .avatar-div {
-          text-align: center;
-          border-right: 1px solid black; }
+          text-align: center; }
           #container-feed .post ul li .avatar-div .post-avatar {
             border-radius: 50%;
-            height: 2.5em;
-            border: 1px solid #1e776d; }
+            height: 2em;
+            border: 1px solid #1e776d;
+            margin-bottom: .25em; }
         #container-feed .post ul li .par-div {
-          width: 12em; }
+          width: 14.25em; }
           #container-feed .post ul li .par-div p {
-            width: 90%;
+            max-width: 90%;
             text-align: left;
             display: inline-block; }
+          #container-feed .post ul li .par-div .time-div {
+            color: gray;
+            font-size: 12px;
+            font-family: "Asap", Helvetica, sans-serif;
+            font-weight: lighter;
+            margin-top: 2em; }
         #container-feed .post ul li .pop-div {
-          width: 1em; }
+          text-align: center; }
           #container-feed .post ul li .pop-div .popcorn {
-            height: 1.5em; }
+            height: 1.5em;
+            cursor: pointer; }
 
 #container-login {
   width: 100%;
