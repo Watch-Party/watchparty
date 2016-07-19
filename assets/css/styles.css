@@ -124,7 +124,6 @@ table {
     #container-feed .post ul {
       display: flex; }
       #container-feed .post ul li {
-        border-top: 1px solid #1e776d;
         border-bottom: 1px solid #1e776d;
         font-family: "David Libre", Verdana, sans-serif;
         display: inline-block;
@@ -139,22 +138,33 @@ table {
             border: 1px solid #1e776d;
             margin-bottom: .25em; }
         #container-feed .post ul li .par-div {
-          width: 14.25em; }
+          width: 15.25em; }
           #container-feed .post ul li .par-div p {
             max-width: 90%;
             text-align: left;
-            display: inline-block; }
+            display: inline-block;
+            letter-spacing: .25px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto; }
           #container-feed .post ul li .par-div .time-div {
             color: gray;
             font-size: 12px;
             font-family: "Asap", Helvetica, sans-serif;
             font-weight: lighter;
-            margin-top: 2em; }
+            margin-top: 1.75em; }
         #container-feed .post ul li .pop-div {
-          text-align: center; }
+          text-align: left; }
           #container-feed .post ul li .pop-div .popcorn {
             height: 1.5em;
-            cursor: pointer; }
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 50%; }
+          #container-feed .post ul li .pop-div .popcorn:hover {
+            background-color: #30BFAF; }
 
 #container-login {
   width: 100%;

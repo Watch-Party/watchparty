@@ -103,7 +103,7 @@
         display: flex;
         // margin-top: 3.55em;
         li {
-          border-top: 1px solid $Main-Green;
+          // border-top: 1px solid $Main-Green;
           border-bottom: 1px solid $Main-Green;
           // border-right: 1px solid black;
           font-family: $Font-Posts;
@@ -127,27 +127,40 @@
             }
           }
           .par-div {
-            width: 14.25em;
+            width: 15.25em;
             p {
               max-width: 90%;
               text-align: left;
               display: inline-block;
+              letter-spacing: .25px;
+              overflow-wrap: break-word;
+              word-wrap: break-word;
+              -webkit-hyphens: auto;
+              -ms-hyphens: auto;
+              -moz-hyphens: auto;
+              hyphens: auto;
             }
             .time-div {
               color: gray;
               font-size: 12px;
               font-family: $Font-Menu;
               font-weight: lighter;
-              margin-top: 2em;
+              margin-top: 1.75em;
             }
           }
           .pop-div{
             // width: 1em;
-            text-align: center;
+            text-align: left;
             .popcorn {
               // display: inline-block;
               height: 1.5em;
               cursor: pointer;
+              // border: 1px solid $Main-Green;
+              padding: 2px;
+              // background-color: #30BFAF;
+              border-radius: 50%;
+            }.popcorn:hover {
+              background-color: #30BFAF;
             }
           }
         }
