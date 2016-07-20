@@ -19,6 +19,7 @@ watchParty.config(function($routeProvider) {
 
   .when ('/feed', {
     templateUrl: 'pages/feed.html',
+    controller: 'postCtrl'
   })
 
   .otherwise({

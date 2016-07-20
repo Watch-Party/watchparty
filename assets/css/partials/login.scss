@@ -24,6 +24,7 @@
         color: #fff;
         text-align: center;
         line-height: 1.25;
+        text-shadow: 2px 2px 2px #30BFAF;
         // letter-spacing: .5px;
       }
       h2 {
@@ -39,19 +40,27 @@
       width: 50%;
       margin: 0 auto;
       text-align: center;
-      margin-top: 2.5em;
+      margin-top: 1.5em;
+         .username[type="text"] {
+          color: #fff;
+          font-family: $Font-Menu;
+          font-size: 13.5px;
+         }
         .username {
+          border: 0;
+          outline: 0;
+          background: transparent;
+          border-bottom: 2px solid #30BFAF;
           margin-bottom: 1em;
-          border: 2px solid #30BFAF;
           padding: .5em;
         }::-webkit-input-placeholder {
           font-family: $Font-Menu;
           letter-spacing: 1.75px;
+          color: #fff;
+          opacity: .50;
         }
         .password {
-          margin-bottom: 1em;
-          border: 2px solid #30BFAF;
-          padding: .5em;
+          @extend .username;
         }
         .go-login {
           font-family: $Font-Menu;
@@ -61,14 +70,14 @@
           border: none;
           color: #fff;
           cursor: pointer;
+          margin-top: .5em;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
         }
     }
     .sign-up-inputs {
       @extend .login-inputs;
       .first-name {
-        margin-bottom: 1em;
-        border: 2px solid #30BFAF;
-        padding: .5em;
+        @extend .username;
       }
       .last-name {
         @extend .first-name;
@@ -92,7 +101,7 @@
     }
     .buttons {
       // border: 1px solid white;
-      margin-top: 2em;
+      margin-top: 1.5em;
       text-align: center;
       .login {
         font-family: $Font-Menu;
@@ -104,6 +113,11 @@
         color: #fff;
         margin-right: .5em;
         cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
+        i {
+          font-weight: bold;
+          margin-left: .25em;
+        }
       }
       .sign-up {
         font-family: $Font-Menu;
@@ -115,6 +129,11 @@
         color: #fff;
         margin-left: .5em;
         cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
+        i {
+          font-weight: bold;
+          margin-left: .25em;
+        }
       }
     }
     .learn-more {
