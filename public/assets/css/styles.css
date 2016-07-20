@@ -1,0 +1,589 @@
+@import "https://fonts.googleapis.com/css?family=Monoton";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#container-feed {
+  width: 100%;
+  max-width: 375px;
+  height: 667px;
+  background-color: #fff;
+  border: 1px solid #1e776d; }
+  #container-feed nav {
+    background-color: #1e776d;
+    width: 100%;
+    max-width: 375px;
+    padding-bottom: .5em;
+    position: fixed; }
+    #container-feed nav ul li {
+      display: inline-block;
+      vertical-align: middle; }
+      #container-feed nav ul li h3 {
+        font-family: "Monoton", Verdana, sans-serif;
+        font-size: 28px;
+        color: #fff;
+        letter-spacing: 2px;
+        margin-left: 2.25em;
+        margin-top: .2em; }
+      #container-feed nav ul li i {
+        font-size: 32px;
+        padding-bottom: .5em;
+        margin-left: .5em;
+        color: #fff;
+        height: .5em;
+        cursor: pointer; }
+      #container-feed nav ul li img {
+        height: 2.5em;
+        width: auto;
+        border-radius: 50%;
+        margin-left: .5em;
+        margin-top: .25em;
+        border: 1px solid #fff; }
+  #container-feed .message-bar {
+    width: 100%;
+    max-width: 375px;
+    background-color: #1e776d;
+    padding: 1em 0 1em 0;
+    border-top: 1px solid #fff;
+    position: relative;
+    top: 605px;
+    bottom: 0; }
+    #container-feed .message-bar .add {
+      display: inline-block;
+      padding: 5px 10px;
+      border: none;
+      background-color: #fff;
+      cursor: pointer;
+      margin-left: 1em; }
+      #container-feed .message-bar .add i {
+        color: #1e776d;
+        font-size: 14px; }
+    #container-feed .message-bar form {
+      display: inline-block; }
+      #container-feed .message-bar form input {
+        padding: .5em .5em;
+        margin-left: 4em;
+        width: 14em; }
+      #container-feed .message-bar form ::-webkit-input-placeholder {
+        font-family: "David Libre", Verdana, sans-serif;
+        font-size: 14px; }
+      #container-feed .message-bar form .submit-btn {
+        padding: 5px 15px;
+        border: none;
+        background-color: #fff;
+        cursor: pointer;
+        margin-left: 4em; }
+        #container-feed .message-bar form .submit-btn i {
+          color: #1e776d;
+          font-size: 16px;
+          font-weight: bolder; }
+  #container-feed .post {
+    width: 100%;
+    max-height: 545px;
+    overflow: scroll; }
+    #container-feed .post ul {
+      display: flex; }
+      #container-feed .post ul li {
+        border-bottom: 1px solid #1e776d;
+        font-family: "David Libre", Verdana, sans-serif;
+        display: inline-block;
+        width: 100%;
+        margin: 0 auto;
+        padding: .75em; }
+        #container-feed .post ul li .avatar-div {
+          text-align: center; }
+          #container-feed .post ul li .avatar-div .post-avatar {
+            border-radius: 50%;
+            height: 2em;
+            border: 1px solid #1e776d;
+            margin-bottom: .25em; }
+        #container-feed .post ul li .par-div {
+          width: 15.25em; }
+          #container-feed .post ul li .par-div p {
+            max-width: 90%;
+            text-align: left;
+            display: inline-block;
+            letter-spacing: .25px;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto; }
+          #container-feed .post ul li .par-div .time-div {
+            color: gray;
+            font-size: 12px;
+            font-family: "Asap", Helvetica, sans-serif;
+            font-weight: lighter;
+            margin-top: 1.75em; }
+        #container-feed .post ul li .pop-div {
+          text-align: left; }
+          #container-feed .post ul li .pop-div .popcorn {
+            height: 1.5em;
+            cursor: pointer;
+            padding: 2px;
+            border-radius: 50%; }
+          #container-feed .post ul li .pop-div .popcorn:hover {
+            background-color: #30BFAF; }
+
+#landingContainer {
+  height: 667px;
+  width: 375px;
+  border: 1px solid black;
+  font-family: "Asap", Helvetica, sans-serif;
+  overflow-y: auto; }
+  #landingContainer .navMenu {
+    font-family: Monoton;
+    width: 100%;
+    background: linear-gradient(#4a4a4a, #313131);
+    color: #30bfaf;
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px; }
+    #landingContainer .navMenu li {
+      display: inline-block;
+      font-size: 2.5em; }
+      #landingContainer .navMenu li input {
+        margin-left: -35px;
+        color: #30bfaf;
+        font-size: .4em;
+        width: 150%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid #30bfaf; }
+    #landingContainer .navMenu .menu {
+      float: left;
+      font-size: 2em;
+      padding-left: 10px; }
+    #landingContainer .navMenu .avatar {
+      float: left;
+      padding-left: 5px; }
+      #landingContainer .navMenu .avatar img {
+        height: 35px;
+        width: 35px; }
+    #landingContainer .navMenu .logo {
+      vertical-align: top; }
+    #landingContainer .navMenu .search {
+      float: right;
+      font-size: 2em;
+      padding-right: 10px; }
+  #landingContainer .sideMenu {
+    position: absolute;
+    height: 575px;
+    width: 125px;
+    background: linear-gradient(#313131, #4a4a4a);
+    margin-top: -1px;
+    z-index: 2;
+    padding-top: 15px;
+    overflow: auto; }
+    #landingContainer .sideMenu li {
+      height: 125px;
+      width: 125px;
+      color: white;
+      cursor: pointer; }
+      #landingContainer .sideMenu li p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.25em; }
+      #landingContainer .sideMenu li i {
+        font-size: 3em; }
+  #landingContainer .roomButtons {
+    position: absolute;
+    height: 610px;
+    overflow-x: scroll;
+    width: 375px; }
+    #landingContainer .roomButtons li {
+      text-align: center;
+      height: 33%;
+      margin: 0;
+      border: .1px solid transparent; }
+      #landingContainer .roomButtons li p {
+        color: white;
+        margin-top: 50px;
+        font-size: 5em;
+        letter-spacing: -5px; }
+    #landingContainer .roomButtons .liveButton {
+      background-color: #1e776d; }
+      #landingContainer .roomButtons .liveButton p {
+        color: white; }
+    #landingContainer .roomButtons .upcoming {
+      background: #1e776d; }
+      #landingContainer .roomButtons .upcoming .upcomingDeets {
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        vertical-align: top; }
+      #landingContainer .roomButtons .upcoming .upcomingBumper {
+        background: #1e776d;
+        height: 10px;
+        width: 100%; }
+    #landingContainer .roomButtons .delayedButton {
+      background-color: #e38c44; }
+    #landingContainer .roomButtons .delayRoom {
+      background-color: #e38c44;
+      width: 100%; }
+      #landingContainer .roomButtons .delayRoom .recentResults {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        text-align: center;
+        font-size: 1.25em;
+        border-bottom: 1px solid #1e776d; }
+      #landingContainer .roomButtons .delayRoom .showSelect {
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        vertical-align: top; }
+      #landingContainer .roomButtons .delayRoom .delayBumper {
+        background: #e38c44;
+        height: 10px;
+        width: 100%; }
+      #landingContainer .roomButtons .delayRoom .seasonResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .delayRoom .episodeResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .delayRoom .startRoom a {
+        text-decoration: none; }
+        #landingContainer .roomButtons .delayRoom .startRoom a .startButton {
+          text-align: center;
+          vertical-align: middle;
+          font-size: 1.5em;
+          padding-top: 15px;
+          width: 50%;
+          height: 35px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid white;
+          background: white;
+          color: #1e776d; }
+      #landingContainer .roomButtons .delayRoom .bumper {
+        height: 25px; }
+    #landingContainer .roomButtons .hybridButton {
+      background: linear-gradient(#e33f3f, #fd4747);
+      /* Standard syntax */ }
+    #landingContainer .roomButtons .hybridRoom {
+      width: 100%;
+      background: linear-gradient(#fd4747, #e33f3f);
+      /* Standard syntax */ }
+      #landingContainer .roomButtons .hybridRoom input {
+        display: block;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px; }
+      #landingContainer .roomButtons .hybridRoom .hybridSelect {
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        vertical-align: top; }
+      #landingContainer .roomButtons .hybridRoom .seasonResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .hybridRoom .episodeResults {
+        font-size: 1.25em;
+        color: white;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        margin-bottom: 25px; }
+      #landingContainer .roomButtons .hybridRoom .startRoom a {
+        text-decoration: none; }
+        #landingContainer .roomButtons .hybridRoom .startRoom a .startButton {
+          text-align: center;
+          vertical-align: middle;
+          font-size: 1.5em;
+          padding-top: 15px;
+          width: 50%;
+          height: 35px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid white;
+          background: white;
+          color: #1e776d; }
+      #landingContainer .roomButtons .hybridRoom .bumper {
+        height: 25px; }
+
+#container-login {
+  width: 100%;
+  max-width: 375px;
+  height: 667px;
+  background-image: linear-gradient(130deg, #0c5a4e 0%, #1e776d 51%, #2b7078 75%); }
+  #container-login header {
+    width: 50%;
+    margin: 0 auto;
+    padding-top: 40%; }
+    #container-login header p {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 18px;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 1em;
+      margin-top: .5em; }
+    #container-login header h1 {
+      font-family: "Monoton", Verdana, sans-serif;
+      font-size: 40px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.25;
+      text-shadow: 2px 2px 2px #30BFAF; }
+    #container-login header h2 {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 22px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.25; }
+  #container-login .login-inputs, #container-login .sign-up-inputs {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1.5em; }
+    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password {
+      color: #fff;
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 13.5px; }
+    #container-login .login-inputs .username, #container-login .sign-up-inputs .username, #container-login .login-inputs .password, #container-login .sign-up-inputs .password, #container-login .sign-up-inputs .first-name, #container-login .sign-up-inputs .last-name, #container-login .sign-up-inputs .email, #container-login .sign-up-inputs .username-signup, #container-login .sign-up-inputs .password-signup, #container-login .sign-up-inputs .re-enter-password {
+      border: 0;
+      outline: 0;
+      background: transparent;
+      border-bottom: 2px solid #30BFAF;
+      margin-bottom: 1em;
+      padding: .5em; }
+    #container-login .login-inputs ::-webkit-input-placeholder, #container-login .sign-up-inputs ::-webkit-input-placeholder {
+      font-family: "Asap", Helvetica, sans-serif;
+      letter-spacing: 1.75px;
+      color: #fff;
+      opacity: .50; }
+    #container-login .login-inputs .go-login, #container-login .sign-up-inputs .go-login, #container-login .sign-up-inputs .go-signup {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 14px;
+      padding: 6px 15px;
+      background-color: #30BFAF;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin-top: .5em;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+  #container-login .sign-up-inputs .go-signup {
+    background-color: #7DDBD0; }
+  #container-login .buttons {
+    margin-top: 1.5em;
+    text-align: center; }
+    #container-login .buttons .login {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #30BFAF;
+      border: none;
+      color: #fff;
+      margin-right: .5em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+      #container-login .buttons .login i {
+        font-weight: bold;
+        margin-left: .25em; }
+    #container-login .buttons .sign-up {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 16px;
+      padding: 10px 20px;
+      background-color: #7DDBD0;
+      border: none;
+      color: #fff;
+      margin-left: .5em;
+      cursor: pointer;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+      #container-login .buttons .sign-up i {
+        font-weight: bold;
+        margin-left: .25em; }
+  #container-login .learn-more {
+    font-family: "Asap", Helvetica, sans-serif;
+    font-size: 12px;
+    text-decoration: underline;
+    font-style: italic;
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    opacity: .75;
+    cursor: pointer; }
+  #container-login :hover {
+    opacity: 1; }
+  #container-login .about {
+    padding-top: 1em;
+    width: 60%;
+    margin: 0 auto;
+    font-family: "Asap", Helvetica, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    text-align: justify;
+    line-height: 1.5; }
+  #container-login .center {
+    text-align: center; }
+
+#profileContainer {
+  height: 667px;
+  width: 375px;
+  border: 1px solid black;
+  font-family: "Asap", Helvetica, sans-serif; }
+  #profileContainer .header {
+    width: 100%;
+    height: 325px;
+    border: 1px solid black;
+    background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%); }
+    #profileContainer .header .fa-chevron-left {
+      color: white;
+      font-size: 2em;
+      display: inline-block;
+      width: 12%;
+      margin-top: 5px;
+      margin-left: 5px; }
+    #profileContainer .header .avatar {
+      display: block;
+      margin-top: -10px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 35%;
+      height: auto; }
+    #profileContainer .header .contact {
+      margin-top: 15px; }
+      #profileContainer .header .contact .contactList {
+        display: inline-block;
+        font-size: .75em;
+        margin-left: 10px;
+        margin-right: 10px; }
+      #profileContainer .header .contact .fa-envelope-o {
+        font-size: 3.5em; }
+      #profileContainer .header .contact .fa-plus {
+        font-size: 3.5em; }
+    #profileContainer .header .names {
+      color: white;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      #profileContainer .header .names .firstName {
+        font-size: 1.5em;
+        margin-left: -50px; }
+      #profileContainer .header .names .lastName {
+        font-size: 1.5em;
+        margin-right: -50px; }
+      #profileContainer .header .names .screenName {
+        font-size: 1.5em;
+        font-size: 1em; }
+    #profileContainer .header .socialStats {
+      width: 95%;
+      margin-top: 12px; }
+      #profileContainer .header .socialStats li {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px; }
+      #profileContainer .header .socialStats .socialNumbers {
+        font-size: 2.5em; }
+  #profileContainer .profileDetails {
+    margin: 12px 12px 0px 12px; }
+    #profileContainer .profileDetails .fa-circle-thin {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-globe {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-play {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails span {
+      font-size: 1.33em;
+      color: #010202; }
+    #profileContainer .profileDetails p {
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e776d; }
+
+/*# sourceMappingURL=styles.css.map */
