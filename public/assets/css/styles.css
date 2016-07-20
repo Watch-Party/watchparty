@@ -168,8 +168,9 @@ table {
             background-color: #30BFAF; }
 
 #landingContainer {
-  height: 667px;
-  width: 375px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   border: 1px solid black;
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto; }
@@ -231,9 +232,9 @@ table {
         font-size: 3em; }
   #landingContainer .roomButtons {
     position: absolute;
-    height: 610px;
+    height: 100%;
     overflow-x: scroll;
-    width: 375px; }
+    width: 100%; }
     #landingContainer .roomButtons li {
       text-align: center;
       height: 33%;
@@ -241,7 +242,7 @@ table {
       border: .1px solid transparent; }
       #landingContainer .roomButtons li p {
         color: white;
-        margin-top: 50px;
+        margin-top: 2%;
         font-size: 5em;
         letter-spacing: -5px; }
     #landingContainer .roomButtons .liveButton {
