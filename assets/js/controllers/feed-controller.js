@@ -1,6 +1,6 @@
 watchParty.controller('postCtrl', function($scope, $http, $compile){
   $scope.allPosts= [];
-  $http.get('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
+  $http.get('https://c2148969.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
     console.log(response);
     $scope.getPosts= response.data.posts
     console.log($scope.getPosts)
@@ -15,9 +15,9 @@ watchParty.controller('postCtrl', function($scope, $http, $compile){
         console.log($scope.post);
         $scope.postContent = '';
 
-        $http.post('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
+        $http.post('https://c2148969.ngrok.io/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
           console.log(post);
-          $http.get('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
+          $http.get('https://c2148969.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
             console.log(response);
             $scope.getPosts= response.data.posts
             console.log($scope.getPosts)
