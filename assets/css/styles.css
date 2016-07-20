@@ -463,5 +463,26 @@ table {
         margin-right: 5px; }
       #profileContainer .header .socialStats .socialNumbers {
         font-size: 2.5em; }
+  #profileContainer .profileDetails {
+    margin: 12px 12px 0px 12px; }
+    #profileContainer .profileDetails .fa-circle-thin {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-globe {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-play {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails span {
+      font-size: 1.33em;
+      color: #010202; }
+    #profileContainer .profileDetails p {
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e776d; }
 
 /*# sourceMappingURL=styles.css.map */
