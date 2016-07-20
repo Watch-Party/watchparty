@@ -424,6 +424,9 @@ table {
       margin-right: .5em;
       cursor: pointer;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+      #container-login .buttons .login i {
+        font-weight: bold;
+        margin-left: .25em; }
     #container-login .buttons .sign-up {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 16px;
@@ -434,6 +437,9 @@ table {
       margin-left: .5em;
       cursor: pointer;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+      #container-login .buttons .sign-up i {
+        font-weight: bold;
+        margin-left: .25em; }
   #container-login .learn-more {
     font-family: "Asap", Helvetica, sans-serif;
     font-size: 12px;

@@ -114,6 +114,10 @@
         margin-right: .5em;
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
+        i {
+          font-weight: bold;
+          margin-left: .25em;
+        }
       }
       .sign-up {
         font-family: $Font-Menu;
@@ -126,6 +130,10 @@
         margin-left: .5em;
         cursor: pointer;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
+        i {
+          font-weight: bold;
+          margin-left: .25em;
+        }
       }
     }
     .learn-more {
