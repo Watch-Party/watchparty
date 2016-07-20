@@ -1,5 +1,10 @@
 watchParty.controller('postCtrl', function($scope, $http, $compile){
   $scope.allPosts= [];
+  $http.get('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
+    console.log(response);
+    $scope.getPosts= response.data.posts
+    console.log($scope.getPosts)
+  })
   $scope.submitPost = function() {
     $scope.post =  {
         'content': $scope.postContent,
@@ -9,17 +14,21 @@ watchParty.controller('postCtrl', function($scope, $http, $compile){
         console.log($scope.allPosts);
         console.log($scope.post);
         $scope.postContent = '';
+
+        $http.post('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
+          console.log(post);
+          $http.get('http://8423677c.ngrok.io/game_of_thrones/1/1/posts.json').then(function(response){
+            console.log(response);
+            $scope.getPosts= response.data.posts
+            console.log($scope.getPosts)
+          })
+        })
   }
-  $scope.reset = function(){
-
-  }
 
 
-    // $http.post('https://json-party.herokuapp.com/users/sign_in.json', $scope.post).then(function(post){
+    // $http.post('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
     //   console.log(post);
     // })
-
-
 
 
 
@@ -27,7 +36,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile){
 
 // inspiration from: https://codedump.io/share/Eunu1YNUTbAO/1/angular-ng-repeat-in-reverse //
 watchParty.filter('missyElliot', function() {
-  return function(posts) {
-  return posts.slice().reverse();
+  return function(items) {
+  return items.slice().reverse();
 };
 });
