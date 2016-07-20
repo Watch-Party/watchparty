@@ -7,14 +7,6 @@
     </ul>
   </nav>
 
-  <section class="message-bar">
-    <button class="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
-    <form ng-submit="submitPost()">
-      <input type="text" placeholder="New post" ng-model="postContent"></input>
-      <button class="submit-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
-    </form>
-  </section>
-
   <div class="post">
     <ul ng-repeat = "post in getPosts | missyElliot">
       <li><div class="avatar-div"><img class="post-avatar" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/10628521_2400037160460_4322777893147362262_n.jpg?oh=c7e1f6c9c7ab7123c4678d2e11ef6149&oe=58267E3D"></img></div></li>
@@ -68,6 +60,15 @@
     </ul> -->
 
   </div>
+
+  <section class="message-bar">
+    <button class="add"><i class="fa fa-plus" aria-hidden="true"></i></button>
+    <form ng-submit="submitPost()">
+      <input type="text" placeholder="New post" ng-model="postContent"></input>
+      <button class="submit-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+    </form>
+  </section>
+
 
 
 

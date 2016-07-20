@@ -48,7 +48,8 @@ table {
 
 #container-feed {
   width: 100%;
-  height: 667px;
+  height: 100%;
+  position: absolute;
   background-color: #fff;
   border: 1px solid #1e776d; }
   #container-feed nav {
@@ -81,10 +82,11 @@ table {
         border: 1px solid #fff; }
   #container-feed .message-bar {
     background-color: #1e776d;
-    padding: 1em 0 1em 0;
+    padding: .5em 0 .5em 0;
     border-top: 1px solid #fff;
-    position: relative;
-    top: 549px;
+    position: absolute;
+    width: 100%;
+    height: 3em;
     bottom: 0; }
     #container-feed .message-bar .add {
       display: inline-block;
@@ -117,11 +119,11 @@ table {
           font-weight: bolder; }
   #container-feed .post {
     width: 100%;
-    max-height: 545px;
-    overflow: scroll;
-    margin-top: -50px; }
+    max-height: 90%;
+    overflow: scroll; }
     #container-feed .post ul {
-      display: flex; }
+      display: flex;
+      height: 10em; }
       #container-feed .post ul li {
         border-bottom: 1px solid #1e776d;
         font-family: "David Libre", Verdana, sans-serif;
