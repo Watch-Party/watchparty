@@ -176,15 +176,25 @@ table {
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto; }
   #landingContainer .navMenu {
+    font-family: Monoton;
     width: 100%;
-    background: linear-gradient(white, #e0e0e0);
-    color: #1e776d;
+    background: linear-gradient(#4a4a4a, #313131);
+    color: #30bfaf;
     text-align: center;
     padding-bottom: 10px;
     padding-top: 10px; }
     #landingContainer .navMenu li {
       display: inline-block;
       font-size: 2.5em; }
+      #landingContainer .navMenu li input {
+        margin-left: -35px;
+        color: #30bfaf;
+        font-size: .4em;
+        width: 150%;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 2px solid #30bfaf; }
     #landingContainer .navMenu .menu {
       float: left;
       font-size: 2em;
@@ -205,15 +215,22 @@ table {
     position: absolute;
     height: 575px;
     width: 125px;
-    background: linear-gradient(#e0e0e0, white);
+    background: linear-gradient(#313131, #4a4a4a);
     margin-top: -1px;
     z-index: 2;
+    padding-top: 15px;
     overflow: auto; }
     #landingContainer .sideMenu li {
-      height: 75px;
-      width: 75px;
-      border: 1px solid black;
-      margin: 15px 0px 25px 25px; }
+      height: 125px;
+      width: 125px;
+      color: white;
+      cursor: pointer; }
+      #landingContainer .sideMenu li p {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.25em; }
+      #landingContainer .sideMenu li i {
+        font-size: 3em; }
   #landingContainer .roomButtons {
     position: absolute;
     height: 610px;
@@ -236,15 +253,22 @@ table {
     #landingContainer .roomButtons .upcoming {
       background: #1e776d; }
       #landingContainer .roomButtons .upcoming .upcomingDeets {
-        display: inline-block;
-        font-size: 1.5em;
-        background: #e0e0e0;
-        margin-left: 5px;
-        margin-bottom: 5px;
-        height: 150px;
-        width: 45%;
-        border: 1px solid white;
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
         vertical-align: top; }
+      #landingContainer .roomButtons .upcoming .upcomingBumper {
+        background: #1e776d;
+        height: 10px;
+        width: 100%; }
     #landingContainer .roomButtons .delayedButton {
       background-color: #e38c44; }
     #landingContainer .roomButtons .delayRoom {
@@ -259,13 +283,22 @@ table {
         font-size: 1.25em;
         border-bottom: 1px solid #1e776d; }
       #landingContainer .roomButtons .delayRoom .showSelect {
-        display: inline-block;
-        width: 32%;
-        vertical-align: top;
-        height: 125px;
-        border: 1px solid white;
-        margin-top: 20px;
-        margin-bottom: 20px; }
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        vertical-align: top; }
+      #landingContainer .roomButtons .delayRoom .delayBumper {
+        background: #e38c44;
+        height: 10px;
+        width: 100%; }
       #landingContainer .roomButtons .delayRoom .seasonResults {
         font-size: 1.25em;
         color: white;
@@ -312,13 +345,18 @@ table {
         margin-right: auto;
         margin-bottom: 20px; }
       #landingContainer .roomButtons .hybridRoom .hybridSelect {
-        display: inline-block;
-        width: 32%;
-        vertical-align: top;
-        height: 125px;
-        border: 1px solid white;
-        margin-top: 50px;
-        margin-bottom: 20px; }
+        font-size: 1.75em;
+        letter-spacing: -2px;
+        text-align: center;
+        color: white;
+        padding-top: 20px;
+        background: #4a4a4a;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 8px;
+        height: 130px;
+        width: 65%;
+        vertical-align: top; }
       #landingContainer .roomButtons .hybridRoom .seasonResults {
         font-size: 1.25em;
         color: white;
@@ -466,5 +504,86 @@ table {
     line-height: 1.5; }
   #container-login .center {
     text-align: center; }
+
+#profileContainer {
+  height: 667px;
+  width: 375px;
+  border: 1px solid black;
+  font-family: "Asap", Helvetica, sans-serif; }
+  #profileContainer .header {
+    width: 100%;
+    height: 325px;
+    border: 1px solid black;
+    background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%); }
+    #profileContainer .header .fa-chevron-left {
+      color: white;
+      font-size: 2em;
+      display: inline-block;
+      width: 12%;
+      margin-top: 5px;
+      margin-left: 5px; }
+    #profileContainer .header .avatar {
+      display: block;
+      margin-top: -10px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 35%;
+      height: auto; }
+    #profileContainer .header .contact {
+      margin-top: 15px; }
+      #profileContainer .header .contact .contactList {
+        display: inline-block;
+        font-size: .75em;
+        margin-left: 10px;
+        margin-right: 10px; }
+      #profileContainer .header .contact .fa-envelope-o {
+        font-size: 3.5em; }
+      #profileContainer .header .contact .fa-plus {
+        font-size: 3.5em; }
+    #profileContainer .header .names {
+      color: white;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center; }
+      #profileContainer .header .names .firstName {
+        font-size: 1.5em;
+        margin-left: -50px; }
+      #profileContainer .header .names .lastName {
+        font-size: 1.5em;
+        margin-right: -50px; }
+      #profileContainer .header .names .screenName {
+        font-size: 1.5em;
+        font-size: 1em; }
+    #profileContainer .header .socialStats {
+      width: 95%;
+      margin-top: 12px; }
+      #profileContainer .header .socialStats li {
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px; }
+      #profileContainer .header .socialStats .socialNumbers {
+        font-size: 2.5em; }
+  #profileContainer .profileDetails {
+    margin: 12px 12px 0px 12px; }
+    #profileContainer .profileDetails .fa-circle-thin {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-globe {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails .fa-play {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf; }
+    #profileContainer .profileDetails span {
+      font-size: 1.33em;
+      color: #010202; }
+    #profileContainer .profileDetails p {
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #1e776d; }
 
 /*# sourceMappingURL=styles.css.map */

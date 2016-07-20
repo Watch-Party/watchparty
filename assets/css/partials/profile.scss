@@ -1,0 +1,104 @@
+#profileContainer {
+  height: 667px;
+  width: 375px;
+  border: 1px solid black;
+  font-family: $Font-Menu;
+  .header{
+    width: 100%;
+    height: 325px;
+    border: 1px solid black;
+    background-image: linear-gradient(130deg, rgb(48, 191, 175) 0%, rgb(50, 194, 177) 51%, rgb(52, 196, 179) 75%);
+    .fa-chevron-left{
+      color: white;
+      font-size: 2em;
+      display: inline-block;
+      width: 12%;
+      margin-top: 5px;
+      margin-left: 5px;
+    }
+    .avatar{
+      display: block;
+      margin-top: -10px;
+      margin-right: auto;
+      margin-left: auto;
+      width: 35%;
+      height: auto;
+    }
+    .contact{
+      margin-top: 15px;
+      .contactList{
+        display: inline-block;
+        font-size: .75em;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .fa-envelope-o{
+        font-size: 3.5em;
+      }
+      .fa-plus {
+        font-size: 3.5em;
+      }
+    }
+    .names{
+      color: white;
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      .firstName{
+        font-size: 1.5em;
+        margin-left: -50px;
+      }
+      .lastName{
+        font-size: 1.5em;
+        margin-right: -50px;
+      }
+      .screenName{
+        font-size: 1.5em;
+        font-size: 1em;
+      }
+    }
+    .socialStats{
+      width: 95%;
+      margin-top: 12px;
+      li{
+        display: inline-block;
+        margin-left: 5px;
+        margin-right: 5px;
+      }
+      .socialNumbers{
+        font-size: 2.5em
+
+      }
+    }
+  }
+  .profileDetails{
+    margin: 12px 12px 0px 12px;
+    .fa-circle-thin{
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf;
+    }
+    .fa-globe {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf;
+    }
+    .fa-play {
+      font-size: 1.33em;
+      margin-right: 35px;
+      color: #30bfaf;
+    }
+    span{
+      font-size: 1.33em;
+      color: #010202
+      // line-height: 1;
+    }
+    p {
+      margin-bottom: 35px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $Main-Green;
+    }
+
+  }
+}

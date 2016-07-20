@@ -5,6 +5,7 @@ watchParty.controller('landingController', function($scope, $http){
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
   $scope.hybridRoomHide = true;
+  $scope.hybridSeasonHide=true;
   $scope.hybridName = '';
   var hybridChannelName = '';
 
@@ -13,6 +14,10 @@ watchParty.controller('landingController', function($scope, $http){
     $scope.menuShow = !$scope.menuShow;
     console.log(hybridChannelName)
     }
+  $scope.searchBarFunc = function(){
+    $scope.logoShow =!$scope.logoShow;
+    $scope.searchHide =!$scope.searchHide;
+  }
   $scope.upcomingFunc = function(){
     $scope.upcomingHide=!$scope.upcomingHide;
   }
@@ -30,9 +35,16 @@ watchParty.controller('landingController', function($scope, $http){
   }
   $scope.hybridRoomFunc = function(){
     $scope.hybridRoomHide=!$scope.hybridRoomHide;
+    $scope.hybridSeasonHide= true;
+    $scope.hybridSelectHide= false;
+  }
+  $scope.hybridSelectFunc = function(){
+    $scope.hybridSeasonHide =! $scope.hybridSeasonHide;
+    $scope.hybridSelectHide =! $scope.hybridSelectHide;
   }
   $scope.hybridStartFunc = function(){
-    hybridChannelName = $scope.hybridName
+    hybridChannelName = $scope.hybridName;
+
     console.log(hybridChannelName);
   }
 

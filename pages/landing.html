@@ -3,16 +3,16 @@
     <ul class="navMenu">
       <li class="menu" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="avatar"><img src="https://pbs.twimg.com/profile_images/711983895407960064/liIRSoxx.jpg"/></li>
-      <li class="logo">WP</li>
-      <li class="search"><i class="fa fa-search" aria-hidden="true"></i></li>
+      <li class="logo" ng-hide="logoShow">WP</li>
+      <li class="searchBar" ng-show="searchHide"><input type="text" placeholder="search for users, shows, channels..."></input></li>
+      <li class="search" ng-click="searchBarFunc()"><i class="fa fa-search" aria-hidden="true"></i></li>
   </div>
   <div class="sideMenu" ng-hide="menuShow">
     <ul class="menuButton">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i> </li>
+      <li><p>Log Out<p><i class="fa fa-sign-out fa-rotate-180" aria-hidden="true"></i></li>
+      <li><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
+      <li><p>Message<p><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
 
     </ul>
   </div>
@@ -21,15 +21,10 @@
     <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
     <!-- </div> -->
       <div class="upcoming" ng-click="upcomingFunc()" ng-hide="upcomingHide">
-        <div class="upcomingDeets" ng-click="enterRoomFunc()">Game of Thrones</div>
-        <div class="upcomingDeets">The Walking Dead</div>
-        <div class="upcomingDeets">The Left Overs</div>
-        <div class="upcomingDeets">Game of Thrones</div>
-        <div class="upcomingDeets">The Walking Dead</div>
-        <div class="upcomingDeets">The Left Overs</div>
-        <div class="upcomingDeets">Game of Thrones</div>
-        <div class="upcomingDeets">The Walking Dead</div>
-        <div class="upcomingDeets">The Left Overs</div>
+        <div class="upcomingDeets" ng-click="enterRoomFunc()">Game of Thrones<p class="startingIn">Starting in:</p><p class="startCount">8:30</p></div>
+        <div class="upcomingDeets">The Walking Dead<p class="startingIn">Starting in:</p><p class="startCount">8:30</p></div>
+        <div class="upcomingDeets">The Left Overs<p class="startingIn">Starting in:</p><p class="startCount">8:30</p></div>
+        <div class="upcomingBumper"></div>
       </div>
     <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p></li>
       <div class="delayRoom" ng-hide="delayRoomHide">
@@ -43,6 +38,7 @@
         <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
           <p>The Left Overs</p>
         </div>
+        <div class="delayBumper" ng-hide="showSelectHide"></div>
         <div class="seasonSelect" ng-hide="seasonHide">
           <p class="seasonResults">Season
             <select class="seasonOptions">
@@ -75,17 +71,17 @@
         <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
           <p>The Left Overs</p>
         </div>
-        <p class="seasonResults">Season
+        <p class="seasonResults" ng-hide="hybridSeasonHide">Season
           <select class="seasonOptions">
             <option value=1>1</option>
           </select>
         </p>
-        <p class="episodeResults">Episode
+        <p class="episodeResults" ng-hide="hybridSeasonHide">Episode
           <select class="seasonOptions">
             <option value=1>1</option>
           </select>
         </p>
-        <div class="startRoom" ng-click="hybridStartFunc()">
+        <div class="startRoom" ng-click="hybridStartFunc()" ng-hide="hybridSeasonHide">
           <a href="#/feed"><p class="startButton">Start Channel</p></a>
         </div>
         <div class="bumper">
