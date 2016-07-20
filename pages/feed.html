@@ -17,8 +17,8 @@
 
   <div class="post">
     <ul ng-repeat = "post in getPosts | missyElliot">
-      <li><div class="avatar-div"><img class="post-avatar" src="https://scontent-iad3-1.xx.fbcdn.net/v/t1.0-9/10628521_2400037160460_4322777893147362262_n.jpg?oh=c7e1f6c9c7ab7123c4678d2e11ef6149&oe=58267E3D"></img></div></li>
-      <li><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">7/19/16 - 2:45 PM</p></div></div></li>
+      <li><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
+      <li><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
       <li><div class="pop-div"><img class="popcorn" src="assets/images/watch-party-popcorn.png"></img></div></li>
     </ul>
     <!-- <ul>
