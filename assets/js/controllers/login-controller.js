@@ -35,7 +35,7 @@ watchParty.controller('loginCtrl', function($scope, $http){
     }}
     console.log($scope.loginInfo);
 
-    $http.post('https://json-party.herokuapp.com/users/sign_in.json', $scope.loginInfo).then(function(loginInfo){
+    $http.post('https://wp-spoileralert.herokuapp.com/users/sign_in.json', $scope.loginInfo).then(function(loginInfo){
       console.log(loginInfo);
     })
   }
@@ -52,7 +52,7 @@ watchParty.controller('loginCtrl', function($scope, $http){
     }}
     console.log($scope.newUserInfo);
 
-    $http.post('https://json-party.herokuapp.com/users.json', $scope.newUserInfo).then(function(newUserInfo){
+    $http.post('https://wp-spoileralert.herokuapp.com/users.json', $scope.newUserInfo).then(function(newUserInfo){
       console.log(newUserInfo);
     })
 
