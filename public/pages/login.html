@@ -22,8 +22,10 @@
   </section>
 
   <section class="buttons">
-    <button class="login" ng-click="showLogin()">LOG IN <i ng-hide="login" class="fa fa-angle-right" aria-hidden="true"></i></button>
-    <button class="sign-up" ng-click="showSignup()">SIGN UP <i ng-hide="signup" class="fa fa-angle-right" aria-hidden="true"></i></button>
+    <button class="login" ng-click="showLogin()" ng-show="login">LOG IN</button>
+    <button class="login" ng-hide="login" ng-click="submitLogin()">LOG IN <i ng-hide="login" class="fa fa-angle-right" aria-hidden="true"></i></button>
+    <button class="sign-up" ng-click="showSignup()" ng-show="signup">SIGN UP</button>
+    <button class="sign-up" ng-hide="signup" ng-click="saveNewUser()">SIGN UP <i ng-hide="signup" class="fa fa-angle-right" aria-hidden="true"></i></button>
   </section>
 
   <p ng-click="aboutShow()" ng-show="about" class="learn-more">Learn more</p>
