@@ -43,6 +43,13 @@
           color: #fff;
           font-family: $Font-Menu;
           font-size: 13.5px;
+          letter-spacing: 1.75px;
+         }
+         .username[type="password"] {
+          color: #fff;
+          font-family: $Font-Menu;
+          font-size: 13.5px;
+          letter-spacing: 2px;
          }
         .username {
           border: 0;
@@ -74,6 +81,18 @@
     }
     .sign-up-inputs {
       @extend .login-inputs;
+      .check {
+        margin-right: -1em;
+        display: inline-block;
+        visibility: hidden;
+        .fa-check-circle {
+          color: #32cd32;
+          // padding-left: .5em;
+        }
+      }
+      .check2 {
+        @extend .check;
+      }
       .first-name {
         @extend .username;
       }
@@ -95,6 +114,12 @@
       .go-signup {
         @extend .go-login;
         background-color: #7DDBD0;
+      }
+      .dont-match {
+        border-bottom: 2px solid red;
+      }
+      .match {
+        border-bottom: 2px solid #30BFAF;
       }
     }
     .buttons {
