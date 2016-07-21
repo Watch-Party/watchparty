@@ -38,11 +38,13 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
           $window.location.href = '#/landing';
         })
     console.log($scope.loginInfo);
+
     //
     // $http.post('https://wp-spoileralert.herokuapp.com/auth/sign_in.json', $scope.loginInfo).then(function(response){
     //   console.log(response);
     //   console.log(response.headers)
     // })
+
   }
 
   $scope.saveNewUser = function() {
@@ -55,22 +57,45 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
       'password_confirmation': $scope.newPassword2
     }
     console.log($scope.newUserInfo);
-    $auth.submitRegistration($scope.newUserInfo)
-  .then(function(response) {
-    console.log(response);
-    console.log($scope.newUserInfo);
-  })
-    $http.post('https://wp-spoileralert.herokuapp.com/auth', $scope.newUserInfo).then(function(newUserInfo){
-      console.log(newUserInfo);
+
+
+
+
+
+
+    if($scope.newPassword != $scope.newPassword2) {
+      console.log("Passwords don't match");
+      // alert("Passwords don't match.")
+      var pwEl1 = angular.element(document.querySelector('.password-signup'));
+      var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
+      pwEl1.addClass('dont-match');
+      pwEl2.addClass('dont-match');
+    }
+    else {
+      console.log("Passwords match");
+      var pwEl1 = angular.element(document.querySelector('.password-signup'));
+      var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
+      var check = angular.element(document.querySelector('.check'));
+      var check2 = angular.element(document.querySelector('.check2'));
+      pwEl1.addClass('match');
+      pwEl2.addClass('match');
+      check.css('visibility', 'visible');
+      check2.css('visibility', 'visible');
+      $auth.submitRegistration($scope.newUserInfo)
+    .then(function(response) {
+      console.log(response);
+      console.log($scope.newUserInfo);
     })
+      // $http.post('https://wp-spoileralert.herokuapp.com/auth', $scope.newUserInfo).then(function(newUserInfo){
+      //   console.log(newUserInfo);
+      // })
+    }
+
+
+
 
 
   }
-
-
-
-
-
 
 
 })
