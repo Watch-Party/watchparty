@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http){
+watchParty.controller('landingController', function($scope, $http, $auth, $window){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -9,6 +9,15 @@ watchParty.controller('landingController', function($scope, $http){
   $scope.hybridName = '';
   var hybridChannelName = '';
 
+  // console.log(response);
+  var id = JSON.parse(localStorage.getItem('id'));
+  console.log(id);
+  $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
+    .then(function(response){
+      $scope.userInfo = response;
+      $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
+      console.log(response)
+    })
 
   $scope.menuFunc = function(){
     $scope.menuShow = !$scope.menuShow;
@@ -48,9 +57,12 @@ watchParty.controller('landingController', function($scope, $http){
     console.log(hybridChannelName);
   }
   $scope.logOut = function(){
+    console.log("click");
   $auth.signOut()
     .then(function(resp) {
-      console.log(goodbye)
+      $window.location.href = '#/login';
+      console.log("goodbye");
+      console.log(resp)
     })
   }
 

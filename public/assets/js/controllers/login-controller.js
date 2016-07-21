@@ -35,6 +35,7 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     $auth.submitLogin($scope.loginInfo)
         .then(function(response) {
           console.log(response);
+          localStorage.setItem('id', JSON.stringify(response.id))
           $window.location.href = '#/landing';
         })
     console.log($scope.loginInfo);

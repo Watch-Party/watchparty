@@ -559,6 +559,12 @@ body, html {
       margin-left: auto;
       width: 35%;
       height: auto; }
+    #profileContainer .header .fa-pencil {
+      display: inline-block;
+      width: 10%;
+      color: white;
+      font-size: 1.5em;
+      float: right; }
     #profileContainer .header .contact {
       margin-top: 15px; }
       #profileContainer .header .contact .contactList {
