@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http){
+watchParty.controller('landingController', function($scope, $http, $auth, $window){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -48,9 +48,12 @@ watchParty.controller('landingController', function($scope, $http){
     console.log(hybridChannelName);
   }
   $scope.logOut = function(){
+    console.log("click");
   $auth.signOut()
     .then(function(resp) {
-      console.log(goodbye)
+      $window.location.href = '#/login';
+      console.log("goodbye");
+      console.log(resp)
     })
   }
 
