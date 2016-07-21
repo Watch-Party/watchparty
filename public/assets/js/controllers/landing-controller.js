@@ -47,6 +47,12 @@ watchParty.controller('landingController', function($scope, $http){
 
     console.log(hybridChannelName);
   }
+  $scope.logOut = function(){
+  $auth.signOut()
+    .then(function(resp) {
+      console.log(goodbye)
+    })
+  }
 
 
 })

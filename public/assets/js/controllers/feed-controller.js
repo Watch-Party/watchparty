@@ -1,18 +1,22 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll){
   $scope.allPosts= [];
   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
     console.log(response);
     $scope.getPosts= response.data.posts;
     console.log($scope.getPosts);
   })
-  setInterval(function(){
+
+  // refresh posts on click //
+  $scope.refreshPosts = function(){
   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
     // console.log(response);
     $scope.getPosts= response.data.posts;
     // console.log($scope.getPosts);
-  })
-}, 1000);
+    console.log("Refresh");
+    })
+  };
 
+  // send post to server on submit //
   $scope.submitPost = function() {
     $scope.post =  {
         'content': $scope.postContent,
