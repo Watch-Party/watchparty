@@ -35,34 +35,49 @@ watchParty.controller('loginCtrl', function($scope, $http){
     }}
     console.log($scope.loginInfo);
 
-    $http.post('https://wp-spoileralert.herokuapp.com/users/sign_in.json', $scope.loginInfo).then(function(loginInfo){
+    $http.post('https://wp-spoileralert.herokuapp.com/auth/sign_in', $scope.loginInfo).then(function(loginInfo){
       console.log(loginInfo);
     })
   }
 
   $scope.saveNewUser = function() {
     $scope.newUserInfo = {
-      "user": {
       'first_name': $scope.firstName,
       'last_name': $scope.lastName,
       'email': $scope.email.toLowerCase(),
       'screen_name': $scope.newUsername.toLowerCase(),
       'password': $scope.newPassword, // authentication here -- if both password values match, send data -- else, outline text box in red //
       'password_confirmation': $scope.newPassword2
-    }}
+    }
     console.log($scope.newUserInfo);
 
-    $http.post('https://wp-spoileralert.herokuapp.com/users.json', $scope.newUserInfo).then(function(newUserInfo){
-      console.log(newUserInfo);
-    })
+    if($scope.newPassword != $scope.newPassword2) {
+      console.log("Passwords don't match");
+      // alert("Passwords don't match.")
+      var pwEl1 = angular.element(document.querySelector('.password-signup'));
+      var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
+      pwEl1.addClass('dont-match');
+      pwEl2.addClass('dont-match');
+    }
+    else {
+      console.log("Passwords match");
+      var pwEl1 = angular.element(document.querySelector('.password-signup'));
+      var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
+      var check = angular.element(document.querySelector('.check'));
+      var check2 = angular.element(document.querySelector('.check2'));
+      pwEl1.addClass('match');
+      pwEl2.addClass('match');
+      check.css('visibility', 'visible');
+      check2.css('visibility', 'visible');
+      $http.post('https://wp-spoileralert.herokuapp.com/auth', $scope.newUserInfo).then(function(newUserInfo){
+        console.log(newUserInfo);
+      })
+    }
+
+
 
 
   }
-
-
-
-
-
 
 
 })

@@ -432,7 +432,13 @@ body, html {
     #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password {
       color: #fff;
       font-family: "Asap", Helvetica, sans-serif;
-      font-size: 13.5px; }
+      font-size: 13.5px;
+      letter-spacing: 1.75px; }
+    #container-login .login-inputs .username[type="password"], #container-login .sign-up-inputs .username[type="password"], #container-login .login-inputs [type="password"].password, #container-login .sign-up-inputs [type="password"].password, #container-login .sign-up-inputs [type="password"].first-name, #container-login .sign-up-inputs [type="password"].last-name, #container-login .sign-up-inputs [type="password"].email, #container-login .sign-up-inputs [type="password"].username-signup, #container-login .sign-up-inputs [type="password"].password-signup, #container-login .sign-up-inputs [type="password"].re-enter-password {
+      color: #fff;
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 13.5px;
+      letter-spacing: 2px; }
     #container-login .login-inputs .username, #container-login .sign-up-inputs .username, #container-login .login-inputs .password, #container-login .sign-up-inputs .password, #container-login .sign-up-inputs .first-name, #container-login .sign-up-inputs .last-name, #container-login .sign-up-inputs .email, #container-login .sign-up-inputs .username-signup, #container-login .sign-up-inputs .password-signup, #container-login .sign-up-inputs .re-enter-password {
       border: 0;
       outline: 0;
@@ -455,8 +461,18 @@ body, html {
       cursor: pointer;
       margin-top: .5em;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
+  #container-login .sign-up-inputs .check, #container-login .sign-up-inputs .check2 {
+    margin-right: -1em;
+    display: inline-block;
+    visibility: hidden; }
+    #container-login .sign-up-inputs .check .fa-check-circle, #container-login .sign-up-inputs .check2 .fa-check-circle {
+      color: #32cd32; }
   #container-login .sign-up-inputs .go-signup {
     background-color: #7DDBD0; }
+  #container-login .sign-up-inputs .dont-match {
+    border-bottom: 2px solid red; }
+  #container-login .sign-up-inputs .match {
+    border-bottom: 2px solid #30BFAF; }
   #container-login .buttons {
     margin-top: 1.5em;
     text-align: center; }
