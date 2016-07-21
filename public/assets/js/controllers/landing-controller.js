@@ -9,6 +9,15 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.hybridName = '';
   var hybridChannelName = '';
 
+  // console.log(response);
+  var id = JSON.parse(localStorage.getItem('id'));
+  console.log(id);
+  $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
+    .then(function(response){
+      $scope.userInfo = response;
+      $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
+      console.log(response)
+    })
 
   $scope.menuFunc = function(){
     $scope.menuShow = !$scope.menuShow;
