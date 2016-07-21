@@ -12,17 +12,8 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
     // console.log(response);
     $scope.getPosts= response.data.posts;
     // console.log($scope.getPosts);
-
-     var x = response.data.posts[23];
-     console.log(x);
-    var el = angular.element(document.querySelector('.message-bar'));
-    $location.hash(x);
-    $anchorScroll();
     console.log("Refresh");
-    console.log(response.data.posts);
-
     })
-
   };
 
   // send post to server on submit //
