@@ -31,6 +31,7 @@ watchParty.config(function($routeProvider) {
 
   .when ('/profile', {
     templateUrl: 'pages/profile.html',
+    controller: 'profileController',
     resolve: {
   auth: function($auth) {
     return $auth.validateUser();
