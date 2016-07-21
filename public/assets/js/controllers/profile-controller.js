@@ -1,6 +1,7 @@
 
 watchParty.controller('profileController', function($scope, $http, $auth, $window){
-
+$scope.editShow= true;
+$scope.userInfoHide= false;
 
 var id = JSON.parse(localStorage.getItem('id'));
 console.log(id);
@@ -14,4 +15,8 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
 
     console.log(response)
   });
+  $scope.editProfileFunc= function(){
+    $scope.editShow= !$scope.editShow;
+    $scope.userInfoHide= !$scope.userInfoHide;
+  }
   });
