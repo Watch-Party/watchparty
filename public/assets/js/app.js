@@ -1,5 +1,15 @@
-var watchParty = angular.module('watchParty', ['ngRoute','ngAnimate']);
+var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie']);
 
+watchParty.config(function($authProvider) {
+     $authProvider.configure({
+         apiUrl: 'https://wp-spoileralert.herokuapp.com'
+     });
+ });
+ {
+  function persistData(key, val) {}
+  function retrieveData(key) {}
+  function deleteData(key) {}
+}
 watchParty.config(function($routeProvider) {
   $routeProvider
 
@@ -10,16 +20,32 @@ watchParty.config(function($routeProvider) {
 
   .when ('/landing', {
     templateUrl: 'pages/landing.html',
-    controller: 'landingController'
+    controller: 'landingController',
+    resolve: {
+  auth: function($auth) {
+    return $auth.validateUser();
+    // console.log($auth.validateUser())
+  }
+}
   })
 
   .when ('/profile', {
     templateUrl: 'pages/profile.html',
+    resolve: {
+  auth: function($auth) {
+    return $auth.validateUser();
+  }
+}
   })
 
   .when ('/feed', {
     templateUrl: 'pages/feed.html',
-    controller: 'postCtrl'
+    controller: 'postCtrl',
+    resolve: {
+  auth: function($auth) {
+    return $auth.validateUser();
+  }
+}
   })
 
   .otherwise({
