@@ -19,6 +19,12 @@ body, html {
         li {
           display: inline-block;
           vertical-align: middle;
+            .fa-refresh {
+              font-size: 18px;
+              color: #fff;
+              margin-left: 3em;
+              vertical-align: text-bottom;
+            }
           h3 {
             font-family: $Font-Header;
             font-size: 28px;
@@ -86,16 +92,17 @@ body, html {
           width: 75%;
           border: 0;
           outline: 0;
+          vertical-align: baseline;
           // background-color: #fff;
           background: transparent;
           border-bottom: 1px solid #30BFAF;
         }::-webkit-input-placeholder {
-          font-family: $Font-Posts;
-          font-size: 14px;
+          font-family: $Font-Menu;
+          font-size: 16px;
           opacity: .60;
         }
         input[type="text"] {
-          font-family: $Font-Posts;
+          font-family: $Font-Menu;
           font-size: 16px;
           color: #fff;
           letter-spacing: 1px;
@@ -127,9 +134,9 @@ body, html {
         // margin-top: 3.55em;
         li {
           // border-top: 1px solid $Main-Green;
-          border-bottom: 1px solid $Main-Green;
+          border-bottom: 1px solid #d3d3d3;
           // border-right: 1px solid black;
-          font-family: $Font-Posts;
+          font-family: $Font-Menu;
           display: inline-block;
           width: 100%; // might need this back //
           // max-width: 375px;
@@ -156,6 +163,7 @@ body, html {
               text-align: left;
               display: inline-block;
               letter-spacing: .25px;
+              line-height: 1.25;
               overflow-wrap: break-word;
               word-wrap: break-word;
               -webkit-hyphens: auto;
