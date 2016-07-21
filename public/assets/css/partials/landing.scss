@@ -1,6 +1,7 @@
 #landingContainer {
-  height: 667px;
-  width: 375px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
   border: 1px solid black;
   font-family: $Font-Menu;
   overflow-y: auto;
@@ -83,9 +84,9 @@
 
   .roomButtons{
     position: absolute;
-    height: 610px;
+    height: 100%;
     overflow-x: scroll;
-    width: 375px;
+    width: 100%;
     li{
       text-align: center;
       height: 33%;
@@ -93,7 +94,7 @@
       border: .1px solid transparent;
       p{
         color: white;
-        margin-top: 50px;
+        margin-top: 2%;
         font-size: 5em;
         letter-spacing: -5px;
       }
