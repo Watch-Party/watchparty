@@ -5,19 +5,19 @@ watchParty.controller('postCtrl', function($scope, $http, $compile){
     $scope.getPosts= response.data.posts;
     console.log($scope.getPosts);
   })
-  setInterval(function(){
-  $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
-    console.log(response);
-    $scope.getPosts= response.data.posts;
-    console.log($scope.getPosts);
-  })
-}, 1000);
+//   setInterval(function(){
+//   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
+//     console.log(response);
+//     $scope.getPosts= response.data.posts;
+//     console.log($scope.getPosts);
+//   })
+// }, 1000);
 
   $scope.submitPost = function() {
     $scope.post =  {
         'content': $scope.postContent,
       };
-      
+
         $scope.allPosts.push($scope.post);
         console.log($scope.allPosts);
         console.log($scope.post);
