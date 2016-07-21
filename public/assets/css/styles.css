@@ -398,14 +398,11 @@ body, html {
         height: 25px; }
 
 #container-login {
-  width: 100%;
-  max-width: 375px;
-  height: 667px;
+  height: 100vh;
   background-image: linear-gradient(130deg, #0c5a4e 0%, #1e776d 51%, #2b7078 75%); }
   #container-login header {
-    width: 50%;
     margin: 0 auto;
-    padding-top: 40%; }
+    padding-top: 30%; }
     #container-login header p {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 18px;
