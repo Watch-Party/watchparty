@@ -56,40 +56,40 @@ body, html {
   background-color: #fff;
   border: 1px solid #1e776d; }
   #container-feed nav {
-    background-color: #1e776d;
+    background: linear-gradient(#4a4a4a, #313131);
     padding-bottom: .5em;
+    padding-top: .25em;
     position: relative; }
     #container-feed nav ul li {
       display: inline-block;
       vertical-align: middle; }
       #container-feed nav ul li .fa-refresh {
-        font-size: 18px;
-        color: #fff;
+        font-size: 1.5em;
+        color: #30bfaf;
         margin-left: 3em;
         vertical-align: text-bottom; }
       #container-feed nav ul li h3 {
         font-family: "Monoton", Verdana, sans-serif;
-        font-size: 28px;
-        color: #fff;
-        letter-spacing: 2px;
+        font-size: 2.5em;
+        color: #30bfaf;
         margin-left: 2.25em;
         margin-top: .2em; }
       #container-feed nav ul li i {
-        font-size: 32px;
+        font-size: 2em;
         padding-bottom: .5em;
         margin-left: .5em;
-        color: #fff;
+        color: #30bfaf;
         height: .5em;
         cursor: pointer; }
       #container-feed nav ul li img {
-        height: 2.5em;
+        height: 35px;
         width: auto;
         border-radius: 50%;
         margin-left: .5em;
         margin-top: .25em;
         border: 1px solid #fff; }
   #container-feed .message-bar {
-    background-color: #1e776d;
+    background: linear-gradient(#4a4a4a, #313131);
     padding: .5em 0 .5em 0;
     border-top: 1px solid #fff;
     position: absolute;
@@ -98,7 +98,7 @@ body, html {
     bottom: 0; }
     #container-feed .message-bar .fa-plus {
       display: inline-block;
-      color: #fff;
+      color: #30bfaf;
       cursor: pointer;
       margin-left: 5%;
       margin-right: 5%;
@@ -127,7 +127,7 @@ body, html {
         letter-spacing: 1px; }
       #container-feed .message-bar form .fa-angle-right {
         width: 10%;
-        color: #fff;
+        color: #30bfaf;
         cursor: pointer;
         margin-left: 5%;
         font-size: 24px;
