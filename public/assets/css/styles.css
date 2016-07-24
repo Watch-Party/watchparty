@@ -560,6 +560,12 @@ body, html {
       margin-left: auto;
       width: 35%;
       height: auto; }
+    #profileContainer .header .avatarUpload {
+      width: 50%;
+      display: block;
+      margin-left: auto;
+      padding-left: 150px;
+      margin-right: auto; }
     #profileContainer .header .fa-pencil {
       display: inline-block;
       width: 10%;
