@@ -1,4 +1,20 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $auth, $window){
+
+  $scope.menuShow = true;
+  $scope.menuFunc = function(){
+    $scope.menuShow = !$scope.menuShow;
+    console.log("Show/Hide Menu")
+  }
+
+  $scope.logOut = function(){
+    console.log("click");
+    $auth.signOut()
+      .then(function(resp) {
+        $window.location.href = '#/login';
+        console.log("goodbye");
+        console.log(resp)
+      })
+  }
 
   var id = JSON.parse(localStorage.getItem('id'));
   console.log(id);

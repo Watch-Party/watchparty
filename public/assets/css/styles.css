@@ -89,6 +89,28 @@ body, html {
         margin-left: .5em;
         margin-top: .25em;
         border: 1px solid #30bfaf; }
+  #container-feed .sideMenu {
+    position: absolute;
+    height: 575px;
+    width: 125px;
+    background: linear-gradient(#313131, #4a4a4a);
+    margin-top: -1px;
+    z-index: 2;
+    padding-top: 15px;
+    overflow: auto;
+    border-bottom-right-radius: 5px; }
+    #container-feed .sideMenu li {
+      height: 125px;
+      width: 125px;
+      color: white;
+      cursor: pointer; }
+      #container-feed .sideMenu li p {
+        font-family: "Asap", Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.25em; }
+      #container-feed .sideMenu li i {
+        font-size: 3em; }
   #container-feed .message-bar {
     background: linear-gradient(#4a4a4a, #313131);
     padding: .5em 0 .5em 0;

@@ -61,6 +61,37 @@ body, html {
         }
       }
     }
+
+    .sideMenu{
+      position: absolute;
+      height: 575px;
+      width: 125px;
+      background: linear-gradient(#313131, #4a4a4a);
+      // border: 1px solid black;
+      margin-top: -1px;
+      z-index: 2;
+      padding-top: 15px;
+      overflow: auto;
+      border-bottom-right-radius: 5px;
+        li{
+          height: 125px;
+          width: 125px;
+          color: white;
+          // border: 1px solid black;
+          //margin-top: 12px;
+          cursor: pointer;
+          p {
+              font-family: $Font-Menu;
+              text-align: center;
+              margin-top: 15px;
+              font-size: 1.25em;
+          }
+          i {
+            font-size: 3em;
+          }
+        }
+    }
+
     .message-bar {
       // width: 100%;
       // width: 375px;
