@@ -102,7 +102,7 @@ body, html {
     #container-feed .sideMenu li {
       height: 125px;
       width: 125px;
-      color: white;
+      color: #fff;
       cursor: pointer; }
       #container-feed .sideMenu li p {
         font-family: "Asap", Helvetica, sans-serif;
@@ -111,6 +111,9 @@ body, html {
         font-size: 1.25em; }
       #container-feed .sideMenu li i {
         font-size: 3em; }
+      #container-feed .sideMenu li a {
+        text-decoration: none;
+        color: #fff; }
   #container-feed .message-bar {
     background: linear-gradient(#4a4a4a, #313131);
     padding: .5em 0 .5em 0;

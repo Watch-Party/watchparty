@@ -76,7 +76,7 @@ body, html {
         li{
           height: 125px;
           width: 125px;
-          color: white;
+          color: #fff;
           // border: 1px solid black;
           //margin-top: 12px;
           cursor: pointer;
@@ -88,6 +88,10 @@ body, html {
           }
           i {
             font-size: 3em;
+          }
+          a {
+            text-decoration: none;
+            color: #fff;
           }
         }
     }
