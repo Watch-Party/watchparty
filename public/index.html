@@ -7,14 +7,21 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- <link rel="stylesheet" href="assets/css/basic.css"> -->
+    <script type="text/javascript" src='assets/js/pop.js'></script>
 
+    <script src='assets/js/sockets/websocket_rails.js'></script>
+    <script src='assets/js/sockets/event.js'></script>
+    <script src='assets/js/sockets/abstract_connection.js'></script>
+    <script src='assets/js/sockets/http_connection.js'></script>
+    <script src='assets/js/sockets/websocket_connection.js'></script>
+    <script src='assets/js/sockets/channel.js'></script>
     <title>Watch Party</title>
   </head>
   <body ng-app="watchParty">
     <div>
       <ng-view></ng-view>
     </div>
-    <script src="assets/js/dropzone.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular-route.js"></script>
