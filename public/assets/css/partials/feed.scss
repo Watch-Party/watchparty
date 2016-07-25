@@ -221,15 +221,15 @@ body, html {
             text-align: left;
             .popcorn {
               // display: inline-block;
-              height: 1.5em;
+              height: 1em;
               cursor: pointer;
-              // border: 1px solid $Main-Green;
-              padding: 2px;
+              border: 1px solid $Main-Green;
+              padding: 1.5px 4.5px 1.5px 4.5px;
               // background-color: #30BFAF;
               border-radius: 50%;
-            }.popcorn:hover {
-              background-color: #30BFAF;
-              // border: 2px solid $Main-Green;
+            }.popcorn:active {
+              // background-color: #30BFAF;
+              border: 2px solid #30BFAF;
             }
           }
         }

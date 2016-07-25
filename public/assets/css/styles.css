@@ -202,12 +202,13 @@ body, html {
         #container-feed .post ul li .pop-div {
           text-align: left; }
           #container-feed .post ul li .pop-div .popcorn {
-            height: 1.5em;
+            height: 1em;
             cursor: pointer;
-            padding: 2px;
+            border: 1px solid #1e776d;
+            padding: 1.5px 4.5px 1.5px 4.5px;
             border-radius: 50%; }
-          #container-feed .post ul li .pop-div .popcorn:hover {
-            background-color: #30BFAF; }
+          #container-feed .post ul li .pop-div .popcorn:active {
+            border: 2px solid #30BFAF; }
 
 #landingContainer {
   position: absolute;
