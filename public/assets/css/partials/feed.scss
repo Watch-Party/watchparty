@@ -8,7 +8,8 @@ body, html {
   height: 100%;
   position: absolute;
   background-color: #fff;
-  border: 1px solid $Main-Green;
+  border-left: 1px solid $Main-Green;
+  border-right: 1px solid $Main-Green;
     nav {
       background: linear-gradient(#4a4a4a, #313131);
       // width: 100%;
@@ -23,16 +24,16 @@ body, html {
             .fa-refresh {
               font-size: 1.5em;
               color: #30bfaf;
-              margin-left: 3em;
+              margin-left: 5.5em;
               vertical-align: text-bottom;
             }
           h3 {
             font-family: $Font-Header;
-            font-size: 2.5em;
+            font-size: 2em;
             // vertical-align: bottom;
             color: #30bfaf;
             // letter-spacing: 2px;
-            margin-left: 2.25em;
+            margin-left: 70%;
             margin-top: .2em;
             // border: 1px solid white;
           }
@@ -53,13 +54,48 @@ body, html {
             // vertical-align: middle;
             margin-left: .5em;
             margin-top: .25em;
-            border: 1px solid #fff;
+            border: 1px solid #30bfaf;
 
           }
 
         }
       }
     }
+
+    .sideMenu{
+      position: absolute;
+      height: 575px;
+      width: 125px;
+      background: linear-gradient(#313131, #4a4a4a);
+      // border: 1px solid black;
+      margin-top: -1px;
+      z-index: 2;
+      padding-top: 15px;
+      overflow: auto;
+      border-bottom-right-radius: 5px;
+        li{
+          height: 125px;
+          width: 125px;
+          color: #fff;
+          // border: 1px solid black;
+          //margin-top: 12px;
+          cursor: pointer;
+          p {
+              font-family: $Font-Menu;
+              text-align: center;
+              margin-top: 15px;
+              font-size: 1.25em;
+          }
+          i {
+            font-size: 3em;
+          }
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+    }
+
     .message-bar {
       // width: 100%;
       // width: 375px;
@@ -185,15 +221,15 @@ body, html {
             text-align: left;
             .popcorn {
               // display: inline-block;
-              height: 1.5em;
+              height: 1em;
               cursor: pointer;
-              // border: 1px solid $Main-Green;
-              padding: 2px;
+              border: 1px solid $Main-Green;
+              padding: 1.5px 4.5px 1.5px 4.5px;
               // background-color: #30BFAF;
               border-radius: 50%;
-            }.popcorn:hover {
-              background-color: #30BFAF;
-              // border: 2px solid $Main-Green;
+            }.popcorn:active {
+              // background-color: #30BFAF;
+              border: 2px solid #30BFAF;
             }
           }
         }

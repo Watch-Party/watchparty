@@ -19,4 +19,26 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
     $scope.editShow= !$scope.editShow;
     $scope.userInfoHide= !$scope.userInfoHide;
   }
+  // $scope.avatarUpload = ""
+  $scope.submitNewAvatarFunc = function(){
+    $scope.submitNewAvatar = {
+      first_name: 238489723
+      //'remote_avatar_url': $scope.avatarNew
+    }
+    console.log($scope.avatarNew)
+    console.log($scope.submitNewAvatar)
+
+      $auth.updateAccount($scope.submitNewAvatar)
+        .then(function(resp) {
+          console.log(resp);
+        })
+        .catch(function(resp) {
+          // handle error response
+        });
+
+    // $http.patch('https://wp-spoileralert.herokuapp.com/auth', $scope.newInfo)
+    //   .then(function(response){
+    //
+    //   });
+  }
   });
