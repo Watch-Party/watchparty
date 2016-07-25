@@ -1,12 +1,19 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $cable){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
   //only show posts with numeric values less than what we are at. Possibly set options where one could set
   //an auto refresh or always be in control.
-  var dispatcher = new WebSocket("ws://echo.websocket.org/") //Url for socket.
-  dispatcher.onopen = function(){ //init a web socket with a function when connection is open.
-    console.log("connected")
-  }
+  // var dispatcher = new WebSocket("ws://echo.websocket.org/") //Url for socket.
+  // dispatcher.onopen = function(){ //init a web socket with a function when connection is open.
+  //   console.log("connected")
+  // }
+  var cable = $cable('wss://wp-spoileralert.herokuapp.com/cable');
+
+  var channel = cable.subscribe('FeedsChannel', { received: function(newComment){
+  //cable.connection.isOpen();
+  console.log(newComment);
+  console.log("connected");
+}});
   var id = JSON.parse(localStorage.getItem('id'));
   console.log(id);
   $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
@@ -67,10 +74,10 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
 
 
   // };
-  dispatcher.onmessage = function(evt){
-    console.log(evt.data);
-    console.log("sent");
-  }
+  // dispatcher.onmessage = function(evt){
+  //   console.log(evt.data);
+  //   console.log("sent");
+  // }
   // send post to server on submit //
   $scope.submitPost = function() {
     $scope.post =  {
