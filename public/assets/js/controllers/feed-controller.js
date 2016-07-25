@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $cable){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
@@ -15,9 +15,6 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   console.log(newComment);
   console.log("connected");
 }});
-=======
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $auth, $window){
-
   // show/hide side menu //
   $scope.menuShow = true;
   $scope.menuFunc = function(){
@@ -36,7 +33,6 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
       })
   }
 
->>>>>>> master
   var id = JSON.parse(localStorage.getItem('id'));
   console.log(id);
   $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
