@@ -112,6 +112,8 @@
         results.push(this.webSocket.removeEventListener(eventName));
       }
       return results;
+      //console.log(results);
+
     };
 
     Connection.prototype.events = {

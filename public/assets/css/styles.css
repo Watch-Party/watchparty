@@ -69,6 +69,8 @@ body, html {
         color: #30bfaf;
         margin-left: 5.5em;
         vertical-align: text-bottom; }
+      #container-feed nav ul li .newPostsRefresh {
+        color: white; }
       #container-feed nav ul li h3 {
         font-family: "Monoton", Verdana, sans-serif;
         font-size: 2em;
