@@ -1,4 +1,4 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $auth, $window){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $auth, $window, $cable){
 
   // show/hide side menu //
   $scope.menuShow = true;
@@ -47,10 +47,12 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // refresh posts on click //
   // watchParty.directive('scrollDir', function($scope, $anchorScroll, $location) {
     $scope.refreshPosts = function(){
-
+      var myEl = angular.element( document.querySelector( '.fa-refresh' ) );
+      myEl.addClass('fa-spin');
       $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
     // console.log(response);
     $scope.getPosts = response.data.posts;
+      myEl.removeClass('fa-spin');
     console.log(response.data.posts);
     // console.log($scope.getPosts);
     console.log("Refresh");
