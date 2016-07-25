@@ -61,6 +61,41 @@ body, html {
         }
       }
     }
+
+    .sideMenu{
+      position: absolute;
+      height: 575px;
+      width: 125px;
+      background: linear-gradient(#313131, #4a4a4a);
+      // border: 1px solid black;
+      margin-top: -1px;
+      z-index: 2;
+      padding-top: 15px;
+      overflow: auto;
+      border-bottom-right-radius: 5px;
+        li{
+          height: 125px;
+          width: 125px;
+          color: #fff;
+          // border: 1px solid black;
+          //margin-top: 12px;
+          cursor: pointer;
+          p {
+              font-family: $Font-Menu;
+              text-align: center;
+              margin-top: 15px;
+              font-size: 1.25em;
+          }
+          i {
+            font-size: 3em;
+          }
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+        }
+    }
+
     .message-bar {
       // width: 100%;
       // width: 375px;
@@ -186,15 +221,15 @@ body, html {
             text-align: left;
             .popcorn {
               // display: inline-block;
-              height: 1.5em;
+              height: 1em;
               cursor: pointer;
-              // border: 1px solid $Main-Green;
-              padding: 2px;
+              border: 1px solid $Main-Green;
+              padding: 1.5px 4.5px 1.5px 4.5px;
               // background-color: #30BFAF;
               border-radius: 50%;
-            }.popcorn:hover {
-              background-color: #30BFAF;
-              // border: 2px solid $Main-Green;
+            }.popcorn:active {
+              // background-color: #30BFAF;
+              border: 2px solid #30BFAF;
             }
           }
         }

@@ -89,6 +89,31 @@ body, html {
         margin-left: .5em;
         margin-top: .25em;
         border: 1px solid #30bfaf; }
+  #container-feed .sideMenu {
+    position: absolute;
+    height: 575px;
+    width: 125px;
+    background: linear-gradient(#313131, #4a4a4a);
+    margin-top: -1px;
+    z-index: 2;
+    padding-top: 15px;
+    overflow: auto;
+    border-bottom-right-radius: 5px; }
+    #container-feed .sideMenu li {
+      height: 125px;
+      width: 125px;
+      color: #fff;
+      cursor: pointer; }
+      #container-feed .sideMenu li p {
+        font-family: "Asap", Helvetica, sans-serif;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 1.25em; }
+      #container-feed .sideMenu li i {
+        font-size: 3em; }
+      #container-feed .sideMenu li a {
+        text-decoration: none;
+        color: #fff; }
   #container-feed .message-bar {
     background: linear-gradient(#4a4a4a, #313131);
     padding: .5em 0 .5em 0;
@@ -177,12 +202,13 @@ body, html {
         #container-feed .post ul li .pop-div {
           text-align: left; }
           #container-feed .post ul li .pop-div .popcorn {
-            height: 1.5em;
+            height: 1em;
             cursor: pointer;
-            padding: 2px;
+            border: 1px solid #1e776d;
+            padding: 1.5px 4.5px 1.5px 4.5px;
             border-radius: 50%; }
-          #container-feed .post ul li .pop-div .popcorn:hover {
-            background-color: #30BFAF; }
+          #container-feed .post ul li .pop-div .popcorn:active {
+            border: 2px solid #30BFAF; }
 
 #landingContainer {
   position: absolute;

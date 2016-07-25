@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $cable){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
@@ -14,6 +15,28 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   console.log(newComment);
   console.log("connected");
 }});
+=======
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $auth, $window){
+
+  // show/hide side menu //
+  $scope.menuShow = true;
+  $scope.menuFunc = function(){
+    $scope.menuShow = !$scope.menuShow;
+    console.log("Show/Hide Menu")
+  }
+
+  // logout - $auth - redirect to login //
+  $scope.logOut = function(){
+    console.log("click");
+    $auth.signOut()
+      .then(function(resp) {
+        $window.location.href = '#/login';
+        console.log("goodbye");
+        console.log(resp)
+      })
+  }
+
+>>>>>>> master
   var id = JSON.parse(localStorage.getItem('id'));
   console.log(id);
   $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
@@ -28,14 +51,14 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
     console.log(response);
     $scope.getPosts= response.data.posts;
     console.log($scope.getPosts);
-    var getUl = angular.element(document.querySelector('.postTest'));
-    console.log(getUl)
-    for (var i = 0; i < response.data.posts.length; i++) {
-      getUl[i];
-      console.log(getUl);
-      console.log(getUl[4]);
-      console.log(i);
-    }
+    // var getUl = angular.element(document.querySelector('.postTest'));
+    // console.log(getUl)
+    // for (var i = 0; i < response.data.posts.length; i++) {
+    //   getUl[i];
+    //   console.log(getUl);
+    //   console.log(getUl[4]);
+    //   console.log(i);
+    // }
 
     // console.log(orig);
 
@@ -52,11 +75,11 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
     console.log("Refresh");
 
 
-    var scrollId = getUl[4]; // don't hardcode 0 in every time? //
-    $location.hash(scrollId); // what's in () is where function scrolls to //
-    $anchorScroll();
-    console.log($location.hash());
-    console.log($location.hash(scrollId));
+    // var scrollId = getUl[4]; // don't hardcode 0 in every time? //
+    // $location.hash(scrollId); // what's in () is where function scrolls to //
+    // $anchorScroll();
+    // console.log($location.hash());
+    // console.log($location.hash(scrollId));
 
         // var x = [];
         // for(var i = 0; i < response.data.posts.length; i++) {
@@ -102,6 +125,15 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
           })
         })
   }
+
+
+  // // on click of popcorn - active -- for add class //
+  // $scope.isActive = false;
+  // $scope.activeButton = function() {
+  //   $scope.isActive = !$scope.isActive;
+  //   console.log("Active click")
+  // }
+
 
 });
 

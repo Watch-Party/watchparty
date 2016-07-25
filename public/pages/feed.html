@@ -1,20 +1,28 @@
 <div id="container-feed" ng-controller="postCtrl">
   <nav>
     <ul>
-      <li><i class="fa fa-bars" aria-hidden="true"></i></li>
+      <li ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li><img src="{{avatarThumb}}"></img></li>
       <li class="wp"><h3>WP</h3></li>
       <li class="refresh" ng-click="refreshPosts()"><i class="fa fa-refresh" aria-hidden="true"></i></li>
     </ul>
   </nav>
 
+  <div class="sideMenu" ng-hide="menuShow">
+    <ul class="menuButton">
+      <li><a href="#/profile"><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i></a></li>
+      <li><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
+      <li><a href="#/landing"><p>Landing<p><i class="fa fa-home" aria-hidden="true"></i></a></li>
+      <li ng-click="logOut()"><p>Log Out<p><i class="fa fa-sign-out fa-rotate-180" aria-hidden="true"></i></li>
+    </ul>
+  </div>
+
   <div class="post">
     <ul class="postTest" id="{{$index}}" ng-repeat = "post in getPosts | missyElliot">
       <li><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
       <li><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
-      <li><div class="pop-div"><img class="popcorn" src="assets/images/watch-party-popcorn.png"></img></div></li>
+      <li><div class="pop-div"><img class="popcorn" src="http://cliparting.com/wp-content/uploads/2016/06/Popcorn-clip-art-black-and-white-free-clipart-images-clipartix.jpg"></img></div></li>
     </ul>
-
   </div>
 
   <section class="message-bar">
@@ -24,5 +32,4 @@
       <i class="fa fa-angle-right" aria-hidden="true"></i>
     </form>
   </section>
-
 </div>
