@@ -1,4 +1,4 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
   //only show posts with numeric values less than what we are at. Possibly set options where one could set
@@ -31,7 +31,8 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   //   ActionCableConfig.autoStart= true;
   // });
 
-var consumer = new ActionCableChannel('FeedsChannel'); //setting up actioncable var
+var userId = JSON.parse(localStorage.getItem('id'));
+var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game_of_thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 var callback = function(post) {
   $scope.allPosts.push(post);
   console.log(post);
@@ -43,10 +44,11 @@ var callback = function(post) {
 consumer.subscribe(callback).then(function(){
   $scope.submitPost = function(post){
     var post = {
-      content: $scope.postContent
+      content: $scope.postContent,
     }
-    consumer.send(post);
-    $scope.allPosts.push(post);
+    consumer.send(post, 'post');
+    $scope.postContent = '';
+    // $scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
