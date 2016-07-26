@@ -49,6 +49,9 @@
            opacity: .7;
            margin-top: 5%;
          }
+         .invalid-server {
+           @extend .invalid;
+         }
       ul {
         li {
          .username[type="text"] {

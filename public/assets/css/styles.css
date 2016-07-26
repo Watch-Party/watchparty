@@ -468,7 +468,7 @@ body, html {
     margin: 0 auto;
     text-align: center;
     margin-top: 1.5em; }
-    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
+    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .login-inputs .invalid-server, #container-login .sign-up-inputs .invalid-server, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 13px;
       color: #fff;

@@ -6,6 +6,7 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
   $scope.about = true;
   $scope.loginLoad = false;
   $scope.loginError = false;
+  $scope.loginErrorServer = false;
   $scope.signupSuccess = false;
   $scope.pwLength = false;
 
@@ -43,8 +44,10 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
           console.log(response);
           localStorage.setItem('id', JSON.stringify(response.id))
           $window.location.href = '#/landing';
-        }, function(error) {
-          $scope.loginError = true;
+        }, function(errorPw) {
+          $scope.loginError = true;  // edit errors for server down or user/pw combo incorrect //
+        }, function(errorServer){
+          $scope.loginErrorServer = true;
         });
     console.log($scope.loginInfo);
 
