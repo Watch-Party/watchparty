@@ -8,10 +8,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // dispatcher.onopen = function(){ //init a web socket with a function when connection is open.
   //   console.log("connected")
   // }
-  // dispatcher.onmessage = function(evt){
-  //   console.log(evt);
-  //   //dispatcher.close();
-  // }
+
   // var cable = new WebSocket('wss://wp-spoileralert.herokuapp.com/cable');
   // cable.onopen = function() {
   //   console.log("connected")
@@ -31,9 +28,16 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   //   ActionCableConfig.wsUri= "wss://wp-spoileralert.herokuapp.com/cable";
   //   ActionCableConfig.autoStart= true;
   // });
-
-var consumer = new ActionCableChannel('FeedsChannel'); //setting up actioncable var
+var userId = JSON.parse(localStorage.getItem('id'));
+var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game_of_thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+consumer.onmessage = function(evt){
+  console.log(evt);
+  //dispatcher.close();
+}
 var callback = function(post) {
+  // var post = {
+  //   content: $scope.postContent
+  // }
   $scope.allPosts.push(post);
   console.log(post);
   //not completely sure what this does yet^^ but its in the docs.
@@ -46,8 +50,9 @@ consumer.subscribe(callback).then(function(){
     var post = {
       content: $scope.postContent
     }
-    consumer.send(post);
-    $scope.allPosts.push(post);
+    consumer.send(post, 'post');
+    $scope.postContent = '';
+    //$scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
