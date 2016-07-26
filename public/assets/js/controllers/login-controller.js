@@ -4,6 +4,7 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
   $scope.login = true;
   $scope.signup = true;
   $scope.about = true;
+  $scope.loginLoad = false;
 
   // Login input fields //
   $scope.showLogin = function(){
@@ -34,6 +35,7 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     }
     $auth.submitLogin($scope.loginInfo)
         .then(function(response) {
+          $scope.loginLoad = true;
           console.log(response);
           localStorage.setItem('id', JSON.stringify(response.id))
           $window.location.href = '#/landing';
