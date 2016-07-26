@@ -5,6 +5,9 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
   $scope.signup = true;
   $scope.about = true;
   $scope.loginLoad = false;
+  $scope.loginError = false;
+  $scope.signupSuccess = false;
+  $scope.pwLength = false;
 
   // Login input fields //
   $scope.showLogin = function(){
@@ -36,10 +39,13 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     $auth.submitLogin($scope.loginInfo)
         .then(function(response) {
           $scope.loginLoad = true;
+          $scope.loginError = false;
           console.log(response);
           localStorage.setItem('id', JSON.stringify(response.id))
           $window.location.href = '#/landing';
-        })
+        }, function(error) {
+          $scope.loginError = true;
+        });
     console.log($scope.loginInfo);
 
     //
@@ -61,11 +67,6 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     }
     console.log($scope.newUserInfo);
 
-
-
-
-
-
     if($scope.newPassword != $scope.newPassword2) {
       console.log("Passwords don't match");
       // alert("Passwords don't match.")
@@ -75,6 +76,7 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
       pwEl2.addClass('dont-match');
     }
     else {
+      if ($scope.newPassword.length && $scope.newPassword2.length >= 6) {
       console.log("Passwords match");
       var pwEl1 = angular.element(document.querySelector('.password-signup'));
       var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
@@ -86,17 +88,19 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
       check2.css('visibility', 'visible');
       $auth.submitRegistration($scope.newUserInfo)
     .then(function(response) {
+      $scope.signupSuccess = true;
+      // $scope.signup = true;
       console.log(response);
       console.log($scope.newUserInfo);
     })
+    }
+    else {
+      $scope.pwLength = true;
+    }
       // $http.post('https://wp-spoileralert.herokuapp.com/auth', $scope.newUserInfo).then(function(newUserInfo){
       //   console.log(newUserInfo);
       // })
     }
-
-
-
-
 
   }
 

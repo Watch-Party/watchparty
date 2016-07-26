@@ -38,10 +38,19 @@
     }
     .login-inputs {
       // border: 1px solid white;
-      width: 50%;
+      width: 90%;
       margin: 0 auto;
       text-align: center;
       margin-top: 1.5em;
+         .invalid {
+           font-family: $Font-Menu;
+           font-size: 13px;
+           color: #fff;
+           opacity: .7;
+           margin-top: 5%;
+         }
+      ul {
+        li {
          .username[type="text"] {
           color: #fff;
           font-family: $Font-Menu;
@@ -55,6 +64,7 @@
           letter-spacing: 2px;
          }
         .username {
+          width: 60%;
           border: 0;
           outline: 0;
           background: transparent;
@@ -81,48 +91,62 @@
           margin-top: .5em;
           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
         }
+       }
+      }
     }
     .sign-up-inputs {
       @extend .login-inputs;
-      .check {
-        margin-right: -1em;
-        display: inline-block;
-        visibility: hidden;
-        .fa-check-circle {
-          color: #32cd32;
-          // padding-left: .5em;
+      ul {
+        li {
+          .check {
+            margin-right: -1em;
+            display: inline-block;
+            visibility: hidden;
+            .fa-check-circle {
+              color: #32cd32;
+              // padding-left: .5em;
+            }
+          }
+          .check2 {
+            @extend .check;
+          }
+          .first-name {
+            @extend .username;
+          }
+          .last-name {
+            @extend .first-name;
+          }
+          .email {
+            @extend .first-name;
+          }
+          .username-signup {
+            @extend .first-name;
+          }
+          .password-signup {
+            @extend .first-name;
+          }
+          .re-enter-password {
+            @extend .first-name;
+          }
+          .go-signup {
+            @extend .go-login;
+            background-color: #7DDBD0;
+          }
+          .dont-match {
+            border-bottom: 2px solid #990000;
+          }
+          .match {
+            border-bottom: 2px solid #30BFAF;
+          }
         }
       }
-      .check2 {
-        @extend .check;
+      .signup-message {
+        @extend .invalid;
+        line-height: 1.25;
       }
-      .first-name {
-        @extend .username;
-      }
-      .last-name {
-        @extend .first-name;
-      }
-      .email {
-        @extend .first-name;
-      }
-      .username-signup {
-        @extend .first-name;
-      }
-      .password-signup {
-        @extend .first-name;
-      }
-      .re-enter-password {
-        @extend .first-name;
-      }
-      .go-signup {
-        @extend .go-login;
-        background-color: #7DDBD0;
-      }
-      .dont-match {
-        border-bottom: 2px solid red;
-      }
-      .match {
-        border-bottom: 2px solid #30BFAF;
+      .pw-length {
+        @extend .signup-message;
+        margin-top: 1em;
       }
     }
     .buttons {

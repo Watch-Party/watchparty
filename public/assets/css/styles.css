@@ -464,33 +464,40 @@ body, html {
       text-align: center;
       line-height: 1.25; }
   #container-login .login-inputs, #container-login .sign-up-inputs {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
     text-align: center;
     margin-top: 1.5em; }
-    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password {
+    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 13px;
+      color: #fff;
+      opacity: .7;
+      margin-top: 5%; }
+    #container-login .login-inputs ul li .username[type="text"], #container-login .sign-up-inputs ul li .username[type="text"], #container-login .login-inputs ul li [type="text"].password, #container-login .sign-up-inputs ul li [type="text"].password, #container-login .sign-up-inputs ul li [type="text"].first-name, #container-login .sign-up-inputs ul li [type="text"].last-name, #container-login .sign-up-inputs ul li [type="text"].email, #container-login .sign-up-inputs ul li [type="text"].username-signup, #container-login .sign-up-inputs ul li [type="text"].password-signup, #container-login .sign-up-inputs ul li [type="text"].re-enter-password {
       color: #fff;
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 13.5px;
       letter-spacing: 1.75px; }
-    #container-login .login-inputs .username[type="password"], #container-login .sign-up-inputs .username[type="password"], #container-login .login-inputs [type="password"].password, #container-login .sign-up-inputs [type="password"].password, #container-login .sign-up-inputs [type="password"].first-name, #container-login .sign-up-inputs [type="password"].last-name, #container-login .sign-up-inputs [type="password"].email, #container-login .sign-up-inputs [type="password"].username-signup, #container-login .sign-up-inputs [type="password"].password-signup, #container-login .sign-up-inputs [type="password"].re-enter-password {
+    #container-login .login-inputs ul li .username[type="password"], #container-login .sign-up-inputs ul li .username[type="password"], #container-login .login-inputs ul li [type="password"].password, #container-login .sign-up-inputs ul li [type="password"].password, #container-login .sign-up-inputs ul li [type="password"].first-name, #container-login .sign-up-inputs ul li [type="password"].last-name, #container-login .sign-up-inputs ul li [type="password"].email, #container-login .sign-up-inputs ul li [type="password"].username-signup, #container-login .sign-up-inputs ul li [type="password"].password-signup, #container-login .sign-up-inputs ul li [type="password"].re-enter-password {
       color: #fff;
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 13.5px;
       letter-spacing: 2px; }
-    #container-login .login-inputs .username, #container-login .sign-up-inputs .username, #container-login .login-inputs .password, #container-login .sign-up-inputs .password, #container-login .sign-up-inputs .first-name, #container-login .sign-up-inputs .last-name, #container-login .sign-up-inputs .email, #container-login .sign-up-inputs .username-signup, #container-login .sign-up-inputs .password-signup, #container-login .sign-up-inputs .re-enter-password {
+    #container-login .login-inputs ul li .username, #container-login .sign-up-inputs ul li .username, #container-login .login-inputs ul li .password, #container-login .sign-up-inputs ul li .password, #container-login .sign-up-inputs ul li .first-name, #container-login .sign-up-inputs ul li .last-name, #container-login .sign-up-inputs ul li .email, #container-login .sign-up-inputs ul li .username-signup, #container-login .sign-up-inputs ul li .password-signup, #container-login .sign-up-inputs ul li .re-enter-password {
+      width: 60%;
       border: 0;
       outline: 0;
       background: transparent;
       border-bottom: 2px solid #30BFAF;
       margin-bottom: 1em;
       padding: .5em; }
-    #container-login .login-inputs ::-webkit-input-placeholder, #container-login .sign-up-inputs ::-webkit-input-placeholder {
+    #container-login .login-inputs ul li ::-webkit-input-placeholder, #container-login .sign-up-inputs ul li ::-webkit-input-placeholder {
       font-family: "Asap", Helvetica, sans-serif;
       letter-spacing: 1.75px;
       color: #fff;
       opacity: .50; }
-    #container-login .login-inputs .go-login, #container-login .sign-up-inputs .go-login, #container-login .sign-up-inputs .go-signup {
+    #container-login .login-inputs ul li .go-login, #container-login .sign-up-inputs ul li .go-login, #container-login .sign-up-inputs ul li .go-signup {
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 14px;
       padding: 6px 15px;
@@ -500,18 +507,22 @@ body, html {
       cursor: pointer;
       margin-top: .5em;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
-  #container-login .sign-up-inputs .check, #container-login .sign-up-inputs .check2 {
+  #container-login .sign-up-inputs ul li .check, #container-login .sign-up-inputs ul li .check2 {
     margin-right: -1em;
     display: inline-block;
     visibility: hidden; }
-    #container-login .sign-up-inputs .check .fa-check-circle, #container-login .sign-up-inputs .check2 .fa-check-circle {
+    #container-login .sign-up-inputs ul li .check .fa-check-circle, #container-login .sign-up-inputs ul li .check2 .fa-check-circle {
       color: #32cd32; }
-  #container-login .sign-up-inputs .go-signup {
+  #container-login .sign-up-inputs ul li .go-signup {
     background-color: #7DDBD0; }
-  #container-login .sign-up-inputs .dont-match {
-    border-bottom: 2px solid red; }
-  #container-login .sign-up-inputs .match {
+  #container-login .sign-up-inputs ul li .dont-match {
+    border-bottom: 2px solid #990000; }
+  #container-login .sign-up-inputs ul li .match {
     border-bottom: 2px solid #30BFAF; }
+  #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
+    line-height: 1.25; }
+  #container-login .sign-up-inputs .pw-length {
+    margin-top: 1em; }
   #container-login .buttons {
     margin-top: 1.5em;
     text-align: center; }
