@@ -58,12 +58,13 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     $scope.signup = true;
   }
 
-  // On submit of GO, log username and password inputs to console //
+  // login submit //
   $scope.submitLogin = function() {
     $scope.loginInfo = {
         'email': $scope.username,
         'password': $scope.password
     }
+
     $auth.submitLogin($scope.loginInfo)
         .then(function(response) {
           $scope.loginLoad = true;
@@ -74,7 +75,11 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
         })
 
         .catch(function(response) {
-          if (response.errors == "Invalid credentials") {
+          if (response === true && response.errors != "Invalid credentials") {
+            $scope.loginErrorServer = true;
+            console.log("server down?");
+          }
+          else if (response.errors == "Invalid credentials") {
             $scope.loginError = true;
             console.log(response.errors);
             // $scope.username = '';
@@ -87,9 +92,9 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
           console.log(response);
           // console.log(response.status);
         });
-    $scope.$on('auth:login-error', function(ev, reason) {
-      console.log('auth failed because', reason.errors[0]);
-    });
+    // $scope.$on('auth:login-error', function(ev, reason) {
+    //   console.log('auth failed because', reason.errors[0]);
+    // });
 
     console.log($scope.loginInfo);
 
@@ -99,8 +104,9 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     //   console.log(response.headers)
     // })
 
-  }
+  } // submitLogin end
 
+  // signup submit //
   $scope.saveNewUser = function() {
     $scope.newUserInfo = {
       'first_name': $scope.firstName,
@@ -112,54 +118,68 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     }
     console.log($scope.newUserInfo);
 
-    if($scope.newPassword != $scope.newPassword2) {
-      console.log("Passwords don't match");
-      // alert("Passwords don't match.")
+    // $auth function for signup submit //
+    $auth.submitRegistration($scope.newUserInfo)
+    .then(function(response) {
+      if (($scope.newPassword.length && $scope.newPassword2.length >= 6) && ($scope.newPassword === $scope.newPassword2)) {
+      console.log("Passwords match and are equal to/greater than 6");
       var pwEl1 = angular.element(document.querySelector('.password-signup'));
       var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
-      pwEl1.addClass('dont-match');
-      pwEl2.addClass('dont-match');
-    }
-    else {
-      if ($scope.newPassword.length && $scope.newPassword2.length >= 6) {
-      console.log("Passwords match");
-      var pwEl1 = angular.element(document.querySelector('.password-signup'));
-      var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
-      pwEl1.addClass('match');
-      pwEl2.addClass('match');
+      pwEl1.addClass('match'); // show green pw check
+      pwEl2.addClass('match'); // show second green pw check
       $scope.check = true;
-
-      $auth.submitRegistration($scope.newUserInfo)
-      .then(function(response) {
-        $scope.signupSuccess = true;
-        // $scope.signup = true;
-        console.log(response);
-        console.log($scope.newUserInfo);
-      })
-
-      .catch(function(response) {
-        if (response.data.errors.full_messages == "Screen name has already been taken") {
-          $scope.usernameTaken = true;
-          console.log("username already taken");
-        }
-        else if (response.data.errors.full_messages == "Email already in use") {
-          $scope.emailTaken = true;
-          console.log("email already in use");
-        }
-        // insert else if error for status if server down //
-        console.log(response);
-      })
-
-      }
-      // else {
-      //   $scope.pwLength = true;
-      // }
-
-
-
+      $scope.signupSuccess = true;
+      $scope.usernameTaken = false;
+      $scope.emailTaken = false;
+      $scope.pwLength = false;
     }
+      console.log(response);
+      console.log($scope.newUserInfo);
+    })
 
-  }
+    .catch(function(response) {
+
+      if($scope.newPassword != $scope.newPassword2) {
+        console.log("Passwords don't match");
+        // alert("Passwords don't match.")
+        var pwEl1 = angular.element(document.querySelector('.password-signup'));
+        var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
+        pwEl1.addClass('dont-match');
+        pwEl2.addClass('dont-match');
+      }
+
+      else if ($scope.newPassword.length && $scope.newPassword2.length < 6) {
+        $scope.pwLength = true;
+        console.log("Password must be at least 6 characters");
+      }
+
+      else if (response.data.errors.full_messages == "Screen name has already been taken") {
+        $scope.usernameTaken = true;
+        console.log("username already taken");
+      }
+
+      else if (response.data.errors.full_messages == "Email already in use") {
+        $scope.emailTaken = true;
+        console.log("email already in use");
+      }
+      // insert else if error for status if server down //
+      console.log(response);
+    })
+
+
+
+
+    // else {
+    //
+    //   // else {
+    //   //   $scope.pwLength = true;
+    //   // }
+    //
+    //
+    //
+    // }
+
+  } // saveNewUser end
 
 
 })
