@@ -32,7 +32,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // });
 
 var userId = JSON.parse(localStorage.getItem('id'));
-var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game_of_thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 var callback = function(post) {
   $scope.allPosts.push(post);
   console.log(post);
