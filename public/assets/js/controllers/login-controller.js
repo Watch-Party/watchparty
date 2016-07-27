@@ -80,21 +80,12 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
             // $scope.username = '';
             // $scope.password = '';
           }
-          // console.log(err);
-          // console.log(err.errors);
-          // $scope.error.data = {message: error, status: status};
-          // console.log($scope.data.error.status);
+          // else if ()
+          else {
+            $scope.loginErrorServer = true;
+          }
           console.log(response);
           // console.log(response.status);
-          // if (err.errors == "Invalid credentials") {
-          //   $scope.loginError = true;
-          //   console.log("Inv email/pw!");
-          // }
-          // else {
-          //   $scope.loginErrorServer = true;
-          //   console.log("503!")
-          // }
-
         });
     $scope.$on('auth:login-error', function(ev, reason) {
       console.log('auth failed because', reason.errors[0]);
@@ -155,13 +146,14 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
           $scope.emailTaken = true;
           console.log("email already in use");
         }
+        // insert else if error for status if server down //
         console.log(response);
       })
 
       }
-      else {
-        $scope.pwLength = true;
-      }
+      // else {
+      //   $scope.pwLength = true;
+      // }
 
 
 

@@ -49,7 +49,7 @@
            font-size: 15px;
            color: #fff;
            opacity: .7;
-           margin-top: 5%;
+           margin-top: 3%;
          }
          .fa-times {
            color: #e60000;
@@ -154,7 +154,7 @@
       }
       .pw-length {
         @extend .signup-message;
-        margin-top: 1em;
+        // margin-top: 5%;
       }
       .username-taken {
         @extend .pw-length;

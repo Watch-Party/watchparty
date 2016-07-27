@@ -474,7 +474,7 @@ body, html {
       font-size: 15px;
       color: #fff;
       opacity: .7;
-      margin-top: 5%; }
+      margin-top: 3%; }
     #container-login .login-inputs .fa-times, #container-login .sign-up-inputs .fa-times {
       color: #e60000;
       font-size: 18px;
@@ -526,8 +526,6 @@ body, html {
     border-bottom: 2px solid #30BFAF; }
   #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
     line-height: 1.25; }
-  #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
-    margin-top: 1em; }
   #container-login .buttons {
     margin-top: 1.5em;
     text-align: center; }
