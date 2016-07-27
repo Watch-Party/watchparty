@@ -1,18 +1,13 @@
 <div id="container-login" ng-controller="loginCtrl">
   <header>
-    <!-- <p ng-hide="about"> What is </p> -->
     <h1>WATCH<br>PARTY</h1>
-    <!-- <p ng-hide="about"> ? </p> -->
   </header>
 
   <section class="login-inputs" ng-hide="login">
-
-      <ul>
-        <form ng-submit="submitLogin()">
-        <li><input type="text" placeholder="email" class="username" ng-model="username"></input></li>
-        <li><input type="password" placeholder="password" class="password" ng-model="password"></input></li>
-        </form>
-      </ul>
+    <form ng-keyup="$event.keyCode == 13 && submitLogin()">
+        <input type="text" placeholder="email" class="username" ng-model="username"></input>
+        <input type="password" placeholder="password" class="password" ng-model="password"></input>
+    </form>
 
       <p class="invalid" ng-show="loginError">invalid email/password combination</p>
       <p class="invalid-server" ng-show="loginErrorServer">Sorry, we're currently experiencing some technical issues. <br> Please try again shortly.</p>
@@ -20,16 +15,15 @@
   </section>
 
   <section class="sign-up-inputs" ng-hide="signup">
-    <ul>
-      <li><input type="text" placeholder="first name" class="first-name" ng-model="firstName" ng-hide="signupSuccess"></input></li>
-      <li><input type="text" placeholder="last name" class="last-name" ng-model="lastName" ng-hide="signupSuccess"></input></li>
-      <li><input type="text" placeholder="email" class="email" ng-model="email" ng-hide="signupSuccess"></input>
-      <li><input type="text" placeholder="username" class="username-signup" ng-model="newUsername" ng-hide="signupSuccess"></input></li>
-      <li><input type="password" placeholder="password" class="password-signup" ng-model="newPassword" ng-hide="signupSuccess"><div class="check"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div>
-      </input></li>
-      <li><input type="password" placeholder="re-enter password" class="re-enter-password" ng-model="newPassword2" ng-hide="signupSuccess"><div class="check2"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div>
-      </input></li>
-    </ul>
+    <form ng-keyup="$event.keyCode == 13 && saveNewUser()">
+      <input type="text" placeholder="first name" class="first-name" ng-model="firstName" ng-hide="signupSuccess"></input>
+      <input type="text" placeholder="last name" class="last-name" ng-model="lastName" ng-hide="signupSuccess"></input>
+      <input type="text" placeholder="email" class="email" ng-model="email" ng-hide="signupSuccess"></input>
+      <input type="text" placeholder="username" class="username-signup" ng-model="newUsername" ng-hide="signupSuccess"></input>
+      <input type="password" placeholder="password" class="password-signup" ng-model="newPassword" ng-hide="signupSuccess"><div class="check"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div></input>
+      <input type="password" placeholder="re-enter password" class="re-enter-password" ng-model="newPassword2" ng-hide="signupSuccess"><div class="check2"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div></input>
+    </form>
+
     <p class="pw-length" ng-show="pwLength">password must be at least 6 characters</p>
     <p class="signup-message" ng-show="signupSuccess">Welcome! <br> Please check your email for confirmation.</p>
     <!-- <button class="go-signup" ng-click="saveNewUser()">SUBMIT <i class="fa fa-angle-right" aria-hidden="true"></i></button> -->

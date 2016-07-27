@@ -42,6 +42,7 @@
       margin: 0 auto;
       text-align: center;
       margin-top: 1.5em;
+      display: block;
          .invalid {
            font-family: $Font-Menu;
            font-size: 13px;
@@ -52,8 +53,6 @@
          .invalid-server {
            @extend .invalid;
          }
-      ul {
-        li {
          .username[type="text"] {
           color: #fff;
           font-family: $Font-Menu;
@@ -94,13 +93,11 @@
           margin-top: .5em;
           box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3), 0 4px 12px 0 rgba(0,0,0,0.18);
         }
-       }
-      }
     }
+    
     .sign-up-inputs {
       @extend .login-inputs;
-      ul {
-        li {
+
           .check {
             margin-right: -1em;
             display: inline-block;
@@ -141,8 +138,7 @@
           .match {
             border-bottom: 2px solid #30BFAF;
           }
-        }
-      }
+
       .signup-message {
         @extend .invalid;
         line-height: 1.25;

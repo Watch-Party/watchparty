@@ -44,11 +44,29 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
           console.log(response);
           localStorage.setItem('id', JSON.stringify(response.id))
           $window.location.href = '#/landing';
-        }, function(errorPw) {
-          $scope.loginError = true;  // edit errors for server down or user/pw combo incorrect //
-        }, function(errorServer){
-          $scope.loginErrorServer = true;
+        })
+
+        .catch(function(response) {
+          // console.log(err);
+          // console.log(err.errors);
+          // $scope.error.data = {message: error, status: status};
+          // console.log($scope.data.error.status);
+          console.log(response);
+          // console.log(response.status);
+          // if (err.errors == "Invalid credentials") {
+          //   $scope.loginError = true;
+          //   console.log("Inv email/pw!");
+          // }
+          // else {
+          //   $scope.loginErrorServer = true;
+          //   console.log("503!")
+          // }
+
         });
+    $scope.$on('auth:login-error', function(ev, reason) {
+      console.log('auth failed because', reason.errors[0]);
+    });
+
     console.log($scope.loginInfo);
 
     //
