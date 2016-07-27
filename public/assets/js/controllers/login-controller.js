@@ -9,12 +9,31 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
   $scope.loginErrorServer = false;
   $scope.signupSuccess = false;
   $scope.pwLength = false;
+  $scope.check = false;
+  $scope.usernameTaken = false;
+  $scope.emailTaken = false;
 
   // Login input fields //
   $scope.showLogin = function(){
     $scope.login = false;
     $scope.signup = true;
     $scope.about = true;
+
+    // clear errors on signup page on click of login button //
+    $scope.signupSuccess = false;
+    $scope.pwLength = false;
+    $scope.check = false;
+    $scope.usernameTaken = false;
+    $scope.emailTaken = false;
+
+    // clear signup form when heading back to login page //
+    // for when user receives error on signup then goes to login and back //
+    $scope.firstName = '';
+    $scope.lastName = '';
+    $scope.email = '';
+    $scope.newUsername = '';
+    $scope.newPassword = '';
+    $scope.newPassword2 = '';
   }
 
   // Signup input fields //
@@ -22,6 +41,14 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
     $scope.login = true;
     $scope.signup = false;
     $scope.about = true;
+
+    // clear errors on login page on click of signup button //
+    $scope.loginError = false;
+
+    // clear login form when heading to signup page //
+    // for when user receives error on login then heads to signup //
+    $scope.username = '';
+    $scope.password = '';
   }
 
   // Learn more text //
@@ -47,6 +74,12 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
         })
 
         .catch(function(response) {
+          if (response.errors == "Invalid credentials") {
+            $scope.loginError = true;
+            console.log(response.errors);
+            // $scope.username = '';
+            // $scope.password = '';
+          }
           // console.log(err);
           // console.log(err.errors);
           // $scope.error.data = {message: error, status: status};
@@ -101,26 +134,37 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
       console.log("Passwords match");
       var pwEl1 = angular.element(document.querySelector('.password-signup'));
       var pwEl2 = angular.element(document.querySelector('.re-enter-password'));
-      var check = angular.element(document.querySelector('.check'));
-      var check2 = angular.element(document.querySelector('.check2'));
       pwEl1.addClass('match');
       pwEl2.addClass('match');
-      check.css('visibility', 'visible');
-      check2.css('visibility', 'visible');
+      $scope.check = true;
+
       $auth.submitRegistration($scope.newUserInfo)
-    .then(function(response) {
-      $scope.signupSuccess = true;
-      // $scope.signup = true;
-      console.log(response);
-      console.log($scope.newUserInfo);
-    })
-    }
-    else {
-      $scope.pwLength = true;
-    }
-      // $http.post('https://wp-spoileralert.herokuapp.com/auth', $scope.newUserInfo).then(function(newUserInfo){
-      //   console.log(newUserInfo);
-      // })
+      .then(function(response) {
+        $scope.signupSuccess = true;
+        // $scope.signup = true;
+        console.log(response);
+        console.log($scope.newUserInfo);
+      })
+
+      .catch(function(response) {
+        if (response.data.errors.full_messages == "Screen name has already been taken") {
+          $scope.usernameTaken = true;
+          console.log("username already taken");
+        }
+        else if (response.data.errors.full_messages == "Email already in use") {
+          $scope.emailTaken = true;
+          console.log("email already in use");
+        }
+        console.log(response);
+      })
+
+      }
+      else {
+        $scope.pwLength = true;
+      }
+
+
+
     }
 
   }

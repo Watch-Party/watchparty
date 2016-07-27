@@ -469,13 +469,18 @@ body, html {
     text-align: center;
     margin-top: 1.5em;
     display: block; }
-    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .login-inputs .invalid-server, #container-login .sign-up-inputs .invalid-server, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
+    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .login-inputs .invalid-server, #container-login .sign-up-inputs .invalid-server, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
       font-family: "Asap", Helvetica, sans-serif;
-      font-size: 13px;
+      font-size: 15px;
       color: #fff;
       opacity: .7;
       margin-top: 5%; }
-    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password {
+    #container-login .login-inputs .fa-times, #container-login .sign-up-inputs .fa-times {
+      color: #e60000;
+      font-size: 18px;
+      font-weight: lighter;
+      margin-right: 5px; }
+    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password, #container-login .sign-up-inputs .email[type="email"] {
       color: #fff;
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 13.5px;
@@ -510,8 +515,7 @@ body, html {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
   #container-login .sign-up-inputs .check, #container-login .sign-up-inputs .check2 {
     margin-right: -1em;
-    display: inline-block;
-    visibility: hidden; }
+    display: inline-block; }
     #container-login .sign-up-inputs .check .fa-check-circle, #container-login .sign-up-inputs .check2 .fa-check-circle {
       color: #32cd32; }
   #container-login .sign-up-inputs .go-signup {
@@ -520,9 +524,9 @@ body, html {
     border-bottom: 2px solid #990000; }
   #container-login .sign-up-inputs .match {
     border-bottom: 2px solid #30BFAF; }
-  #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length {
+  #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
     line-height: 1.25; }
-  #container-login .sign-up-inputs .pw-length {
+  #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
     margin-top: 1em; }
   #container-login .buttons {
     margin-top: 1.5em;
