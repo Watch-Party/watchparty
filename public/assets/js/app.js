@@ -1,5 +1,6 @@
 var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie', 'ngActionCable' ]);
 
+
 watchParty.config(function($authProvider) {
      $authProvider.configure({
          apiUrl: 'https://wp-spoileralert.herokuapp.com'

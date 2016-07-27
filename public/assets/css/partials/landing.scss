@@ -17,16 +17,6 @@
     li{
       display: inline-block;
       font-size: 2.5em;
-      input{
-        margin-left: -35px;
-        color: #30bfaf;
-        font-size: .4em;
-        width: 150%;
-        border: 0;
-        outline: 0;
-        background: transparent;
-        border-bottom: 2px solid #30bfaf;
-      }
     }
     .menu{
     float: left;
@@ -34,8 +24,8 @@
     padding-left: 10px;
     }
     .avatar{
-      float: left;
-      padding-left: 5px;
+      float: right;
+      padding-right: 5px;
       img {
       height: 35px;
       width: 35px;
@@ -46,12 +36,13 @@
       // justify-content: center;
       vertical-align: top;
       // width: 25%;
-      // margin-left: 29%;
+      margin-left: -20px;
     }
     .search{
-      float: right;
+      float: left;
+      // width: 80%;
       font-size: 2em;
-      padding-right: 10px;
+      padding-left: 10px;
     }
   }
   .sideMenu{
@@ -81,6 +72,47 @@
         }
       }
   }
+  .searchBarHolder {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(130deg, rgb(12, 90, 78) 0%, rgb(30, 119, 109) 51%, rgb(43, 112, 120) 75%);
+    .searchResult{
+      margin-top: 25px;
+
+      .userOrShow{
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid white;
+        font-size: 1.5em;
+        color: white;
+        padding: .2em;
+        margin-bottom: .2em;
+        .type {
+          display: inline-block;
+          font-size: .75em;
+          width: 20%;
+        }
+      }
+    }
+  }
+  .searchBar{
+    // margin-left: -20%;
+    //padding-bottom: 20px;
+    display: block;
+    color: #30bfaf;
+    font-size: .4em;
+    width: 80%;
+    font-size: 1.25em;
+    padding-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 2px solid #30bfaf;
+  }
 
   .roomButtons{
     position: absolute;
@@ -89,7 +121,7 @@
     width: 100%;
     li{
       text-align: center;
-      height: 33%;
+      height: 50%;
       margin: 0;
       border: .1px solid transparent;
       p{
@@ -119,6 +151,7 @@
     }
     .upcoming{
       background: $Main-Green;
+      margin-top: -120px;
       .upcomingDeets{
         // display: inline-block;
         font-size: 1.75em;
@@ -150,6 +183,7 @@
     .delayRoom{
       background-color: #e38c44;
       width: 100%;
+      margin-top: -120px;
       .recentResults{
         width: 50%;
         margin-left: auto;

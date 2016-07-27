@@ -3,20 +3,28 @@
     <ul class="navMenu">
       <li class="menu" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="avatar"><img src="{{avatarThumb}}"/></li>
-      <li class="logo" ng-hide="logoShow">WP</li>
-      <li class="searchBar" ng-show="searchHide"><input type="text" placeholder="search for users, shows, channels..."></input></li>
+      <li class="logo">WP</li>
       <li class="search" ng-click="searchBarFunc()"><i class="fa fa-search" aria-hidden="true"></i></li>
   </div>
   <div class="sideMenu" ng-hide="menuShow">
     <ul class="menuButton">
-      <li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i> </li>
+      <a href="#/profile"><li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i></li></a>
       <li ng-click="logOut()"><p>Log Out<p><i class="fa fa-sign-out fa-rotate-180" aria-hidden="true"></i></li>
       <li><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
       <li><p>Message<p><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
 
     </ul>
   </div>
-  <ul class="roomButtons">
+  <div class="searchBarHolder" ng-show="searchBarShow">
+      <input class="searchBar" type="text" placeholder="Search Shows & Users" ng-model="searchInput" ng-keyup="search(searchInput)"></input>
+      <ul class='searchResult'>
+        <li class="userOrShow" ng-repeat="user in usersSearchResults"><p class="type">{{user.type}}:</p> {{user.username}}{{user.showname}}</li>
+      <ul>
+        <!-- <ul class='show'>
+          <li ng-repeat="show in usersSearchResults">1{{show.showname}}</li>
+        <ul> -->
+  </div>
+  <ul class="roomButtons" ng-show="buttonsShow">
     <!-- <div class="liveButtonBg"> -->
     <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
     <!-- </div> -->
@@ -58,7 +66,7 @@
         </div>
       </div>
 
-
+<!--
     <li class="hybridButton" ng-click="hybridRoomFunc()"><p>Hybrid</p></li>
       <div class="hybridRoom" ng-hide="hybridRoomHide">
         <input type="text" placeholder="Name your Channel" ng-model="hybridName"></input>
@@ -86,6 +94,6 @@
         </div>
         <div class="bumper">
         </div>
-      </div>
+      </div> -->
   </ul>
 </div>

@@ -24,6 +24,14 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   //   //console.log(evt)
   // }
   $scope.allPosts = []
+  console.log($scope.allPosts)
+
+  // $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
+  //   $scope.allPosts= response.data.posts
+  //   console.log($scope.allPosts)
+  //   console.log(response.data.posts)
+  // });
+
   // watchParty.run(function (ActionCableConfig){
   //   ActionCableConfig.wsUri= "wss://wp-spoileralert.herokuapp.com/cable";
   //   ActionCableConfig.autoStart= true;
@@ -109,7 +117,7 @@ consumer.subscribe(callback).then(function(){
     // $scope.refreshPosts = function(){
     //   $scope.socketPosts = []
     //   $scope.newPostsRefresh = 0;
-    //   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
+    //   $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
     // // console.log(response);
     // $scope.getPosts = response.data.posts;
     // console.log(response.data.posts);

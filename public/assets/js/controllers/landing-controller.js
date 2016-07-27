@@ -7,6 +7,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.hybridRoomHide = true;
   $scope.hybridSeasonHide=true;
   $scope.hybridName = '';
+  $scope.buttonsShow = true;
+  $scope.searchBarShow=false;
   var hybridChannelName = '';
 
   // console.log(response);
@@ -24,8 +26,9 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     console.log(hybridChannelName)
     }
   $scope.searchBarFunc = function(){
-    $scope.logoShow =!$scope.logoShow;
-    $scope.searchHide =!$scope.searchHide;
+    $scope.buttonsShow = !$scope.buttonsShow;
+    $scope.searchBarShow= !$scope.searchBarShow;
+
   }
   $scope.upcomingFunc = function(){
     $scope.upcomingHide=!$scope.upcomingHide;
@@ -65,6 +68,22 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       console.log(resp)
     })
   }
+  $scope.usersSearch =[];
+  $scope.search = function(searchInput){
+    $http.get('https://wp-spoileralert.herokuapp.com/search?criteria=' + '"' + $scope.searchInput + '"')
+      .then(function(response){
+        $scope.usersSearchResults = response.data.results
+        console.log($scope.usersSearchResults)
+        if ($scope.usersSearchResults.length > 0){
+          //$scope.usersSearch.push($scope.usersSearchResults)
+          console.log($scope.usersSearchResults);
+        }
+        console.log(response);
+      })
+    console.log($scope.searchInput);
+    console.log("Get request goes here to search things");
+
+  };
 
 
 })
