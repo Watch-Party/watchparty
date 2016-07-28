@@ -1,4 +1,4 @@
-var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie', 'ngActionCable' ]);
+var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie', 'ngActionCable', ]);
 
 
 watchParty.config(function($authProvider) {

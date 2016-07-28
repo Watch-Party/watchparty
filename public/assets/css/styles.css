@@ -293,6 +293,13 @@ body, html {
           display: inline-block;
           font-size: .75em;
           width: 20%; }
+        #landingContainer .searchBarHolder .searchResult .userOrShow .watchButton {
+          float: right;
+          margin-right: 25px;
+          font-size: .75em;
+          border: none;
+          color: white;
+          background: #30bfaf; }
   #landingContainer .searchBar {
     display: block;
     color: #30bfaf;

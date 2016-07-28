@@ -29,35 +29,46 @@
     <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
     <!-- </div> -->
       <div class="upcoming" ng-hide="upcomingHide">
-        <div ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">{{show.showTitle}}<p class="startingIn">Starting in:</p><p class="startCount"><timer end-time="1451628000000">{{days}} days, {{hours}} hours, {{minutes}} minutes, {{seconds}} seconds.</timer></p></div>
+        <div ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">{{show.showTitle}}
+          <p class="startingIn">Starting in:</p>
+          <p class="startCount"></p>{{counterWillGoHere}}
+          <select ng-model="data.typeOfChannel" class="typeOfChannel">
+            <option  value='All'>Public- View everyone's posts about this show!</option>
+            <option  value='Watching'>Watching- View only the people you watch posts!</option>
+          </select>
+          <button class="playButton" ng-click="startLiveRoomFunc(data.typeOfChannel)">PLAY</button>
+        </div>
       <div class="upcomingBumper"></div>
       </div>
     <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p></li>
       <div class="delayRoom" ng-hide="delayRoomHide">
         <p class="recentResults" ng-hide="showSelectHide">Your Recent Shows</p>
-        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
-          <p>Game of Thrones</p>
+        <div class="showSelect" ng-repeat="recentShow in recentShows" ng-hide="showSelectHide" ng-click="showSelectFunc(); setActive(show); setActiveDelay(recentShow)">
+          <p>{{recentShow.title}}</p>
         </div>
-        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
+        <!-- ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">{{show.showTitle}} -->
+        <!-- <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
           <p>The Walking Dead</p>
         </div>
         <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
           <p>The Left Overs</p>
-        </div>
+        </div> -->
         <div class="delayBumper" ng-hide="showSelectHide"></div>
         <div class="seasonSelect" ng-hide="seasonHide">
           <p class="seasonResults">Season
-            <select class="seasonOptions">
-              <option value=1>1</option>
+            <select  ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
+              <option ng-repeat="season in seasons" value="{{season.season}}">{{season.season}}</option>
             </select>
           </p>
           <p class="episodeResults">Episode
-            <select class="seasonOptions">
-              <option value=1>1</option>
+            <select ng-model="data.episode" class="seasonOptions">
+              <option  ng-repeat="episode in episodes" value={{episode.episode}}>{{episode.episode}}</option>
             </select>
           </p>
           <div class="startRoom">
-            <a href="#/feed"><p class="startButton">Start Channel</p></a>
+            <a href="#/feed" ng-click="startDelayedFunc(data.season, data.episode)">
+              <p class="startButton">Start Channel</p>
+            </a>
           </div>
           <div class="bumper">
           </div>
