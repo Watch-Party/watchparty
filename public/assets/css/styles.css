@@ -212,11 +212,9 @@ body, html {
         #container-feed .post ul .list-pop .pop-div {
           text-align: center; }
           #container-feed .post ul .list-pop .pop-div .popcorn {
-            height: 1em;
             cursor: pointer;
-            border: 1px solid #1e776d;
-            padding: 1.5px 4.5px 1.5px 4.5px;
-            border-radius: 50%; }
+            font-size: 22px;
+            vertical-align: middle; }
           #container-feed .post ul .list-pop .pop-div .popcorn:active {
             border: 2px solid #30BFAF; }
 

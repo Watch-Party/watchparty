@@ -240,12 +240,14 @@ body, html {
               text-align: center;
               .popcorn {
                 // display: inline-block;
-                height: 1em;
+                // height: 1em;
                 cursor: pointer;
-                border: 1px solid $Main-Green;
-                padding: 1.5px 4.5px 1.5px 4.5px;
+                font-size: 22px;
+                vertical-align: middle;
+                // border: 1px solid $Main-Green;
+                // padding: 1.5px 4.5px 1.5px 4.5px;
                 // background-color: #30BFAF;
-                border-radius: 50%;
+                // border-radius: 50%;
               }.popcorn:active {
                 // background-color: #30BFAF;
                 border: 2px solid #30BFAF;
