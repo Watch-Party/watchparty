@@ -238,9 +238,10 @@ body, html {
             .pop-div{
               // width: 1em;
               text-align: center;
-              .popcorn {
+              .fa-star-o {
                 // display: inline-block;
                 // height: 1em;
+                color: $Main-Green;
                 cursor: pointer;
                 font-size: 22px;
                 vertical-align: middle;
@@ -248,9 +249,17 @@ body, html {
                 // padding: 1.5px 4.5px 1.5px 4.5px;
                 // background-color: #30BFAF;
                 // border-radius: 50%;
-              }.popcorn:active {
-                // background-color: #30BFAF;
-                border: 2px solid #30BFAF;
+              }
+              .fa-star {
+                @extend .fa-star-o;
+              }
+            }
+            .comment-div {
+              @extend .pop-div;
+              .fa-comment-o {
+                @extend .fa-star-o;
+                font-size: 20px;
+                margin-top: 10px;
               }
             }
           }

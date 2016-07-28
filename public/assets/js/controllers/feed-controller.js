@@ -41,9 +41,10 @@ var userId = JSON.parse(localStorage.getItem('id'));
 var consumer = new ActionCableChannel('LiveChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 
 var callback = function(post) {
-  // var post = {
-  //   content: $scope.postContent
-  // }
+
+  console.log(post);
+
+  // filter out pops -- just push up posts //
   if ('content' in post) {
     $scope.allPosts.push(post);
     console.log(post);
@@ -96,10 +97,11 @@ consumer.subscribe(callback).then(function(){
   }
 
   // change star class on click //
-  $scope.class = "fa fa-star-o";
-  $scope.popStar = function(){
-    $scope.class = "fa fa-star";
-    console.log("change star class");
+  // $scope.class = "fa fa-star-o";
+  $scope.popStar = function(post){
+    post.popped = true; // seems to work now but will need to set initial class on load of each post //
+    // $scope.class = "fa fa-star";
+    console.log("click star");
   }
 });
 
