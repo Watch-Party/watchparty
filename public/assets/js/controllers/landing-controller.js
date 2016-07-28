@@ -65,6 +65,14 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
 
     console.log(hybridChannelName);
   }
+  $scope.watchUserFunc = function(user){
+    $scope.userSelected = user.id;
+    // console.log($scope.userSelected);
+    $http.post('https://wp-spoileralert.herokuapp.com/watch/' + $scope.userSelected).then(function(response){
+      console.log(response);
+
+    })
+  }
   $scope.logOut = function(){
     console.log("click");
   $auth.signOut()

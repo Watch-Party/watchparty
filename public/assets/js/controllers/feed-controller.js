@@ -46,7 +46,6 @@ var callback = function(post) {
   // }
   $scope.allPosts.push(post);
   console.log(post);
-  //not completely sure what this does yet^^ but its in the docs.
 };
 //Thoughts to not forget for Tuesday
 //Ping the server with newpost server responds with proper format
