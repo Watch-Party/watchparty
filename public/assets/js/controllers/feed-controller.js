@@ -7,10 +7,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // dispatcher.onopen = function(){ //init a web socket with a function when connection is open.
   //   console.log("connected")
   // }
-  // dispatcher.onmessage = function(evt){
-  //   console.log(evt);
-  //   //dispatcher.close();
-  // }
+
   // var cable = new WebSocket('wss://wp-spoileralert.herokuapp.com/cable');
   // cable.onopen = function() {
   //   console.log("connected")
@@ -26,14 +23,27 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   //   //console.log(evt)
   // }
   $scope.allPosts = []
+  console.log($scope.allPosts)
+
+  // $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
+  //   $scope.allPosts= response.data.posts
+  //   console.log($scope.allPosts)
+  //   console.log(response.data.posts)
+  // });
+
   // watchParty.run(function (ActionCableConfig){
   //   ActionCableConfig.wsUri= "wss://wp-spoileralert.herokuapp.com/cable";
   //   ActionCableConfig.autoStart= true;
   // });
 
+
 var userId = JSON.parse(localStorage.getItem('id'));
 var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+
 var callback = function(post) {
+  // var post = {
+  //   content: $scope.postContent
+  // }
   $scope.allPosts.push(post);
   console.log(post);
   //not completely sure what this does yet^^ but its in the docs.
@@ -48,7 +58,7 @@ consumer.subscribe(callback).then(function(){
     }
     consumer.send(post, 'post');
     $scope.postContent = '';
-    // $scope.allPosts.push(post);
+    $scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
@@ -105,7 +115,7 @@ consumer.subscribe(callback).then(function(){
     // $scope.refreshPosts = function(){
     //   $scope.socketPosts = []
     //   $scope.newPostsRefresh = 0;
-    //   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
+    //   $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
     // // console.log(response);
     // $scope.getPosts = response.data.posts;
     // console.log(response.data.posts);
