@@ -1,27 +1,33 @@
 <div id="container-login" ng-controller="loginCtrl">
   <header>
-    <!-- <p ng-hide="about"> What is </p> -->
     <h1>WATCH<br>PARTY</h1>
-    <!-- <p ng-hide="about"> ? </p> -->
   </header>
 
   <section class="login-inputs" ng-hide="login">
-      <input type="text" placeholder="email" class="username" ng-model="username"></input>
+    <form ng-keyup="$event.keyCode == 13 && submitLogin()">
+        <input type="text" placeholder="email" class="username" ng-model="username"></input>
+        <input type="password" placeholder="password" class="password" ng-model="password"></input>
+    </form>
 
-      <input type="password" placeholder="password" class="password" ng-model="password"></input>
+      <p class="invalid" ng-show="loginError"><i class="fa fa-times" aria-hidden="true"></i> invalid email/password combination</p>
+      <p class="invalid-server" ng-show="loginErrorServer"><i class="fa fa-times" aria-hidden="true"></i> Sorry, we're currently experiencing some technical issues. <br> Please try again shortly.</p>
     <!-- <button class="go-login" ng-click="submitLogin()">GO <i class="fa fa-angle-right" aria-hidden="true"></i></button> -->
   </section>
 
   <section class="sign-up-inputs" ng-hide="signup">
-    <input type="text" placeholder="first name" class="first-name" ng-model="firstName"></input>
-    <input type="text" placeholder="last name" class="last-name" ng-model="lastName"></input>
-    <input type="text" placeholder="email" class="email" ng-model="email"></input>
-    <input type="text" placeholder="username" class="username-signup" ng-model="newUsername"></input>
+    <form ng-keyup="$event.keyCode == 13 && saveNewUser()">
+      <input type="text" placeholder="first name" class="first-name" ng-model="firstName" ng-hide="signupSuccess"></input>
+      <input type="text" placeholder="last name" class="last-name" ng-model="lastName" ng-hide="signupSuccess"></input>
+      <input type="email" placeholder="email" class="email" ng-model="email" ng-hide="signupSuccess"></input>
+      <input type="text" placeholder="username" class="username-signup" ng-model="newUsername" ng-hide="signupSuccess"></input>
+      <input type="password" placeholder="password" class="password-signup" ng-model="newPassword" ng-hide="signupSuccess"><div class="check" ng-show="check"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div></input>
+      <input type="password" placeholder="re-enter password" class="re-enter-password" ng-model="newPassword2" ng-hide="signupSuccess"><div class="check2" ng-show="check"><i class="fa fa-check-circle" aria-hidden="true" ng-hide="signupSuccess"></i></div></input>
+    </form>
 
-    <input type="password" placeholder="password" class="password-signup" ng-model="newPassword"><div class="check"><i class="fa fa-check-circle" aria-hidden="true"></i></div>
-    </input>
-    <input type="password" placeholder="re-enter password" class="re-enter-password" ng-model="newPassword2"><div class="check2"><i class="fa fa-check-circle" aria-hidden="true"></i></div>
-    </input>
+    <p class="pw-length" ng-show="pwLength"><i class="fa fa-times" aria-hidden="true"></i> password must be at least 6 characters</p>
+    <p class="email-taken" ng-show="emailTaken"><i class="fa fa-times" aria-hidden="true"></i> email already in use</p>
+    <p class="username-taken" ng-show="usernameTaken"><i class="fa fa-times" aria-hidden="true"></i> username has already been taken</p>
+    <p class="signup-message" ng-show="signupSuccess">Welcome! <br> Please check your email for confirmation.</p>
     <!-- <button class="go-signup" ng-click="saveNewUser()">SUBMIT <i class="fa fa-angle-right" aria-hidden="true"></i></button> -->
   </section>
 
@@ -33,6 +39,7 @@
   </section>
 
   <p ng-click="aboutShow()" ng-show="about" class="learn-more">Learn more</p>
+  <i class="fa fa-spinner fa-spin fa-3x fa-fw" ng-show="loginLoad"></i>
   <p ng-hide="about" class="about center">Your show.</p>
   <p ng-hide="about" class="about center">Your friends.</p>
   <p ng-hide="about" class="about center">On your time.</p>

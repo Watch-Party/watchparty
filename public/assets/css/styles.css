@@ -69,6 +69,8 @@ body, html {
         color: #30bfaf;
         margin-left: 5.5em;
         vertical-align: text-bottom; }
+      #container-feed nav ul li .newPostsRefresh {
+        color: white; }
       #container-feed nav ul li h3 {
         font-family: "Monoton", Verdana, sans-serif;
         font-size: 2em;
@@ -170,44 +172,50 @@ body, html {
         border-bottom: 1px solid #d3d3d3;
         font-family: "Asap", Helvetica, sans-serif;
         display: inline-block;
-        width: 100%;
         margin: 0 auto;
         padding: 1em .75em; }
-        #container-feed .post ul li .avatar-div {
+      #container-feed .post ul .list-avatar, #container-feed .post ul .list-par, #container-feed .post ul .list-pop {
+        width: 15%;
+        border-bottom: 1px solid #d3d3d3;
+        font-family: "Asap", Helvetica, sans-serif;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 1em .75em; }
+        #container-feed .post ul .list-avatar .avatar-div, #container-feed .post ul .list-par .avatar-div, #container-feed .post ul .list-pop .avatar-div {
           text-align: center; }
-          #container-feed .post ul li .avatar-div .post-avatar {
+          #container-feed .post ul .list-avatar .avatar-div .post-avatar, #container-feed .post ul .list-par .avatar-div .post-avatar, #container-feed .post ul .list-pop .avatar-div .post-avatar {
             border-radius: 50%;
             height: 2em;
             border: 1px solid #1e776d;
             margin-bottom: .25em; }
-        #container-feed .post ul li .par-div {
-          width: 15.25em; }
-          #container-feed .post ul li .par-div p {
-            text-align: left;
-            display: inline-block;
-            letter-spacing: .25px;
-            line-height: 1.25;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            -moz-hyphens: auto;
-            hyphens: auto; }
-          #container-feed .post ul li .par-div .time-div {
-            color: gray;
-            font-size: 12px;
-            font-family: "Asap", Helvetica, sans-serif;
-            font-weight: lighter;
-            margin-top: 1.75em; }
-        #container-feed .post ul li .pop-div {
-          text-align: left; }
-          #container-feed .post ul li .pop-div .popcorn {
-            height: 1em;
+      #container-feed .post ul .list-par {
+        width: 70%; }
+        #container-feed .post ul .list-par .par-div p {
+          text-align: left;
+          display: inline-block;
+          letter-spacing: .25px;
+          line-height: 1.25;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -webkit-hyphens: auto;
+          -ms-hyphens: auto;
+          -moz-hyphens: auto;
+          hyphens: auto; }
+        #container-feed .post ul .list-par .par-div .time-div {
+          color: gray;
+          font-size: 12px;
+          font-family: "Asap", Helvetica, sans-serif;
+          font-weight: lighter;
+          margin-top: 1.75em; }
+      #container-feed .post ul .list-pop {
+        width: 15%; }
+        #container-feed .post ul .list-pop .pop-div {
+          text-align: center; }
+          #container-feed .post ul .list-pop .pop-div .popcorn {
             cursor: pointer;
-            border: 1px solid #1e776d;
-            padding: 1.5px 4.5px 1.5px 4.5px;
-            border-radius: 50%; }
-          #container-feed .post ul li .pop-div .popcorn:active {
+            font-size: 22px;
+            vertical-align: middle; }
+          #container-feed .post ul .list-pop .pop-div .popcorn:active {
             border: 2px solid #30BFAF; }
 
 #landingContainer {
@@ -462,11 +470,23 @@ body, html {
       text-align: center;
       line-height: 1.25; }
   #container-login .login-inputs, #container-login .sign-up-inputs {
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
     text-align: center;
-    margin-top: 1.5em; }
-    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password {
+    margin-top: 1.5em;
+    display: block; }
+    #container-login .login-inputs .invalid, #container-login .sign-up-inputs .invalid, #container-login .login-inputs .invalid-server, #container-login .sign-up-inputs .invalid-server, #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
+      font-family: "Asap", Helvetica, sans-serif;
+      font-size: 15px;
+      color: #fff;
+      opacity: .7;
+      margin-top: 3%; }
+    #container-login .login-inputs .fa-times, #container-login .sign-up-inputs .fa-times {
+      color: #e60000;
+      font-size: 18px;
+      font-weight: lighter;
+      margin-right: 5px; }
+    #container-login .login-inputs .username[type="text"], #container-login .sign-up-inputs .username[type="text"], #container-login .login-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].password, #container-login .sign-up-inputs [type="text"].first-name, #container-login .sign-up-inputs [type="text"].last-name, #container-login .sign-up-inputs [type="text"].email, #container-login .sign-up-inputs [type="text"].username-signup, #container-login .sign-up-inputs [type="text"].password-signup, #container-login .sign-up-inputs [type="text"].re-enter-password, #container-login .sign-up-inputs .email[type="email"] {
       color: #fff;
       font-family: "Asap", Helvetica, sans-serif;
       font-size: 13.5px;
@@ -477,6 +497,7 @@ body, html {
       font-size: 13.5px;
       letter-spacing: 2px; }
     #container-login .login-inputs .username, #container-login .sign-up-inputs .username, #container-login .login-inputs .password, #container-login .sign-up-inputs .password, #container-login .sign-up-inputs .first-name, #container-login .sign-up-inputs .last-name, #container-login .sign-up-inputs .email, #container-login .sign-up-inputs .username-signup, #container-login .sign-up-inputs .password-signup, #container-login .sign-up-inputs .re-enter-password {
+      width: 60%;
       border: 0;
       outline: 0;
       background: transparent;
@@ -500,16 +521,17 @@ body, html {
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 4px 12px 0 rgba(0, 0, 0, 0.18); }
   #container-login .sign-up-inputs .check, #container-login .sign-up-inputs .check2 {
     margin-right: -1em;
-    display: inline-block;
-    visibility: hidden; }
+    display: inline-block; }
     #container-login .sign-up-inputs .check .fa-check-circle, #container-login .sign-up-inputs .check2 .fa-check-circle {
       color: #32cd32; }
   #container-login .sign-up-inputs .go-signup {
     background-color: #7DDBD0; }
   #container-login .sign-up-inputs .dont-match {
-    border-bottom: 2px solid red; }
+    border-bottom: 2px solid #990000; }
   #container-login .sign-up-inputs .match {
     border-bottom: 2px solid #30BFAF; }
+  #container-login .sign-up-inputs .signup-message, #container-login .sign-up-inputs .pw-length, #container-login .sign-up-inputs .username-taken, #container-login .sign-up-inputs .email-taken {
+    line-height: 1.25; }
   #container-login .buttons {
     margin-top: 1.5em;
     text-align: center; }
@@ -551,6 +573,11 @@ body, html {
     cursor: pointer; }
   #container-login :hover {
     opacity: 1; }
+  #container-login .fa-spin {
+    width: 100%;
+    margin-top: 10%;
+    color: #fff;
+    text-align: center; }
   #container-login .about {
     padding-top: 1em;
     width: 60%;
