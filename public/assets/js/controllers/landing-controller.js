@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http, $auth, $window){
+watchParty.controller('landingController', function($scope, $http, $auth, $window, showFactory){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -10,6 +10,11 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.buttonsShow = true;
   $scope.searchBarShow=false;
   var hybridChannelName = '';
+  $scope.shows = [{
+    showTitle: 'Game of Thrones'
+  }, {
+    showTitle: 'Walking Dead'
+  }]
 
   // console.log(response);
   var id = JSON.parse(localStorage.getItem('id'));
@@ -33,8 +38,9 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.upcomingFunc = function(){
     $scope.upcomingHide=!$scope.upcomingHide;
   }
-  $scope.enterRoomFunc= function(){
-    console.log("room");
+  $scope.setActive = function(show){
+    $scope.selected= show;
+    console.log($scope.selected);
   }
   $scope.delayedRoomFunc = function(){
   $scope.delayRoomHide = !$scope.delayRoomHide;

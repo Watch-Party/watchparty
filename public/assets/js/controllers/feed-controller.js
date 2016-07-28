@@ -37,7 +37,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   //   ActionCableConfig.autoStart= true;
   // });
 var userId = JSON.parse(localStorage.getItem('id'));
-var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game_of_thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 consumer.onmessage = function(evt){
   console.log(evt);
   //dispatcher.close();
@@ -60,7 +60,7 @@ consumer.subscribe(callback).then(function(){
     }
     consumer.send(post, 'post');
     $scope.postContent = '';
-    //$scope.allPosts.push(post);
+    $scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
