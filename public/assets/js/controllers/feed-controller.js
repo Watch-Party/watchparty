@@ -38,38 +38,72 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
 
 
 var userId = JSON.parse(localStorage.getItem('id'));
-var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+var consumer = new ActionCableChannel('LiveChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 
 var callback = function(post) {
   // var post = {
   //   content: $scope.postContent
   // }
-  $scope.allPosts.push(post);
-  console.log(post);
+  if ('content' in post) {
+    $scope.allPosts.push(post);
+    console.log(post);
+  }
+    else {
+      return "true";
+      console.log(post);
+      // console.log(post);
+      // console.log($scope.allPosts)
+}
+  // console.log(pop);
   //not completely sure what this does yet^^ but its in the docs.
 };
+
+// var callbackPop = function(pop) {
+//   // var post = {
+//   //   content: $scope.postContent
+//   // }
+//   console.log(pop);
+//   // console.log($scope.allPosts)
+//   // console.log(pop);
+//   //not completely sure what this does yet^^ but its in the docs.
+// };
 //Thoughts to not forget for Tuesday
 //Ping the server with newpost server responds with proper format
 // this is what sends a post to the actioncable and displays on screen.
 consumer.subscribe(callback).then(function(){
+
   $scope.submitPost = function(post){
     var post = {
       content: $scope.postContent,
     }
     consumer.send(post, 'post');
     $scope.postContent = '';
-    $scope.allPosts.push(post);
+    // $scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
   console.log(callback);
-})
-//   var channel = cable.subscribe('FeedsChannel', { received: function(newComment){
-//    $scope.allPosts.push(newComment);
-//    console.log(newComment);
-//    console.log($scope.allPosts);
-//
-// }});
+
+  $scope.setPostToPop = function(post){
+    console.log(post.post_id)
+    var pop = {
+      post_id: post.post_id
+    }
+    console.log(pop.post_id);
+    console.log(post);
+    consumer.send(pop, 'pop');
+    console.log(consumer.send(pop, 'pop'));
+  }
+
+  // change star class on click //
+  $scope.class = "fa fa-star-o";
+  $scope.popStar = function(){
+    $scope.class = "fa fa-star";
+    console.log("change star class");
+  }
+});
+
+
   // show/hide side menu //
   $scope.menuShow = true;
   $scope.menuFunc = function(){
@@ -96,6 +130,10 @@ consumer.subscribe(callback).then(function(){
       $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
       console.log(response)
     })
+
+
+  // start of POP stuff //
+
 
 
     // var getUl = angular.element(document.querySelector('.postTest'));
