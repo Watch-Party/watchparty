@@ -172,44 +172,52 @@ body, html {
         border-bottom: 1px solid #d3d3d3;
         font-family: "Asap", Helvetica, sans-serif;
         display: inline-block;
-        width: 100%;
         margin: 0 auto;
         padding: 1em .75em; }
-        #container-feed .post ul li .avatar-div {
+      #container-feed .post ul .list-avatar, #container-feed .post ul .list-par, #container-feed .post ul .list-pop {
+        width: 15%;
+        border-bottom: 1px solid #d3d3d3;
+        font-family: "Asap", Helvetica, sans-serif;
+        display: inline-block;
+        margin: 0 auto;
+        padding: 1em .75em; }
+        #container-feed .post ul .list-avatar .avatar-div, #container-feed .post ul .list-par .avatar-div, #container-feed .post ul .list-pop .avatar-div {
           text-align: center; }
-          #container-feed .post ul li .avatar-div .post-avatar {
+          #container-feed .post ul .list-avatar .avatar-div .post-avatar, #container-feed .post ul .list-par .avatar-div .post-avatar, #container-feed .post ul .list-pop .avatar-div .post-avatar {
             border-radius: 50%;
             height: 2em;
             border: 1px solid #1e776d;
             margin-bottom: .25em; }
-        #container-feed .post ul li .par-div {
-          width: 15.25em; }
-          #container-feed .post ul li .par-div p {
-            text-align: left;
-            display: inline-block;
-            letter-spacing: .25px;
-            line-height: 1.25;
-            overflow-wrap: break-word;
-            word-wrap: break-word;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            -moz-hyphens: auto;
-            hyphens: auto; }
-          #container-feed .post ul li .par-div .time-div {
-            color: gray;
-            font-size: 12px;
-            font-family: "Asap", Helvetica, sans-serif;
-            font-weight: lighter;
-            margin-top: 1.75em; }
-        #container-feed .post ul li .pop-div {
-          text-align: left; }
-          #container-feed .post ul li .pop-div .popcorn {
+      #container-feed .post ul .list-par {
+        width: 70%; }
+        #container-feed .post ul .list-par .par-div p {
+          text-align: left;
+          display: inline-block;
+          letter-spacing: .25px;
+          line-height: 1.25;
+          overflow-wrap: break-word;
+          word-wrap: break-word;
+          -webkit-hyphens: auto;
+          -ms-hyphens: auto;
+          -moz-hyphens: auto;
+          hyphens: auto; }
+        #container-feed .post ul .list-par .par-div .time-div {
+          color: gray;
+          font-size: 12px;
+          font-family: "Asap", Helvetica, sans-serif;
+          font-weight: lighter;
+          margin-top: 1.75em; }
+      #container-feed .post ul .list-pop {
+        width: 15%; }
+        #container-feed .post ul .list-pop .pop-div {
+          text-align: center; }
+          #container-feed .post ul .list-pop .pop-div .popcorn {
             height: 1em;
             cursor: pointer;
             border: 1px solid #1e776d;
             padding: 1.5px 4.5px 1.5px 4.5px;
             border-radius: 50%; }
-          #container-feed .post ul li .pop-div .popcorn:active {
+          #container-feed .post ul .list-pop .pop-div .popcorn:active {
             border: 2px solid #30BFAF; }
 
 #landingContainer {

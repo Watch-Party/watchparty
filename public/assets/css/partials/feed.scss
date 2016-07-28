@@ -178,64 +178,84 @@ body, html {
           // border-right: 1px solid black;
           font-family: $Font-Menu;
           display: inline-block;
-          width: 100%; // might need this back //
+          // width: 100%; // might need this back //
           // max-width: 375px;
           margin: 0 auto;
           padding: 1em .75em;
           // display: inline-block;
-          .avatar-div{
-            // height: 2.5em;
-            // width: 1em;
-            text-align: center;
-            // border-right: 1px solid black;
-            .post-avatar {
-              border-radius: 50%;
-              // display: inline-block;
-              height: 2em;
-              border: 1px solid $Main-Green;
-              margin-bottom: .25em;
+          }
+          .list-avatar {
+            width: 15%;
+            border-bottom: 1px solid #d3d3d3;
+            font-family: $Font-Menu;
+            display: inline-block;
+            margin: 0 auto;
+            padding: 1em .75em;
+            .avatar-div{
+              // height: 2.5em;
+              // width: 20%;
+              text-align: center;
+              // border-right: 1px solid black;
+              .post-avatar {
+                border-radius: 50%;
+                // display: inline-block;
+                height: 2em;
+                border: 1px solid $Main-Green;
+                margin-bottom: .25em;
+              }
             }
           }
-          .par-div {
-            width: 15.25em;
-            p {
-              // max-width: 90%;
-              text-align: left;
-              display: inline-block;
-              letter-spacing: .25px;
-              line-height: 1.25;
-              overflow-wrap: break-word;
-              word-wrap: break-word;
-              -webkit-hyphens: auto;
-              -ms-hyphens: auto;
-              -moz-hyphens: auto;
-              hyphens: auto;
-            }
-            .time-div {
-              color: gray;
-              font-size: 12px;
-              font-family: $Font-Menu;
-              font-weight: lighter;
-              margin-top: 1.75em;
-            }
-          }
-          .pop-div{
-            // width: 1em;
-            text-align: left;
-            .popcorn {
-              // display: inline-block;
-              height: 1em;
-              cursor: pointer;
-              border: 1px solid $Main-Green;
-              padding: 1.5px 4.5px 1.5px 4.5px;
-              // background-color: #30BFAF;
-              border-radius: 50%;
-            }.popcorn:active {
-              // background-color: #30BFAF;
-              border: 2px solid #30BFAF;
+          .list-par {
+            @extend .list-avatar;
+            width: 70%;
+            .par-div {
+              // width: 70%;
+              p {
+                // max-width: 90%;
+                text-align: left;
+                display: inline-block;
+                letter-spacing: .25px;
+                line-height: 1.25;
+                overflow-wrap: break-word;
+                word-wrap: break-word;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+              }
+              .time-div {
+                color: gray;
+                font-size: 12px;
+                font-family: $Font-Menu;
+                font-weight: lighter;
+                margin-top: 1.75em;
+              }
             }
           }
-        }
+          .list-pop {
+            @extend .list-avatar;
+            width: 15%;
+            .pop-div{
+              // width: 1em;
+              text-align: center;
+              .popcorn {
+                // display: inline-block;
+                height: 1em;
+                cursor: pointer;
+                border: 1px solid $Main-Green;
+                padding: 1.5px 4.5px 1.5px 4.5px;
+                // background-color: #30BFAF;
+                border-radius: 50%;
+              }.popcorn:active {
+                // background-color: #30BFAF;
+                border: 2px solid #30BFAF;
+              }
+            }
+          }
+
+
+
+
       }
     }
 
