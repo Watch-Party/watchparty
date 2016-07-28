@@ -1,20 +1,77 @@
 
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, $cable){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
   //only show posts with numeric values less than what we are at. Possibly set options where one could set
   //an auto refresh or always be in control.
-  // var dispatcher = new WebSocket("ws://echo.websocket.org/") //Url for socket.
+  // var dispatcher = new WebSocket('wss://wp-spoileralert.herokuapp.com/cable') //Url for socket.
   // dispatcher.onopen = function(){ //init a web socket with a function when connection is open.
   //   console.log("connected")
   // }
-  var cable = $cable('wss://wp-spoileralert.herokuapp.com/cable');
 
-  var channel = cable.subscribe('FeedsChannel', { received: function(newComment){
-  //cable.connection.isOpen();
-  console.log(newComment);
-  console.log("connected");
-}});
+  // var cable = new WebSocket('wss://wp-spoileralert.herokuapp.com/cable');
+  // cable.onopen = function() {
+  //   console.log("connected")
+  //   $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
+  //   console.log(response);
+  //   // $scope.allPosts= [];
+  //   $scope.getPosts= response.data.posts;
+  //   //$scope.allPosts.push($scope.getPosts);
+  //   console.log($scope.getPosts);
+  //   });
+  // }
+  // cable.onmessage = function(evt){
+  //   //console.log(evt)
+  // }
+  $scope.allPosts = []
+  console.log($scope.allPosts)
+
+  // $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
+  //   $scope.allPosts= response.data.posts
+  //   console.log($scope.allPosts)
+  //   console.log(response.data.posts)
+  // });
+
+  // watchParty.run(function (ActionCableConfig){
+  //   ActionCableConfig.wsUri= "wss://wp-spoileralert.herokuapp.com/cable";
+  //   ActionCableConfig.autoStart= true;
+  // });
+var userId = JSON.parse(localStorage.getItem('id'));
+var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+consumer.onmessage = function(evt){
+  console.log(evt);
+  //dispatcher.close();
+}
+var callback = function(post) {
+  // var post = {
+  //   content: $scope.postContent
+  // }
+  $scope.allPosts.push(post);
+  console.log(post);
+  //not completely sure what this does yet^^ but its in the docs.
+};
+//Thoughts to not forget for Tuesday
+//Ping the server with newpost server responds with proper format
+// this is what sends a post to the actioncable and displays on screen.
+consumer.subscribe(callback).then(function(){
+  $scope.submitPost = function(post){
+    var post = {
+      content: $scope.postContent
+    }
+    consumer.send(post, 'post');
+    $scope.postContent = '';
+    $scope.allPosts.push(post);
+    console.log(post);
+    console.log($scope.allPosts)
+  };
+  console.log(callback);
+})
+//   var channel = cable.subscribe('FeedsChannel', { received: function(newComment){
+//    $scope.allPosts.push(newComment);
+//    console.log(newComment);
+//    console.log($scope.allPosts);
+//
+// }});
   // show/hide side menu //
   $scope.menuShow = true;
   $scope.menuFunc = function(){
@@ -32,7 +89,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
         console.log(resp)
       })
   }
-
+//function to display avatar
   var id = JSON.parse(localStorage.getItem('id'));
   console.log(id);
   $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
@@ -42,11 +99,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
       console.log(response)
     })
 
-  $scope.allPosts= [];
-  $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
-    console.log(response);
-    $scope.getPosts= response.data.posts;
-    console.log($scope.getPosts);
+
     // var getUl = angular.element(document.querySelector('.postTest'));
     // console.log(getUl)
     // for (var i = 0; i < response.data.posts.length; i++) {
@@ -61,14 +114,15 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
 
   // refresh posts on click //
   // watchParty.directive('scrollDir', function($scope, $anchorScroll, $location) {
-    $scope.refreshPosts = function(){
-
-      $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
-    // console.log(response);
-    $scope.getPosts = response.data.posts;
-    console.log(response.data.posts);
-    // console.log($scope.getPosts);
-    console.log("Refresh");
+    // $scope.refreshPosts = function(){
+    //   $scope.socketPosts = []
+    //   $scope.newPostsRefresh = 0;
+    //   $http.get('https://wp-spoileralert.herokuapp.com/doctor_who/9/12/posts.json').then(function(response){
+    // // console.log(response);
+    // $scope.getPosts = response.data.posts;
+    // console.log(response.data.posts);
+    // // console.log($scope.getPosts);
+    // console.log("Refresh");
 
 
     // var scrollId = getUl[4]; // don't hardcode 0 in every time? //
@@ -86,41 +140,35 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
         // $scope.scrollId =
 
         // console.log();
+    //
+    //    })
+    // };
+    // })
 
-       })
-    };
-    })
 
-
-  // };
+  //// };
   // dispatcher.onmessage = function(evt){
   //   console.log(evt.data);
   //   console.log("sent");
   // }
   // send post to server on submit //
-  $scope.submitPost = function() {
-    $scope.post =  {
-        'content': $scope.postContent,
-      };
-      var message = $scope.postContent;  ///Send a message to a websocket
-      function sendMessage(message){
-        dispatcher.send(message);
-        console.log(message)
-      }
-        $scope.allPosts.push($scope.post);
-        console.log($scope.allPosts);
-        console.log($scope.post);
-        $scope.postContent = '';
-
-        $http.post('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
-          console.log(post);
-          $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
-            console.log(response);
-            $scope.getPosts= response.data.posts;
-            console.log($scope.getPosts);
-          })
-        })
-  }
+  // $scope.submitPost = function() {
+  //   $scope.post =  {
+  //       'content': $scope.postContent,
+  //     };
+  //     // $scope.allPosts.push($scope.post);
+  //     console.log($scope.post);
+  //     console.log($scope.allPosts);
+  //     $scope.postContent = '';
+  //     $http.post('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json', $scope.post).then(function(post){
+  //         console.log(post);
+  //         // $http.get('https://wp-spoileralert.herokuapp.com/game_of_thrones/1/1/posts.json').then(function(response){
+  //         //   console.log(response);
+  //         //   $scope.getPosts= response.data.posts;
+  //         //   console.log($scope.getPosts);
+  //         // })
+  //       });
+  // }
 
 
   // // on click of popcorn - active -- for add class //
@@ -131,12 +179,12 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // }
 
 
-});
+  });
 
-
-// inspiration from: https://codedump.io/share/Eunu1YNUTbAO/1/angular-ng-repeat-in-reverse //
-watchParty.filter('missyElliot', function() {
-  return function(items) {
-  return items.slice().reverse();
-};
-});
+//FILTER WE MAY OR MAY NOT NEED
+// // inspiration from: https://codedump.io/share/Eunu1YNUTbAO/1/angular-ng-repeat-in-reverse //
+// watchParty.filter('missyElliot', function() {
+//   return function(items) {
+//   return items.slice().reverse();
+// };
+// });
