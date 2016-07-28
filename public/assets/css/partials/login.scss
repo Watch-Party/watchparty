@@ -59,6 +59,7 @@
          }
          .invalid-server {
            @extend .invalid;
+           line-height: 1.25;
          }
          .username[type="text"] {
           color: #fff;
