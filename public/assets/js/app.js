@@ -1,9 +1,10 @@
-var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie', 'ngActionCable' ]);
+var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCookie', 'ngActionCable', ]);
 
 
 watchParty.config(function($authProvider) {
      $authProvider.configure({
-         apiUrl: 'https://wp-spoileralert.herokuapp.com'
+       //apiUrl: 'https://073434ad.ngrok.io'
+        apiUrl: 'https://wp-spoileralert.herokuapp.com'
      });
  });
  {

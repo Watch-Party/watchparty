@@ -94,6 +94,15 @@
           font-size: .75em;
           width: 20%;
         }
+        .watchButton {
+          float: right;
+          margin-right: 25px;
+          font-size: .75em;
+          border: none;
+          color: white;
+          background: #30bfaf;
+
+        }
       }
     }
   }
@@ -112,6 +121,20 @@
     outline: 0;
     background: transparent;
     border-bottom: 2px solid #30bfaf;
+  }
+  .delayTimer{
+    margin-top: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    p{
+      text-align: center;
+    }
+    .countDown{
+      margin-top: 1.5em;
+      font-size: 3em;
+    }
   }
 
   .roomButtons{
@@ -163,10 +186,30 @@
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 8px;
-        height: 130px;
+        height: 250px;
         width: 65%;
         // border: 1px solid black;
         vertical-align: top;
+        .showTitle{
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          padding-bottom: 20px;
+          border-bottom: 1px solid $Main-Green;
+          margin-bottom: 20px;
+        }
+        .typeOfChannel{
+          width: 49%;
+          height: 38%;
+          margin-top: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          display: inline-block;
+          padding: 10px;
+          font-size: .5em;
+          border: .5px solid black;
+          vertical-align: top;
+        }
 
       }
       .upcomingBumper{
@@ -307,6 +350,7 @@
           text-align: center;
           margin-bottom: 25px;
       }
+
       .startRoom{
         a{
           text-decoration: none;
@@ -331,5 +375,15 @@
       }
     }
   }
-
+  .typeOfChannel{
+    width: 49%;
+    height: 38%;
+    margin-top: 10px;
+    margin-left: 2px;
+    display: inline-block;
+    padding: 10px;
+    font-size: .85em;
+    // border: .5px solid white;
+    vertical-align: top;
+  }
 }
