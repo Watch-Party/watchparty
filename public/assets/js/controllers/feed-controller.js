@@ -71,6 +71,14 @@ var callback = function(post) {
 //Thoughts to not forget for Tuesday
 //Ping the server with newpost server responds with proper format
 // this is what sends a post to the actioncable and displays on screen.
+
+
+// hide comment bar by default - toggle on click //
+$scope.commentShow = false;
+$scope.clickComment = function(post) {
+  post.commentShow = !post.commentShow;
+}
+
 consumer.subscribe(callback).then(function(){
 
   $scope.submitPost = function(post){
@@ -93,13 +101,29 @@ consumer.subscribe(callback).then(function(){
     console.log(pop.post_id);
     console.log(post);
     consumer.send(pop, 'pop');
-    console.log(consumer.send(pop, 'pop'));
+    // console.log(consumer.send(pop, 'pop'));
   }
 
   // change star class on click //
   $scope.popStar = function(post){
     post.popped = true;
     console.log("click star");
+  }
+
+  $scope.submittedConf = false;
+  $scope.formData = {};
+  $scope.submitComment = function(post, comment){
+    console.log("comment submitted");
+    console.log(comment.formData.commentContent);
+    console.log(comment);
+    var comment = {
+      post_id: post.post_id,
+      content: comment.formData.commentContent
+    }
+    consumer.send(comment, 'comment');
+    // console.log(consumer.send(comment, 'comment'));
+    // $scope.submittedConf = true;
+    console.log(comment);
   }
 
 });
@@ -133,6 +157,7 @@ consumer.subscribe(callback).then(function(){
     })
 
 
+});
   // start of POP stuff //
 
 
@@ -214,9 +239,6 @@ consumer.subscribe(callback).then(function(){
   //   $scope.isActive = !$scope.isActive;
   //   console.log("Active click")
   // }
-
-
-  });
 
 //FILTER WE MAY OR MAY NOT NEED
 // // inspiration from: https://codedump.io/share/Eunu1YNUTbAO/1/angular-ng-repeat-in-reverse //
