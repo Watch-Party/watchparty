@@ -177,7 +177,7 @@ body, html {
           border-bottom: 1px solid #d3d3d3;
           // border-right: 1px solid black;
           font-family: $Font-Menu;
-          display: inline-block;
+          // display: inline-block;
           // width: 100%; // might need this back //
           // max-width: 375px;
           margin: 0 auto;
@@ -238,9 +238,10 @@ body, html {
             .pop-div{
               // width: 1em;
               text-align: center;
-              .popcorn {
+              .fa-star-o {
                 // display: inline-block;
                 // height: 1em;
+                color: $Main-Green;
                 cursor: pointer;
                 font-size: 22px;
                 vertical-align: middle;
@@ -248,17 +249,63 @@ body, html {
                 // padding: 1.5px 4.5px 1.5px 4.5px;
                 // background-color: #30BFAF;
                 // border-radius: 50%;
-              }.popcorn:active {
-                // background-color: #30BFAF;
-                border: 2px solid #30BFAF;
+              }
+              .fa-star {
+                @extend .fa-star-o;
+              }
+            }
+            .comment-div {
+              @extend .pop-div;
+              .fa-comment-o {
+                @extend .fa-star-o;
+                font-size: 20px;
+                margin-top: 10px;
               }
             }
           }
-
-
-
-
+        }
+      .comment-section {
+        margin: 0 auto;
+        // border: 1px solid red;
+        padding: 1em .5em;
+        // width: 100%;
+        border-bottom: 1px solid #d3d3d3;
+        display: block;
+        form {
+          // border: 1px solid green;
+          width: 65%;
+          margin: 0 auto;
+          text-align: center;
+          display: block;
+          p {
+            color: #30BFAF;
+            font-weight: bold;
+            font-family: $Font-Menu;
+          }
+          .comment-box {
+            display: inline-block;
+            width: 70%;
+            padding: .5em;
+            border-radius: 3px;
+            border: 1px solid #d3d3d3;
+          }
+          .submit-comment {
+            display: inline-block;
+            width: 5%;
+            border: none;
+            background-image: -webkit-linear-gradient(top, #7DDBD0 0%, #30BFAF 100%);
+            border-radius: 3px;
+            padding: 3px 13px 3px 10px;
+            margin-left: .5em;
+            vertical-align: middle;
+            i {
+              color: #fff;
+              font-size: 16px;
+            }
+          }
+        }
       }
+
     }
 
 }

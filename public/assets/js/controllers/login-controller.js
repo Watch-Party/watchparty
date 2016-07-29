@@ -75,11 +75,11 @@ watchParty.controller('loginCtrl', function($scope, $http, $auth, $window){
         })
 
         .catch(function(response) {
-          if (response === true && response.errors != "Invalid credentials") {
+          if (response) {
             $scope.loginErrorServer = true;
             console.log("server down?");
           }
-          else if (response.errors == "Invalid credentials") {
+          else if (response && response.errors == "Invalid credentials") {
             $scope.loginError = true;
             console.log(response.errors);
             // $scope.username = '';

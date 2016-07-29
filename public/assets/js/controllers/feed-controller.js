@@ -38,38 +38,97 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
 
 
 var userId = JSON.parse(localStorage.getItem('id'));
-var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+var consumer = new ActionCableChannel('LiveChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 
 var callback = function(post) {
-  // var post = {
-  //   content: $scope.postContent
-  // }
-  $scope.allPosts.push(post);
+
   console.log(post);
+
+  // filter out pops -- just push up posts //
+  if ('content' in post) {
+    $scope.allPosts.push(post);
+    console.log(post);
+  }
+    else {
+      return "true";
+      console.log(post);
+      // console.log(post);
+      // console.log($scope.allPosts)
+}
+  // console.log(pop);
   //not completely sure what this does yet^^ but its in the docs.
 };
+
+// var callbackPop = function(pop) {
+//   // var post = {
+//   //   content: $scope.postContent
+//   // }
+//   console.log(pop);
+//   // console.log($scope.allPosts)
+//   // console.log(pop);
+//   //not completely sure what this does yet^^ but its in the docs.
+// };
 //Thoughts to not forget for Tuesday
 //Ping the server with newpost server responds with proper format
 // this is what sends a post to the actioncable and displays on screen.
+
+
+// hide comment bar by default - toggle on click //
+$scope.commentShow = false;
+$scope.clickComment = function(post) {
+  post.commentShow = !post.commentShow;
+}
+
 consumer.subscribe(callback).then(function(){
+
   $scope.submitPost = function(post){
     var post = {
       content: $scope.postContent,
     }
     consumer.send(post, 'post');
     $scope.postContent = '';
-    $scope.allPosts.push(post);
+    // $scope.allPosts.push(post);
     console.log(post);
     console.log($scope.allPosts)
   };
   console.log(callback);
-})
-//   var channel = cable.subscribe('FeedsChannel', { received: function(newComment){
-//    $scope.allPosts.push(newComment);
-//    console.log(newComment);
-//    console.log($scope.allPosts);
-//
-// }});
+
+  $scope.setPostToPop = function(post){
+    console.log(post.post_id)
+    var pop = {
+      post_id: post.post_id
+    }
+    console.log(pop.post_id);
+    console.log(post);
+    consumer.send(pop, 'pop');
+    // console.log(consumer.send(pop, 'pop'));
+  }
+
+  // change star class on click //
+  $scope.popStar = function(post){
+    post.popped = true;
+    console.log("click star");
+  }
+
+  $scope.submittedConf = false;
+  $scope.formData = {};
+  $scope.submitComment = function(post, comment){
+    console.log("comment submitted");
+    console.log(comment.formData.commentContent);
+    console.log(comment);
+    var comment = {
+      post_id: post.post_id,
+      content: comment.formData.commentContent
+    }
+    consumer.send(comment, 'comment');
+    // console.log(consumer.send(comment, 'comment'));
+    // $scope.submittedConf = true;
+    console.log(comment);
+  }
+
+});
+
+
   // show/hide side menu //
   $scope.menuShow = true;
   $scope.menuFunc = function(){
@@ -96,6 +155,11 @@ consumer.subscribe(callback).then(function(){
       $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
       console.log(response)
     })
+
+
+});
+  // start of POP stuff //
+
 
 
     // var getUl = angular.element(document.querySelector('.postTest'));
@@ -175,9 +239,6 @@ consumer.subscribe(callback).then(function(){
   //   $scope.isActive = !$scope.isActive;
   //   console.log("Active click")
   // }
-
-
-  });
 
 //FILTER WE MAY OR MAY NOT NEED
 // // inspiration from: https://codedump.io/share/Eunu1YNUTbAO/1/angular-ng-repeat-in-reverse //

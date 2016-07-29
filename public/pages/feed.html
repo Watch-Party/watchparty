@@ -18,11 +18,26 @@
   </div>
 
   <div class="post">
-    <ul class="postTest" id="{{$index}}" ng-repeat = "post in allPosts">
-      <li class="list-avatar"><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
-      <li class="list-par"><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
-      <li class="list-pop"><div class="pop-div"><i class="fa fa-star-o popcorn" aria-hidden="true"></i></div></li>
-    </ul>
+    <div class="entire-post" id="{{$index}}" ng-repeat = "post in allPosts">
+      <ul class="postTest">
+        <li class="list-avatar"><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
+        <li class="list-par"><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
+        <li class="list-pop">
+          <div class="pop-div">
+            <i ng-class="{'fa fa-star': post.popped}" aria-hidden="true"></i>
+            <i class="fa fa-star-o" aria-hidden="true" ng-click="setPostToPop(post); popStar(post)" ng-hide="post.popped"></i>
+          </div>
+          <div class="comment-div"><i class="fa fa-comment-o" aria-hidden="true" ng-click="clickComment(post)"></i></div>
+        </li>
+      </ul>
+      <div class="comment-section" ng-show="post.commentShow">
+        <form ng-submit="submitComment(post, comment)">
+          <input ng-hide="submittedConf" ng-model="comment.formData.commentContent" type="text" class="comment-box" placeholder="Add comment"></input>
+          <button ng-hide="submittedConf" class="submit-comment"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+          <p ng-show="submittedConf">Submitted!</p>
+        </form>
+      </div>
+    </div>
   </div>
 
   <section class="message-bar">
