@@ -58,12 +58,10 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     localStorage.setItem('channelType', 'LiveChannel')
 
   }
-  // $scope.setActive = function(show){
-  //   $scope.selected= show.episodeId;
-  //   console.log($scope.selected);
-  //   localStorage.setItem('episodeId', $scope.selected)
-  //
-  // }
+  $scope.setActive = function(show){
+    localStorage.setItem('title', show.title);
+    console.log($scope.selected);
+  }
   $scope.setActiveDelay = function(recentShow){
     $scope.selectedShow= recentShow
     console.log($scope.selectedShow);
@@ -71,6 +69,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     console.log($scope.seasons)
     $scope.episodes = $scope.seasons.episodes
     console.log($scope.episodes);
+    localStorage.setItem('title', recentShow.title);
   }
   $scope.seasonSelectFunc = function(season){
     console.log(season)
@@ -93,7 +92,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
   localStorage.setItem('channelType', 'DelayedChannel');
-  $scope.seasonOptions.$setPristine;
+  // $scope.seasonEpisodeForm.$setPristine;
+  // console.log($scope.seasonEpisodeForm)
   }
   $scope.showSelectFunc = function(){
     $scope.showSelectHide= true;

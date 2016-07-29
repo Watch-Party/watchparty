@@ -43,7 +43,7 @@
     <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p></li>
       <div class="delayRoom" ng-hide="delayRoomHide">
         <p class="recentResults" ng-hide="showSelectHide">Your Recent Shows</p>
-        <div class="showSelect" ng-repeat="recentShow in recentShows" ng-hide="showSelectHide" ng-click="showSelectFunc(); setActive(show); setActiveDelay(recentShow)">
+        <div class="showSelect" ng-repeat="recentShow in recentShows" ng-hide="showSelectHide" ng-click="showSelectFunc(); setActiveDelay(recentShow)">
           <p>{{recentShow.title}}</p>
         </div>
         <!-- ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">{{show.showTitle}} -->
@@ -56,7 +56,7 @@
         <div class="delayBumper" ng-hide="showSelectHide"></div>
         <div class="seasonSelect" ng-hide="seasonHide">
           <p class="seasonResults">Season
-            <select  ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
+            <select  name="seasonForm" ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
               <option ng-repeat="season in seasons" value="{{season.season}}">{{season.season}}</option>
             </select>
           </p>
