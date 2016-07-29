@@ -3,8 +3,8 @@ var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCoo
 
 watchParty.config(function($authProvider) {
      $authProvider.configure({
-       apiUrl: 'https://073434ad.ngrok.io'
-        //  apiUrl: 'https://wp-spoileralert.herokuapp.com'
+       //apiUrl: 'https://073434ad.ngrok.io'
+        apiUrl: 'https://wp-spoileralert.herokuapp.com'
      });
  });
  {

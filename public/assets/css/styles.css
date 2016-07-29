@@ -313,6 +313,17 @@ body, html {
     outline: 0;
     background: transparent;
     border-bottom: 2px solid #30bfaf; }
+  #landingContainer .delayTimer {
+    margin-top: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em; }
+    #landingContainer .delayTimer p {
+      text-align: center; }
+    #landingContainer .delayTimer .countDown {
+      margin-top: 1.5em;
+      font-size: 3em; }
   #landingContainer .roomButtons {
     position: absolute;
     height: 100%;
@@ -345,9 +356,27 @@ body, html {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 8px;
-        height: 130px;
+        height: 250px;
         width: 65%;
         vertical-align: top; }
+        #landingContainer .roomButtons .upcoming .upcomingDeets .showTitle {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          padding-bottom: 20px;
+          border-bottom: 1px solid #1e776d;
+          margin-bottom: 20px; }
+        #landingContainer .roomButtons .upcoming .upcomingDeets .typeOfChannel {
+          width: 49%;
+          height: 38%;
+          margin-top: 10px;
+          margin-left: auto;
+          margin-right: auto;
+          display: inline-block;
+          padding: 10px;
+          font-size: .5em;
+          border: .5px solid black;
+          vertical-align: top; }
       #landingContainer .roomButtons .upcoming .upcomingBumper {
         background: #1e776d;
         height: 10px;
@@ -473,6 +502,15 @@ body, html {
           color: #1e776d; }
       #landingContainer .roomButtons .hybridRoom .bumper {
         height: 25px; }
+  #landingContainer .typeOfChannel {
+    width: 49%;
+    height: 38%;
+    margin-top: 10px;
+    margin-left: 2px;
+    display: inline-block;
+    padding: 10px;
+    font-size: .85em;
+    vertical-align: top; }
 
 #container-login {
   height: 100%;

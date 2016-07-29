@@ -44,7 +44,7 @@ var episodeNumber = JSON.parse(localStorage.getItem('episode'));
 var viewType = localStorage.getItem('typeOfChannel')
 
 
-var consumer = new ActionCableChannel('FeedsChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: 1}]); //setting up actioncable var
+var consumer = new ActionCableChannel('LiveChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
 
 var callback = function(post) {
   // var post = {
@@ -63,9 +63,9 @@ consumer.subscribe(callback).then(function(){
     }
     consumer.send(post, 'post');
     $scope.postContent = '';
-    $scope.allPosts.push(post);
+    // $scope.allPosts.push(post);
     console.log(post);
-    console.log($scope.allPosts)
+    // console.log($scope.allPosts)
   };
   console.log(callback);
 })

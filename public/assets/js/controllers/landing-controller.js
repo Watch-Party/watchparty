@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http, $auth, $window, showFactory){
+watchParty.controller('landingController', function($scope, $http, $auth, $window, $timeout, showFactory){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -9,6 +9,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.hybridName = '';
   $scope.buttonsShow = true;
   $scope.searchBarShow=false;
+  $scope.landingContentWrapperShow = true;
+  $scope.delayTimerShow = false;
   var hybridChannelName = '';
   $scope.shows = [{
     showTitle: 'Game of Thrones', episodeId: 18
@@ -77,13 +79,41 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       console.log($scope.episodes)
 
   }
-  $scope.startLiveRoomFunc = function(data) {
-    localStorage.setItem('typeOfChannel', data)
+  $scope.startAllLiveRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'all')
+
+  }
+  $scope.startWatchingLiveRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'watching')
 
   }
   $scope.startDelayedFunc = function(dataSeason, dataEpisode){
     localStorage.setItem('season', dataSeason);
     localStorage.setItem('episode', dataEpisode);
+    var spaceShowName = localStorage.getItem('title');
+    var showName = spaceShowName.replace(/\s+/g, '_');
+    console.log(showName)
+    $http.get('https://wp-spoileralert.herokuapp.com/' + showName + '/' + dataSeason + '/' + dataEpisode)
+      .then(function(response){
+        console.log(response)
+        var epId = response.data.episode_id;
+        localStorage.setItem('episodeId', epId);
+
+      })
+    $scope.delayCounter = 15;
+    $scope.onTimeout = function(){
+      $scope.delayCounter--;
+      delayTimeout = $timeout($scope.onTimeout,1000);
+      console.log($scope.delayCounter)
+      if ($scope.delayCounter === 0){
+        $window.location.href = '#/feed'
+        $timeout.cancel(delayTimeout);
+
+      }
+    }
+    var delayTimeout = $timeout($scope.onTimeout,1000)
+    $scope.landingContentWrapperShow = !$scope.landingContentWrapperShow;
+    $scope.delayTimerShow= true;
 
 
   }
