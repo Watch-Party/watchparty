@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http, $auth, $window, showFactory){
+watchParty.controller('landingController', function($scope, $http, $auth, $window, $timeout, showFactory){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -9,12 +9,32 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.hybridName = '';
   $scope.buttonsShow = true;
   $scope.searchBarShow=false;
+  $scope.landingContentWrapperShow = true;
+  $scope.delayTimerShow = false;
   var hybridChannelName = '';
   $scope.shows = [{
-    showTitle: 'Game of Thrones'
+    showTitle: 'Game of Thrones', episodeId: 18
   }, {
-    showTitle: 'Walking Dead'
+    showTitle: 'Walking Dead', episodeId: 22
+  }
+];
+  $scope.seasons = [{
+    episode: 1,
+  },
+    {episode: 2
+  },
+    {episode: 3
   }]
+  $http.get('https://wp-spoileralert.herokuapp.com/upcoming')
+    .then(function(response){
+
+      console.log(response);
+    });
+    $http.get('https://wp-spoileralert.herokuapp.com/recent')
+      .then(function(response){
+        $scope.recentShows = response.data.recent_shows
+        console.log($scope.recentShows);
+      })
 
   // console.log(response);
   var id = JSON.parse(localStorage.getItem('id'));
@@ -37,15 +57,73 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   }
   $scope.upcomingFunc = function(){
     $scope.upcomingHide=!$scope.upcomingHide;
+    localStorage.setItem('channelType', 'LiveChannel')
+
   }
   $scope.setActive = function(show){
-    $scope.selected= show;
+    localStorage.setItem('title', show.title);
     console.log($scope.selected);
+  }
+  $scope.setActiveDelay = function(recentShow){
+    $scope.selectedShow= recentShow
+    console.log($scope.selectedShow);
+    $scope.seasons = recentShow.seasons;
+    console.log($scope.seasons)
+    $scope.episodes = $scope.seasons.episodes
+    console.log($scope.episodes);
+    localStorage.setItem('title', recentShow.title);
+  }
+  $scope.seasonSelectFunc = function(season){
+    console.log(season)
+      $scope.episodes = $scope.selectedShow.seasons[season].episodes;
+      console.log($scope.episodes)
+
+  }
+  $scope.startAllLiveRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'all')
+
+  }
+  $scope.startWatchingLiveRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'watching')
+
+  }
+  $scope.startDelayedFunc = function(dataSeason, dataEpisode){
+    localStorage.setItem('season', dataSeason);
+    localStorage.setItem('episode', dataEpisode);
+    var spaceShowName = localStorage.getItem('title');
+    var showName = spaceShowName.replace(/\s+/g, '_');
+    console.log(showName)
+    $http.get('https://wp-spoileralert.herokuapp.com/' + showName + '/' + dataSeason + '/' + dataEpisode)
+      .then(function(response){
+        console.log(response)
+        var epId = response.data.episode_id;
+        localStorage.setItem('episodeId', epId);
+
+      })
+    $scope.delayCounter = 15;
+    $scope.onTimeout = function(){
+      $scope.delayCounter--;
+      delayTimeout = $timeout($scope.onTimeout,1000);
+      console.log($scope.delayCounter)
+      if ($scope.delayCounter === 0){
+        $window.location.href = '#/feed'
+        $timeout.cancel(delayTimeout);
+
+      }
+    }
+    var delayTimeout = $timeout($scope.onTimeout,1000)
+    $scope.landingContentWrapperShow = !$scope.landingContentWrapperShow;
+    $scope.delayTimerShow= true;
+
+
   }
   $scope.delayedRoomFunc = function(){
   $scope.delayRoomHide = !$scope.delayRoomHide;
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
+  localStorage.setItem('channelType', 'DelayedChannel');
+  // $scope.seasonEpisodeForm.$setPristine;
+  // console.log($scope.seasonEpisodeForm)
   }
   $scope.showSelectFunc = function(){
     $scope.showSelectHide= true;
