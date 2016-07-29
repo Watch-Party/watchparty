@@ -98,11 +98,22 @@ consumer.subscribe(callback).then(function(){
 
   // change star class on click //
   // $scope.class = "fa fa-star-o";
+  // $scope.className = "fa fa-star-o";
   $scope.popStar = function(post){
-    post.popped = true; // seems to work now but will need to set initial class on load of each post //
+    // post.popped2 = "";
+    post.popped = true;
+    $scope.hideStar = function() {
+      if (post.popped = true) {
+        console.log('removing initial star');
+      }
+    }
+    // $scope.className = "";
+     // seems to work now but will need to set initial class on load of each post //
     // $scope.class = "fa fa-star";
     console.log("click star");
   }
+
+
 });
 
 
