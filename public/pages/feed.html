@@ -22,7 +22,10 @@
       <li class="list-avatar"><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
       <li class="list-par"><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
       <li class="list-pop">
-        <div class="pop-div"><i ng-class="{'fa fa-star': post.popped}" aria-hidden="true"></i><i id="ogStar" class="fa fa-star-o" aria-hidden="true" ng-click="setPostToPop(post); popStar(post); hideStar()"></i></div>
+        <div class="pop-div">
+          <i ng-class="{'fa fa-star': post.popped}" aria-hidden="true"></i>
+          <i class="fa fa-star-o" aria-hidden="true" ng-click="setPostToPop(post); popStar(post)" ng-hide="post.popped"></i>
+        </div>
         <div class="comment-div"><i class="fa fa-comment-o" aria-hidden="true"></i></div>
       </li>
     </ul>
