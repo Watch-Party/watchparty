@@ -1,9 +1,9 @@
 <div id="container-feed" ng-controller="postCtrl">
   <nav>
     <ul>
-      <li ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
-      <li><img src="{{avatarThumb}}"></img></li>
+      <li class="hamburger" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="wp"><h3>WP</h3></li>
+      <li class="avatar-nav"><img src="{{avatarThumb}}"></img></li>
       <!-- <li class="refresh" ng-click="refreshPosts()"><i class="fa fa-refresh" aria-hidden="true"></i><p class="newPostsRefresh">{{newPostsRefresh}}</p></li> -->
     </ul>
   </nav>
@@ -33,6 +33,16 @@
           <div class="comment-div"><i class="fa fa-comment-o" aria-hidden="true" ng-click="clickComment(post)"></i></div>
         </li>
       </ul>
+      <!-- <div class="contains-comment">
+        <div class="comment-left">
+          <img class="commenter-avatar" src="{{post.comments[0].thumb_url}}"></img>
+          <p class="commenter-username">{{post.comments[0].username}}</p>
+        </div>
+        <div class="comment-center">
+          <p class="commenter-text">{{post.comments[0].content}}</p>
+          <p class="commenter-timestamp">Commented at {{post.comments[0].timestamp}}</p>
+        </div>
+      </div> -->
       <div class="comment-section" ng-show="post.commentShow">
         <form ng-submit="submitComment(post, comment)">
           <input ng-hide="submittedConf" ng-model="comment.formData.commentContent" type="text" class="comment-box" placeholder="Add comment"></input>
