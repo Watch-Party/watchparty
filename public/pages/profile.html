@@ -1,16 +1,19 @@
 <div id="profileContainer">
   <div class="header">
     <a href="#/landing"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
-    <img class="avatar" src="{{avatar}}"/><form ng-submit="submitNewAvatarFunc()"> <input type="text" class="avatarUpload" ng-model="avatarNew" ng-hide=""></input><button class="submit" type="submit">Submit</button></form>
-    <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()"></i>
+    <img class="avatar" src="{{avatar}}"/>
+
+    <!-- <form ng-submit="submitNewAvatarFunc()"> <input type="text" class="avatarUpload" ng-model="avatarNew" ng-hide=""></input><button class="submit" type="submit">Submit</button></form> -->
+    <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()" ng-show="thisUser"></i>
+    <i class="fa fa-floppy-o" aria-hidden="true" ng-hide="editShow" ng-click="submitEditFunc()"></i>
     <ul class="names">
       <li class="firstName"><span ng-hide="userInfoHide">{{firstName}}</span><input ng-model="firstName" ng-hide="editShow" placeholder="First Name"></input></li>
       <li class="lastName"><span ng-hide="userInfoHide">{{lastName}}</span><input ng-model="lastName" ng-hide="editShow" placeholder="First Name"></input></li>
       <li class="screenName">{{screenName}}</li>
     <ul>
-      <ul class="contact">
+      <ul class="contact" ng-show="contactShow">
         <li class="contactList message"><i class="fa fa-envelope-o" aria-hidden="true"></i><p>Message</p></li>
-        <li class="contactList addTo"><i class="fa fa-plus" aria-hidden="true"></i><p>Add to channel</p></li>
+        <li class="contactList addTo"><i class="fa fa-plus" aria-hidden="true" ng-click="watchUserFunc()"></i><p>Watch!</p></li>
       </ul>
     <ul class="socialStats">
       <li class="watchers"><span class="socialNumbers">34</span><p>Watchers</p></li>

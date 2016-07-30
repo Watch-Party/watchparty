@@ -8,7 +8,7 @@
   </div>
   <div class="sideMenu" ng-hide="menuShow">
     <ul class="menuButton">
-      <a href="#/profile"><li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i></li></a>
+      <a href="#/profile" ng-click="profileSet()"><li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i></li></a>
       <li ng-click="logOut()"><p>Log Out<p><i class="fa fa-sign-out fa-rotate-180" aria-hidden="true"></i></li>
       <li><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
       <li><p>Message<p><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
@@ -18,7 +18,9 @@
   <div class="searchBarHolder" ng-show="searchBarShow">
       <input class="searchBar" type="text" placeholder="Search Shows & Users" ng-model="searchInput" ng-keyup="search(searchInput)"></input>
       <ul class='searchResult'>
-        <li class="userOrShow" ng-repeat="user in usersSearchResults"><p class="type">{{user.type}}:</p> {{user.username}}{{user.showname}}<button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li>
+        <p class="popularHeader">Check out what's popular now!</p>
+        <li class="popular" ng-repeat="show in popularShows">{{show.title}}</li>
+        <li class="userOrShow" ng-repeat="user in usersSearchResults | filter:userSearch"><p class="type">{{user.type}}:<a href="#/profile" ng-click="goToProfile(user)"></p> {{user.username}}{{user.showname}}</a><button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li>
       <ul>
         <!-- <ul class='show'>
           <li ng-repeat="show in usersSearchResults">1{{show.showname}}</li>
@@ -34,10 +36,10 @@
     <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
     <!-- </div> -->
       <div class="upcoming" ng-hide="upcomingHide">
-        <div ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">
-          <p class="showTitle">{{show.showTitle}}</p>
-          <p>Pick your feed and start your channel!</p>
-          <button class="typeOfChannel" value="all" name="all" ng-click="startAllLiveRoomFunc()"><p>All:</p><p>See all posts from everyone!</p></button><button class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingLiveRoomFunc()"><p>Watching:</p><p>Only see the people you watch posts'!</p></button>
+        <div ng-repeat="show in upcomingShows" class="upcomingDeets" ng-click="setActive(show)">
+          <p class="showTitle">{{show.show}}<br><span class="epTitle">{{show.episode_title}}</span></p>
+          <p class="selectP">Pick your feed and start your channel!</p>
+          <button class="typeOfChannel" value="all" name="all" ng-click="startAllLiveRoomFunc();setActive(show)"><p>All:</p><p>See all posts from everyone!</p></button><button class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingLiveRoomFunc();setActive(show)"><p>Watching:</p><p>Only see the people you watch posts'!</p></button>
         </div>
       <div class="upcomingBumper"></div>
       </div>
@@ -56,6 +58,7 @@
         </div> -->
         <div class="delayBumper" ng-hide="showSelectHide"></div>
         <div class="seasonSelect" ng-hide="seasonHide">
+          <input type=checkbox name="partyRoom" ng-model="partyRoom" ng-trueValue="partyRoom" ng-falseValue="false">Party Room?</input>
           <p class="seasonResults">Season
             <select  name="seasonForm" ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
               <option ng-repeat="season in seasons" value="{{season.season}}">{{season.season}}</option>

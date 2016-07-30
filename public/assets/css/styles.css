@@ -307,6 +307,8 @@ body, html {
   border: 1px solid black;
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto; }
+  #landingContainer a {
+    text-decoration: none; }
   #landingContainer .navMenu {
     font-family: Monoton;
     width: 100%;
@@ -361,6 +363,26 @@ body, html {
     background-image: linear-gradient(130deg, #0c5a4e 0%, #1e776d 51%, #2b7078 75%); }
     #landingContainer .searchBarHolder .searchResult {
       margin-top: 25px; }
+      #landingContainer .searchBarHolder .searchResult .popularHeader {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        color: white;
+        font-size: 1.33em;
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid white; }
+      #landingContainer .searchBarHolder .searchResult .popular {
+        display: block;
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        border: 1px solid white;
+        font-size: 1.5em;
+        color: white;
+        padding: .2em;
+        margin-bottom: .2em; }
       #landingContainer .searchBarHolder .searchResult .userOrShow {
         display: block;
         width: 80%;
@@ -371,6 +393,8 @@ body, html {
         color: white;
         padding: .2em;
         margin-bottom: .2em; }
+        #landingContainer .searchBarHolder .searchResult .userOrShow a {
+          color: white; }
         #landingContainer .searchBarHolder .searchResult .userOrShow .type {
           display: inline-block;
           font-size: .75em;
@@ -448,6 +472,12 @@ body, html {
           padding-bottom: 20px;
           border-bottom: 1px solid #1e776d;
           margin-bottom: 20px; }
+          #landingContainer .roomButtons .upcoming .upcomingDeets .showTitle .epTitle {
+            font-size: .75em;
+            letter-spacing: 1.5px; }
+        #landingContainer .roomButtons .upcoming .upcomingDeets .selectP {
+          font-size: .75em;
+          letter-spacing: 1.25px; }
         #landingContainer .roomButtons .upcoming .upcomingDeets .typeOfChannel {
           width: 49%;
           height: 38%;
@@ -775,6 +805,13 @@ body, html {
       margin-left: auto;
       padding-left: 150px;
       margin-right: auto; }
+    #profileContainer .header .fa-floppy-o {
+      display: inline-block;
+      width: 10%;
+      color: white;
+      font-size: 1.5em;
+      float: left;
+      margin-left: 10px; }
     #profileContainer .header .fa-pencil {
       display: inline-block;
       width: 10%;
