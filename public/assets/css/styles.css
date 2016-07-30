@@ -52,10 +52,7 @@ body, html {
 #container-feed {
   width: 100%;
   height: 100%;
-  position: absolute;
-  background-color: #fff;
-  border-left: 1px solid #1e776d;
-  border-right: 1px solid #1e776d; }
+  position: absolute; }
   #container-feed nav {
     background: linear-gradient(#4a4a4a, #313131);
     padding-bottom: .5em;
@@ -64,33 +61,35 @@ body, html {
     #container-feed nav ul li {
       display: inline-block;
       vertical-align: middle; }
-      #container-feed nav ul li .fa-refresh {
-        font-size: 1.5em;
-        color: #30bfaf;
-        margin-left: 5.5em;
-        vertical-align: text-bottom; }
-      #container-feed nav ul li .newPostsRefresh {
-        color: white; }
-      #container-feed nav ul li h3 {
-        font-family: "Monoton", Verdana, sans-serif;
-        font-size: 2em;
-        color: #30bfaf;
-        margin-left: 70%;
-        margin-top: .2em; }
-      #container-feed nav ul li i {
+    #container-feed nav ul .hamburger {
+      width: 20%;
+      text-align: left; }
+      #container-feed nav ul .hamburger i {
         font-size: 2em;
         padding-bottom: .5em;
         margin-left: .5em;
         color: #30bfaf;
         height: .5em;
-        cursor: pointer; }
-      #container-feed nav ul li img {
+        cursor: pointer;
+        text-align: left; }
+    #container-feed nav ul .wp {
+      width: 60%;
+      text-align: center; }
+      #container-feed nav ul .wp h3 {
+        font-family: "Monoton", Verdana, sans-serif;
+        font-size: 2em;
+        color: #30bfaf;
+        margin-top: .2em; }
+    #container-feed nav ul .avatar-nav {
+      width: 15%;
+      text-align: right; }
+      #container-feed nav ul .avatar-nav img {
         height: 35px;
         width: auto;
         border-radius: 50%;
-        margin-left: .5em;
         margin-top: .25em;
-        border: 1px solid #30bfaf; }
+        border: 1px solid #30bfaf;
+        text-align: right; }
   #container-feed .sideMenu {
     position: absolute;
     height: 575px;
@@ -166,90 +165,140 @@ body, html {
     width: 100%;
     height: 90%;
     overflow: scroll; }
-    #container-feed .post ul {
-      display: flex; }
-      #container-feed .post ul li {
-        border-bottom: 1px solid #d3d3d3;
-        font-family: "Asap", Helvetica, sans-serif;
-        margin: 0 auto;
-        padding: 1em .75em; }
-      #container-feed .post ul .list-avatar, #container-feed .post ul .list-par, #container-feed .post ul .list-pop {
-        width: 15%;
-        border-bottom: 1px solid #d3d3d3;
-        font-family: "Asap", Helvetica, sans-serif;
-        display: inline-block;
-        margin: 0 auto;
-        padding: 1em .75em; }
-        #container-feed .post ul .list-avatar .avatar-div, #container-feed .post ul .list-par .avatar-div, #container-feed .post ul .list-pop .avatar-div {
-          text-align: center; }
-          #container-feed .post ul .list-avatar .avatar-div .post-avatar, #container-feed .post ul .list-par .avatar-div .post-avatar, #container-feed .post ul .list-pop .avatar-div .post-avatar {
-            border-radius: 50%;
-            height: 2em;
-            border: 1px solid #1e776d;
-            margin-bottom: .25em; }
-      #container-feed .post ul .list-par {
-        width: 70%; }
-        #container-feed .post ul .list-par .par-div p {
-          text-align: left;
-          display: inline-block;
-          letter-spacing: .25px;
-          line-height: 1.25;
-          overflow-wrap: break-word;
-          word-wrap: break-word;
-          -webkit-hyphens: auto;
-          -ms-hyphens: auto;
-          -moz-hyphens: auto;
-          hyphens: auto; }
-        #container-feed .post ul .list-par .par-div .time-div {
-          color: gray;
-          font-size: 12px;
+    #container-feed .post .entire-post {
+      border-top: 1px solid #ededed;
+      border-bottom: 1px solid #ededed;
+      border-left: 2px solid #ededed;
+      border-right: 2px solid #ededed;
+      border-radius: 3.5px;
+      margin: .75em;
+      background-color: #fff;
+      box-shadow: -4px 3px 6px 0 rgba(0, 0, 0, 0.3), -3px 3px 10px 0 rgba(0, 0, 0, 0.18); }
+      #container-feed .post .entire-post ul {
+        display: flex; }
+        #container-feed .post .entire-post ul li {
           font-family: "Asap", Helvetica, sans-serif;
-          font-weight: lighter;
-          margin-top: 1.75em; }
-      #container-feed .post ul .list-pop {
-        width: 15%; }
-        #container-feed .post ul .list-pop .pop-div, #container-feed .post ul .list-pop .comment-div {
-          text-align: center; }
-          #container-feed .post ul .list-pop .pop-div .fa-star-o, #container-feed .post ul .list-pop .comment-div .fa-star-o, #container-feed .post ul .list-pop .pop-div .fa-star, #container-feed .post ul .list-pop .comment-div .fa-star, #container-feed .post ul .list-pop .comment-div .fa-comment-o {
-            color: #1e776d;
-            cursor: pointer;
-            font-size: 22px;
-            vertical-align: middle; }
-        #container-feed .post ul .list-pop .comment-div .fa-comment-o {
-          font-size: 20px;
-          margin-top: 10px; }
-    #container-feed .post .comment-section {
-      margin: 0 auto;
-      padding: 1em .5em;
-      border-bottom: 1px solid #d3d3d3;
-      display: block; }
-      #container-feed .post .comment-section form {
-        width: 65%;
+          margin: 0 auto;
+          padding: 1em .75em; }
+        #container-feed .post .entire-post ul .list-avatar, #container-feed .post .entire-post ul .list-par, #container-feed .post .entire-post ul .list-pop {
+          width: 15%;
+          font-family: "Asap", Helvetica, sans-serif;
+          display: inline-block;
+          margin: 0 auto;
+          padding: 1em .75em; }
+          #container-feed .post .entire-post ul .list-avatar .avatar-div, #container-feed .post .entire-post ul .list-par .avatar-div, #container-feed .post .entire-post ul .list-pop .avatar-div {
+            text-align: center; }
+            #container-feed .post .entire-post ul .list-avatar .avatar-div .post-avatar, #container-feed .post .entire-post ul .list-par .avatar-div .post-avatar, #container-feed .post .entire-post ul .list-pop .avatar-div .post-avatar {
+              border-radius: 50%;
+              vertical-align: text-top;
+              height: 2.25em;
+              border: 1px solid #26988c;
+              margin-bottom: .25em; }
+          #container-feed .post .entire-post ul .list-avatar .username-div, #container-feed .post .entire-post ul .list-par .username-div, #container-feed .post .entire-post ul .list-pop .username-div {
+            text-align: center;
+            margin-top: .75em; }
+            #container-feed .post .entire-post ul .list-avatar .username-div p, #container-feed .post .entire-post ul .list-par .username-div p, #container-feed .post .entire-post ul .list-pop .username-div p {
+              font-size: 12px;
+              color: #808080;
+              text-align: center;
+              vertical-align: text-bottom; }
+        #container-feed .post .entire-post ul .list-par {
+          width: 70%; }
+          #container-feed .post .entire-post ul .list-par .par-div p {
+            text-align: left;
+            display: inline-block;
+            letter-spacing: .25px;
+            line-height: 1.25;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            -webkit-hyphens: auto;
+            -ms-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto; }
+          #container-feed .post .entire-post ul .list-par .par-div .time-div {
+            color: gray;
+            font-size: 12px;
+            font-family: "Asap", Helvetica, sans-serif;
+            font-weight: lighter;
+            margin-top: 2.85em;
+            vertical-align: text-bottom; }
+        #container-feed .post .entire-post ul .list-pop {
+          width: 15%; }
+          #container-feed .post .entire-post ul .list-pop .pop-div, #container-feed .post .entire-post ul .list-pop .comment-div {
+            text-align: center; }
+            #container-feed .post .entire-post ul .list-pop .pop-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .pop-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
+              color: #26988c;
+              cursor: pointer;
+              font-size: 22px;
+              vertical-align: middle; }
+          #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
+            font-size: 20px;
+            margin-top: 1em; }
+      #container-feed .post .entire-post .contains-comment {
+        border-top: 1px solid #d3d3d3;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        width: 70%;
         margin: 0 auto;
-        text-align: center;
-        display: block; }
-        #container-feed .post .comment-section form p {
-          color: #30BFAF;
-          font-weight: bold;
-          font-family: "Asap", Helvetica, sans-serif; }
-        #container-feed .post .comment-section form .comment-box {
+        margin-bottom: 2em;
+        font-family: "Asap", Helvetica, sans-serif;
+        padding: 1em .5em; }
+        #container-feed .post .entire-post .contains-comment .comment-left {
+          width: 15%;
           display: inline-block;
+          text-align: center;
+          margin-right: 10%; }
+          #container-feed .post .entire-post .contains-comment .comment-left .commenter-avatar {
+            height: 1.75em;
+            border-radius: 50%;
+            margin-bottom: .25em; }
+          #container-feed .post .entire-post .contains-comment .comment-left .commenter-username {
+            color: #808080;
+            font-size: 12px; }
+        #container-feed .post .entire-post .contains-comment .comment-center {
           width: 70%;
-          padding: .5em;
-          border-radius: 3px;
-          border: 1px solid #d3d3d3; }
-        #container-feed .post .comment-section form .submit-comment {
           display: inline-block;
-          width: 5%;
-          border: none;
-          background-image: -webkit-linear-gradient(top, #7DDBD0 0%, #30BFAF 100%);
-          border-radius: 3px;
-          padding: 3px 13px 3px 10px;
-          margin-left: .5em;
-          vertical-align: middle; }
-          #container-feed .post .comment-section form .submit-comment i {
-            color: #fff;
-            font-size: 16px; }
+          vertical-align: top; }
+          #container-feed .post .entire-post .contains-comment .comment-center .commenter-text {
+            font-size: 14px;
+            margin-bottom: 1.25em; }
+          #container-feed .post .entire-post .contains-comment .comment-center .commenter-timestamp {
+            color: #808080;
+            font-size: 12px; }
+      #container-feed .post .entire-post .comment-section {
+        margin: 0 auto;
+        padding: 1em .5em;
+        border-bottom: 1px solid #d3d3d3;
+        border-top: 1px solid #d3d3d3;
+        display: block; }
+        #container-feed .post .entire-post .comment-section form {
+          width: 65%;
+          margin: 0 auto;
+          text-align: center;
+          display: block; }
+          #container-feed .post .entire-post .comment-section form p {
+            color: #30BFAF;
+            font-weight: bold;
+            font-family: "Asap", Helvetica, sans-serif; }
+          #container-feed .post .entire-post .comment-section form .comment-box {
+            display: inline-block;
+            width: 70%;
+            padding: .5em;
+            border-radius: 3px;
+            border: 1px solid #d3d3d3; }
+          #container-feed .post .entire-post .comment-section form .submit-comment {
+            display: inline-block;
+            width: 5%;
+            border: none;
+            background-image: -webkit-linear-gradient(top, #7DDBD0 0%, #30BFAF 100%);
+            border-radius: 3px;
+            padding: 3px 13px 3px 10px;
+            margin-left: .5em;
+            vertical-align: middle;
+            cursor: pointer; }
+            #container-feed .post .entire-post .comment-section form .submit-comment i {
+              color: #fff;
+              font-size: 16px; }
 
 #landingContainer {
   position: absolute;

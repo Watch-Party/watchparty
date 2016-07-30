@@ -52,7 +52,7 @@ var callback = function(post) {
   // filter out pops -- just push up posts //
   if ('content' in post) {
     $scope.allPosts.push(post);
-    console.log(post);
+    // console.log(post);
   }
     else {
       return "true";
