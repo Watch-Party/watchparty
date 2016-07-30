@@ -69,7 +69,7 @@
               <option  ng-repeat="episode in episodes" value={{episode.episode}}>{{episode.episode}}</option>
             </select>
           </p>
-          <button class="typeOfChannel" value="all" name="all" ng-click="startAllLiveRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>All:</p><p>See all posts from everyone!</p></button><button class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingLiveRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>Watching:</p><p>Only see the people you watch posts'!</p></button>
+          <button class="typeOfChannel" value="all" name="all" ng-click="startAllDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>All:</p><p>See all posts from everyone!</p></button><button class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>Watching:</p><p>Only see the people you watch posts'!</p></button>
 
           <!-- <div class="startRoom">
             <a ng-click="startDelayedFunc(data.season, data.episode)">

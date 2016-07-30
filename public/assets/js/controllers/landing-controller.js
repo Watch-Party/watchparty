@@ -106,6 +106,14 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     $window.location.href = '#/feed'
 
   }
+  $scope.startAllDelayRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'all')
+
+  }
+  $scope.startWatchingDelayRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'watching')
+
+  }
   $scope.startDelayedFunc = function(dataSeason, dataEpisode){
     localStorage.setItem('season', dataSeason);
     localStorage.setItem('episode', dataEpisode);
