@@ -33,16 +33,16 @@
           <div class="comment-div"><i class="fa fa-comment-o" aria-hidden="true" ng-click="clickComment(post)"></i></div>
         </li>
       </ul>
-      <!-- <div class="contains-comment">
+      <div class="contains-comment" ng-repeat="comment in post.comments">
         <div class="comment-left">
-          <img class="commenter-avatar" src="{{post.comments[0].thumb_url}}"></img>
-          <p class="commenter-username">{{post.comments[0].username}}</p>
+          <img class="commenter-avatar" src="{{comment.thumb_url}}"></img>
+          <p class="commenter-username">{{comment.username}}</p>
         </div>
         <div class="comment-center">
-          <p class="commenter-text">{{post.comments[0].content}}</p>
-          <p class="commenter-timestamp">Commented at {{post.comments[0].timestamp}}</p>
+          <p class="commenter-text">{{comment.content}}</p>
+          <p class="commenter-timestamp">Commented at {{comment.timestamp}}</p>
         </div>
-      </div> -->
+      </div>
       <div class="comment-section" ng-show="post.commentShow">
         <form ng-submit="submitComment(post, comment)">
           <input ng-hide="submittedConf" ng-model="comment.formData.commentContent" type="text" class="comment-box" placeholder="Add comment"></input>
@@ -51,6 +51,9 @@
         </form>
       </div>
     </div>
+    <!-- <div class="commentsOnPosts" ng-repeat="comment in comments">
+      <p>COMMENTS!</p>
+    </div> -->
   </div>
 
   <section class="message-bar">

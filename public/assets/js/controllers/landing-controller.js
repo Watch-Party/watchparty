@@ -12,6 +12,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.landingContentWrapperShow = true;
   $scope.delayTimerShow = false;
   var hybridChannelName = '';
+  var id = JSON.parse(localStorage.getItem('id'));
+  console.log($scope.partyRoom);
   $scope.shows = [{
     showTitle: 'Game of Thrones', episodeId: 18
   }, {
@@ -35,6 +37,12 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
         $scope.recentShows = response.data.recent_shows
         console.log($scope.recentShows);
       })
+      $http.get('https://wp-spoileralert.herokuapp.com/search/init')
+        .then(function(response){
+          $scope.popularShows = response.data.popular
+          // popularShows.push(response.data.popular);
+          console.log(response)
+        });
 
   // console.log(response);
   var id = JSON.parse(localStorage.getItem('id'));
@@ -50,9 +58,16 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     $scope.menuShow = !$scope.menuShow;
     console.log(hybridChannelName)
     }
+    $scope.profileSet = function(){
+      localStorage.setItem('profileId', id)
+    }
   $scope.searchBarFunc = function(){
     $scope.buttonsShow = !$scope.buttonsShow;
     $scope.searchBarShow= !$scope.searchBarShow;
+
+  }
+  $scope.goToProfile = function(user){
+    localStorage.setItem('profileId', user.id)
 
   }
   $scope.upcomingFunc = function(){
@@ -92,6 +107,10 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     localStorage.setItem('episode', dataEpisode);
     var spaceShowName = localStorage.getItem('title');
     var showName = spaceShowName.replace(/\s+/g, '_');
+    console.log($scope.partyRoom);
+    if ($scope.partyRoom === true){
+      $http.get('https://wp-spoileralert.herokuapp.com/')
+    }
     console.log(showName)
     $http.get('https://wp-spoileralert.herokuapp.com/' + showName + '/' + dataSeason + '/' + dataEpisode)
       .then(function(response){
@@ -100,7 +119,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
         localStorage.setItem('episodeId', epId);
 
       })
-    $scope.delayCounter = 15;
+    $scope.delayCounter = 5;
     $scope.onTimeout = function(){
       $scope.delayCounter--;
       delayTimeout = $timeout($scope.onTimeout,1000);
@@ -122,6 +141,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
   localStorage.setItem('channelType', 'DelayedChannel');
+  console.log($scope.partyRoom);
+
   // $scope.seasonEpisodeForm.$setPristine;
   // console.log($scope.seasonEpisodeForm)
   }
@@ -179,3 +200,13 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
 
 
 })
+watchParty.filter('userSearch', function() {
+  return function(user){
+    if ('email' in user){
+      return items;
+      console.log("filtering")
+    }
+  }
+
+console.log("not filtering")
+});

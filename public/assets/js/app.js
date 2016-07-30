@@ -3,8 +3,8 @@ var watchParty = angular.module('watchParty', ['ngRoute', 'ng-token-auth','ipCoo
 
 watchParty.config(function($authProvider) {
      $authProvider.configure({
-       //apiUrl: 'https://073434ad.ngrok.io'
-        apiUrl: 'https://wp-spoileralert.herokuapp.com'
+       //apiUrl: 'https://281f92a2.ngrok.io'
+       apiUrl: 'https://wp-spoileralert.herokuapp.com'
      });
  });
  {
@@ -55,4 +55,14 @@ watchParty.config(function($routeProvider) {
     redirectTo: '/login'
     });
 
+});
+watchParty.filter('userSearch', function() {
+  return function(items){
+    if ('email' in items){
+      return items;
+      console.log("filtering")
+    }
+  }
+
+console.log("not filtering")
 });

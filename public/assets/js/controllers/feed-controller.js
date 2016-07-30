@@ -38,12 +38,14 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
 
 
 var userId = JSON.parse(localStorage.getItem('id'));
-var showName = JSON.parse(localStorage.getItem(''));
-var seasonNumber = JSON.parse(localStorage.getItem('season'));
-var episodeNumber = JSON.parse(localStorage.getItem('episode'));
+// var showName = JSON.parse(localStorage.getItem(''));
+// var seasonNumber = JSON.parse(localStorage.getItem('season'));
+var episodeId = JSON.parse(localStorage.getItem('episodeId'));
 var viewType = localStorage.getItem('typeOfChannel')
+var channelType = localStorage.getItem('channelType')
 
-var consumer = new ActionCableChannel('LiveChannel', [{show: 'game of thrones', season: 1, episode: 1}, {user_id: userId}]); //setting up actioncable var
+
+var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
 
 var callback = function(post) {
 
