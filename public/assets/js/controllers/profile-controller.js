@@ -1,5 +1,5 @@
 
-watchParty.controller('profileController', function($scope, $http, $auth, $window){
+watchParty.controller('profileController', function($scope, $http, $auth, $window,$route){
 $scope.editShow= true;
 $scope.userInfoHide= false;
 var id = JSON.parse(localStorage.getItem('id'));
@@ -23,6 +23,12 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ profileId)
     }
     console.log(response)
   });
+  if (profileId === id){
+    $scope.contactShow = false;
+  }
+  else{
+    $scope.contactShow=true;
+  }
 
   $scope.editProfileFunc= function(){
     $scope.editShow= !$scope.editShow;
@@ -41,6 +47,7 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ profileId)
       $auth.updateAccount(edited)
         .then(function(resp) {
           console.log(resp);
+          $route.reload();
         })
         .catch(function(resp) {
           // handle error response
@@ -51,4 +58,10 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ profileId)
     //
     //   });
   }
+  $scope.watchUserFunc = function(){
+    $http.post('https://wp-spoileralert.herokuapp.com/watch/' + profileId)
+    .then(function(response){
+      console.log(response);
+    });
+    };
   });

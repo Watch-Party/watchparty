@@ -14,23 +14,24 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   var hybridChannelName = '';
   var id = JSON.parse(localStorage.getItem('id'));
   console.log($scope.partyRoom);
-  $scope.shows = [{
-    showTitle: 'Game of Thrones', episodeId: 18
-  }, {
-    showTitle: 'Walking Dead', episodeId: 22
-  }
-];
-  $scope.seasons = [{
-    episode: 1,
-  },
-    {episode: 2
-  },
-    {episode: 3
-  }]
+//   $scope.shows = [{
+//     showTitle: 'Game of Thrones', episodeId: 18
+//   }, {
+//     showTitle: 'Walking Dead', episodeId: 22
+//   }
+// ];
+//   $scope.seasons = [{
+//     episode: 1,
+//   },
+//     {episode: 2
+//   },
+//     {episode: 3
+//   }]
   $http.get('https://wp-spoileralert.herokuapp.com/upcoming')
     .then(function(response){
+      $scope.upcomingShows = response.data.upcoming;
 
-      console.log(response);
+      console.log($scope.upcomingShows);
     });
     $http.get('https://wp-spoileralert.herokuapp.com/recent')
       .then(function(response){
@@ -77,6 +78,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   }
   $scope.setActive = function(show){
     localStorage.setItem('title', show.title);
+    localStorage.setItem('episodeId', show.id)
     console.log($scope.selected);
   }
   $scope.setActiveDelay = function(recentShow){
@@ -96,10 +98,12 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   }
   $scope.startAllLiveRoomFunc = function(value) {
     localStorage.setItem('typeOfChannel', 'all')
+    $window.location.href = '#/feed'
 
   }
   $scope.startWatchingLiveRoomFunc = function(value) {
     localStorage.setItem('typeOfChannel', 'watching')
+    $window.location.href = '#/feed'
 
   }
   $scope.startDelayedFunc = function(dataSeason, dataEpisode){
@@ -108,16 +112,20 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     var spaceShowName = localStorage.getItem('title');
     var showName = spaceShowName.replace(/\s+/g, '_');
     console.log($scope.partyRoom);
-    if ($scope.partyRoom === true){
-      $http.get('https://wp-spoileralert.herokuapp.com/')
-    }
+    localStorage.setItem('partyRoom', $scope.partyRoom);
     console.log(showName)
     $http.get('https://wp-spoileralert.herokuapp.com/' + showName + '/' + dataSeason + '/' + dataEpisode)
       .then(function(response){
         console.log(response)
         var epId = response.data.episode_id;
         localStorage.setItem('episodeId', epId);
+        if ($scope.partyRoom === true){
 
+          $http.get('https://wp-spoileralert.herokuapp.com/party/' + epId)
+          .then(function(response){
+            localStorage.setItem('partyId', response.data.feed_name)
+          })
+        }
       })
     $scope.delayCounter = 5;
     $scope.onTimeout = function(){

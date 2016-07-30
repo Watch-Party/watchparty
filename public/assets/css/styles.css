@@ -472,6 +472,12 @@ body, html {
           padding-bottom: 20px;
           border-bottom: 1px solid #1e776d;
           margin-bottom: 20px; }
+          #landingContainer .roomButtons .upcoming .upcomingDeets .showTitle .epTitle {
+            font-size: .75em;
+            letter-spacing: 1.5px; }
+        #landingContainer .roomButtons .upcoming .upcomingDeets .selectP {
+          font-size: .75em;
+          letter-spacing: 1.25px; }
         #landingContainer .roomButtons .upcoming .upcomingDeets .typeOfChannel {
           width: 49%;
           height: 38%;

@@ -225,6 +225,14 @@
           padding-bottom: 20px;
           border-bottom: 1px solid $Main-Green;
           margin-bottom: 20px;
+          .epTitle{
+            font-size: .75em;
+            letter-spacing: 1.5px;
+          }
+        }
+        .selectP{
+          font-size: .75em;
+          letter-spacing: 1.25px;
         }
         .typeOfChannel{
           width: 49%;

@@ -43,9 +43,17 @@ var userId = JSON.parse(localStorage.getItem('id'));
 var episodeId = JSON.parse(localStorage.getItem('episodeId'));
 var viewType = localStorage.getItem('typeOfChannel')
 var channelType = localStorage.getItem('channelType')
+var partyOrNah = localStorage.getItem('partyRoom')
+var partyId = localStorage.getItem('partyId')
 
+if (partyOrNah === 'true'){
+  var consumer = new ActionCableChannel('PartyChannel', [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}, {feed_name: partyId}]); //setting up actioncable var
+  console.log('partyChannel')
+}
+else {
+  var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
 
-var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
+}
 
 var callback = function(post) {
 

@@ -11,9 +11,9 @@
       <li class="lastName"><span ng-hide="userInfoHide">{{lastName}}</span><input ng-model="lastName" ng-hide="editShow" placeholder="First Name"></input></li>
       <li class="screenName">{{screenName}}</li>
     <ul>
-      <ul class="contact">
+      <ul class="contact" ng-show="contactShow">
         <li class="contactList message"><i class="fa fa-envelope-o" aria-hidden="true"></i><p>Message</p></li>
-        <li class="contactList addTo"><i class="fa fa-plus" aria-hidden="true"></i><p>Add to channel</p></li>
+        <li class="contactList addTo"><i class="fa fa-plus" aria-hidden="true" ng-click="watchUserFunc()"></i><p>Watch!</p></li>
       </ul>
     <ul class="socialStats">
       <li class="watchers"><span class="socialNumbers">34</span><p>Watchers</p></li>
