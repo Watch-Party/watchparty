@@ -174,7 +174,7 @@ body, html {
         // margin-top: 3.55em;
         li {
           // border-top: 1px solid $Main-Green;
-          border-bottom: 1px solid #d3d3d3;
+          // border-bottom: 1px solid #d3d3d3;
           // border-right: 1px solid black;
           font-family: $Font-Menu;
           // display: inline-block;
@@ -199,9 +199,20 @@ body, html {
               .post-avatar {
                 border-radius: 50%;
                 // display: inline-block;
+                vertical-align: text-top;
                 height: 2em;
                 border: 1px solid $Main-Green;
                 margin-bottom: .25em;
+              }
+            }
+            .username-div {
+              text-align: center;
+              margin-top: .75em;
+              p {
+                font-size: 12px;
+                color: #808080;
+                text-align: center;
+                vertical-align: text-bottom;
               }
             }
           }
@@ -228,7 +239,8 @@ body, html {
                 font-size: 12px;
                 font-family: $Font-Menu;
                 font-weight: lighter;
-                margin-top: 1.75em;
+                margin-top: 2.7em;
+                vertical-align: text-bottom;
               }
             }
           }
@@ -259,7 +271,7 @@ body, html {
               .fa-comment-o {
                 @extend .fa-star-o;
                 font-size: 20px;
-                margin-top: 10px;
+                margin-top: 1em;
               }
             }
           }
@@ -270,6 +282,7 @@ body, html {
         padding: 1em .5em;
         // width: 100%;
         border-bottom: 1px solid #d3d3d3;
+        // border-top: 2px solid #fff;
         display: block;
         form {
           // border: 1px solid green;
@@ -298,6 +311,7 @@ body, html {
             padding: 3px 13px 3px 10px;
             margin-left: .5em;
             vertical-align: middle;
+            cursor: pointer;
             i {
               color: #fff;
               font-size: 16px;

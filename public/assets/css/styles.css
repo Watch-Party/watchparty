@@ -169,7 +169,6 @@ body, html {
     #container-feed .post ul {
       display: flex; }
       #container-feed .post ul li {
-        border-bottom: 1px solid #d3d3d3;
         font-family: "Asap", Helvetica, sans-serif;
         margin: 0 auto;
         padding: 1em .75em; }
@@ -184,9 +183,18 @@ body, html {
           text-align: center; }
           #container-feed .post ul .list-avatar .avatar-div .post-avatar, #container-feed .post ul .list-par .avatar-div .post-avatar, #container-feed .post ul .list-pop .avatar-div .post-avatar {
             border-radius: 50%;
+            vertical-align: text-top;
             height: 2em;
             border: 1px solid #1e776d;
             margin-bottom: .25em; }
+        #container-feed .post ul .list-avatar .username-div, #container-feed .post ul .list-par .username-div, #container-feed .post ul .list-pop .username-div {
+          text-align: center;
+          margin-top: .75em; }
+          #container-feed .post ul .list-avatar .username-div p, #container-feed .post ul .list-par .username-div p, #container-feed .post ul .list-pop .username-div p {
+            font-size: 12px;
+            color: #808080;
+            text-align: center;
+            vertical-align: text-bottom; }
       #container-feed .post ul .list-par {
         width: 70%; }
         #container-feed .post ul .list-par .par-div p {
@@ -205,7 +213,8 @@ body, html {
           font-size: 12px;
           font-family: "Asap", Helvetica, sans-serif;
           font-weight: lighter;
-          margin-top: 1.75em; }
+          margin-top: 2.7em;
+          vertical-align: text-bottom; }
       #container-feed .post ul .list-pop {
         width: 15%; }
         #container-feed .post ul .list-pop .pop-div, #container-feed .post ul .list-pop .comment-div {
@@ -217,7 +226,7 @@ body, html {
             vertical-align: middle; }
         #container-feed .post ul .list-pop .comment-div .fa-comment-o {
           font-size: 20px;
-          margin-top: 10px; }
+          margin-top: 1em; }
     #container-feed .post .comment-section {
       margin: 0 auto;
       padding: 1em .5em;
@@ -246,7 +255,8 @@ body, html {
           border-radius: 3px;
           padding: 3px 13px 3px 10px;
           margin-left: .5em;
-          vertical-align: middle; }
+          vertical-align: middle;
+          cursor: pointer; }
           #container-feed .post .comment-section form .submit-comment i {
             color: #fff;
             font-size: 16px; }

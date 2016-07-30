@@ -20,7 +20,10 @@
   <div class="post">
     <div class="entire-post" id="{{$index}}" ng-repeat = "post in allPosts">
       <ul class="postTest">
-        <li class="list-avatar"><div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div></li>
+        <li class="list-avatar">
+          <div class="avatar-div"><img class="post-avatar" src="{{post.thumb_url}}"></img></div>
+          <div class="username-div"><p>{{post.username}}</p></div>
+        </li>
         <li class="list-par"><div class="par-div"><p>{{post.content}}</p><div class="time-div"><p class="date">{{post.timestamp}}</p></div></div></li>
         <li class="list-pop">
           <div class="pop-div">
