@@ -1,4 +1,4 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window, $timeout){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
   //only show posts with numeric values less than what we are at. Possibly set options where one could set
@@ -46,7 +46,7 @@ var channelType = localStorage.getItem('channelType')
 var partyOrNah = localStorage.getItem('partyRoom')
 var partyId = localStorage.getItem('partyId')
 
-if (partyOrNah === 'true'){
+if (partyOrNah === 'true' && channelType === 'DelayedChannel'){
   var consumer = new ActionCableChannel('PartyChannel', [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}, {feed_name: partyId}]); //setting up actioncable var
   console.log('partyChannel')
 }
@@ -125,7 +125,7 @@ consumer.subscribe(callback).then(function(){
     console.log("click star");
   }
 
-  $scope.submittedConf = false;
+  // $scope.submittedConf = false;
   $scope.formData = {};
   $scope.submitComment = function(post, comment){
     console.log("comment submitted");
@@ -136,8 +136,12 @@ consumer.subscribe(callback).then(function(){
       content: comment.formData.commentContent
     }
     consumer.send(comment, 'comment');
-    // console.log(consumer.send(comment, 'comment'));
-    // $scope.submittedConf = true;
+    post.submittedConf = true;
+    $scope.submitDelay = function() {
+      post.submittedConf = false;
+      post.commentShow = false;
+    }
+    $timeout($scope.submitDelay, 2000);
     console.log(comment);
   }
 

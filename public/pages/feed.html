@@ -45,9 +45,9 @@
       </div>
       <div class="comment-section" ng-show="post.commentShow">
         <form ng-submit="submitComment(post, comment)">
-          <input ng-hide="submittedConf" ng-model="comment.formData.commentContent" type="text" class="comment-box" placeholder="Add comment"></input>
-          <button ng-hide="submittedConf" class="submit-comment"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
-          <p ng-show="submittedConf">Submitted!</p>
+          <input ng-hide="post.submittedConf" ng-model="comment.formData.commentContent" type="text" class="comment-box" placeholder="Add comment"></input>
+          <button ng-hide="post.submittedConf" class="submit-comment"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+          <p ng-show="post.submittedConf">Submitted!</p>
         </form>
       </div>
     </div>
