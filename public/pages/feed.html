@@ -1,11 +1,23 @@
 <div id="container-feed" ng-controller="postCtrl">
   <nav>
-    <ul>
+    <ul class="main-nav">
       <li class="hamburger" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="wp"><h3>WP</h3></li>
       <li class="avatar-nav"><img src="{{avatarThumb}}"></img></li>
       <!-- <li class="refresh" ng-click="refreshPosts()"><i class="fa fa-refresh" aria-hidden="true"></i><p class="newPostsRefresh">{{newPostsRefresh}}</p></li> -->
     </ul>
+    <div class="room-info-bar">
+      <ul class="info-nav">
+        <li class="bar-type"><img src="assets/images/live_logo3.png"></img></li>
+        <li class="bar-show-name">Preacher</li>
+        <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+        <li class="bar-season">Season 1</li>
+        <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+        <li class="bar-epi">Episode 2</li>
+        <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+        <li class="bar-party">Party id: 26784</li>
+      </ul>
+    </div>
   </nav>
 
   <div class="sideMenu" ng-hide="menuShow">

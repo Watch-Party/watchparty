@@ -17,10 +17,11 @@ body, html {
       padding-bottom: .5em;
       padding-top: .25em;
       position: relative;
-      ul {
+      .main-nav {
         li {
           display: inline-block;
           vertical-align: middle;
+          padding-bottom: .25em;
         }
             .hamburger {
               width: 20%;
@@ -66,6 +67,32 @@ body, html {
               }
             }
 
+      }
+      .room-info-bar {
+        border-top: 1px solid #30bfaf;
+        text-align: center;
+        padding: .25em 0em 0em 0em;
+        .info-nav {
+          margin: 0 auto;
+          li {
+            display: inline-block;
+            color: #fff;
+            font-family: $Font-Menu;
+            font-size: 12px;
+            letter-spacing: .75px;
+            margin-left: .25em;
+            margin-right: .25em;
+          }
+          img {
+            height: 1.2em;
+            width: auto;
+            vertical-align: sub;
+          }
+          .fa-circle {
+            font-size: 8px;
+            // vertical-align: middle;
+          }
+        }
       }
     }
 
@@ -167,7 +194,7 @@ body, html {
     }
     .post {
       width: 100%;
-      height: 90%;
+      height: 85%;
       // border: 1px solid red;
       // position: relative;
 
@@ -298,7 +325,7 @@ body, html {
           border-bottom-left-radius: 3px;
           width: 70%;
           margin: 0 auto;
-          margin-bottom: 2em;
+          margin-bottom: .5em;
           font-family: $Font-Menu;
           padding: 1em .5em;
           .comment-left {

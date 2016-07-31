@@ -136,12 +136,14 @@ consumer.subscribe(callback).then(function(){
       content: comment.formData.commentContent
     }
     consumer.send(comment, 'comment');
+    // console.log(comment.formData.commentContent);
     post.submittedConf = true;
     $scope.submitDelay = function() {
       post.submittedConf = false;
       post.commentShow = false;
+      // comment.formData.commentContent.$setPristine());
     }
-    $timeout($scope.submitDelay, 2000);
+    $timeout($scope.submitDelay, 1200);
     console.log(comment);
   }
 
