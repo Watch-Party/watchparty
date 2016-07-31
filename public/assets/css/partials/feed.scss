@@ -98,27 +98,28 @@ body, html {
 
     .sideMenu{
       position: absolute;
-      height: 575px;
-      width: 125px;
+      // height: 65%;
+      width: 25%;
       background: linear-gradient(#313131, #4a4a4a);
       // border: 1px solid black;
       margin-top: -1px;
       z-index: 2;
-      padding-top: 15px;
+      // padding-top: 15px;
       overflow: auto;
       border-bottom-right-radius: 5px;
         li{
-          height: 125px;
-          width: 125px;
+          // height: 125px;
+          // width: 125px;
           color: #fff;
           // border: 1px solid black;
           //margin-top: 12px;
           cursor: pointer;
+          padding: .75em;
           p {
               font-family: $Font-Menu;
               text-align: center;
-              margin-top: 15px;
-              font-size: 1.25em;
+              margin-top: 10%;
+              font-size: 1em;
           }
           i {
             font-size: 3em;
@@ -194,7 +195,7 @@ body, html {
     }
     .post {
       width: 100%;
-      height: 85%;
+      height: 77%;
       // border: 1px solid red;
       // position: relative;
 

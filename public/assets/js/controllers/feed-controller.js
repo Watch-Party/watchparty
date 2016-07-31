@@ -22,6 +22,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // cable.onmessage = function(evt){
   //   //console.log(evt)
   // }
+
   $scope.allPosts = []
   console.log($scope.allPosts)
 
@@ -54,6 +55,13 @@ else {
   var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
 
 }
+
+// display show info under nav bar //
+$http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
+  .then(function(response){
+    $scope.feedInfo = response.data;
+    console.log(response);
+  });
 
 var callback = function(post) {
 

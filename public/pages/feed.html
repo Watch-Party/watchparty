@@ -7,13 +7,13 @@
       <!-- <li class="refresh" ng-click="refreshPosts()"><i class="fa fa-refresh" aria-hidden="true"></i><p class="newPostsRefresh">{{newPostsRefresh}}</p></li> -->
     </ul>
     <div class="room-info-bar">
-      <ul class="info-nav">
+      <ul class="info-nav" ng-model="feedInfo">
         <li class="bar-type"><img src="assets/images/live_logo3.png"></img></li>
-        <li class="bar-show-name">Preacher</li>
+        <li class="bar-show-name">{{feedInfo.showname}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-season">Season 1</li>
+        <li class="bar-season">Season {{feedInfo.season_number}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-epi">Episode 2</li>
+        <li class="bar-epi">Episode {{feedInfo.episode_number}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
         <li class="bar-party">Party id: 26784</li>
       </ul>
