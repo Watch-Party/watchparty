@@ -41,25 +41,26 @@
     <p>Your feed will start in:</p> <p class="countDown"> {{delayCounter}}</p>
   </div>
   <div class="landingContentWrapper" ng-show="landingContentWrapperShow">
-    <ul class="upcomingShows" ng-hide="buttonsShow"><p class="startSoon">Starting Soon</p>
+    <p class="partyRoom" ng-hide="buttonsShow">Joining a Party Channel?</p>
+    <form class="partyRoomForm" ng-submit="partyRoomJoinFunc()" ng-hide="buttonsShow"><input class="partyRoomId" ng-model="partyRoomId" placeholder="Party Room Id"></input><button type="submit" class="submitPartyRoom">go</button>
+    </form>
+    <ul class="upcomingShows" ng-hide="buttonsShow"><p class="startSoon">See What's Starting Soon</p>
       <li class="upcomingShow" ng-repeat="show in upcomingShows" ng-click="setActive(show); upcomingFunc()">
         <p class="showTitle">{{show.show}}</p>
         <p class="epTitle">{{show.episode_title}}</p>
         <p class="icon"><i class="fa fa-play" aria-hidden="true"></i></p>
       </li>
     </ul>
-    <p class="partyRoom" ng-hide="buttonsShow">Joining a Party Channel?</p>
-    <form class="partyRoomForm" ng-submit="partyRoomJoinFunc()" ng-hide="buttonsShow"><input class="partyRoomId" ng-model="partyRoomId" placeholder="Party Room Id"></input><button type="submit" class="submitPartyRoom">go</button>
-    </form>
-    <ul class="recentShows" ng-hide="buttonsShow"><p class="recentSoon">Your Recent Shows!</p>
-      <li class="recentShow" ng-repeat="recentShow in recentShows" ng-click="setActive(show)">
+
+    <ul class="recentShows" ng-hide="buttonsShow"><p class="recentSoon">View Your Recent Shows!</p>
+      <li class="recentShow" ng-repeat="recentShow in recentShows" ng-show="recentShowHide" ng-click="setActive(show)">
         <p class="showTitle">{{recentShow.title}}</p>
       </li>
     </ul>
     <div class="startDelayRoom" ng-hide="buttonsShow" ng-click='searchBarFunc(); showSearchFunc()'>
-      <p class="create">Create a Delayed Channel to catch up!</p>
-      <p class='or'>or</p>
-      <p>A Party Channel to catch up with your friends!</p>
+      <p class="create">Find Shows</p>
+      <p class='or'>&</p>
+      <p>Start a Feed!</p>
     </div>
 
   <!-- <ul class="roomButtons" ng-show="buttonsShow">
