@@ -1,4 +1,4 @@
-watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window){
+watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window, $timeout){
 
   //Consider opening up a timer when entering a room. using that timer to send a numeric value with every post
   //only show posts with numeric values less than what we are at. Possibly set options where one could set
@@ -22,6 +22,7 @@ watchParty.controller('postCtrl', function($scope, $http, $compile, $location, $
   // cable.onmessage = function(evt){
   //   //console.log(evt)
   // }
+
   $scope.allPosts = []
   console.log($scope.allPosts)
 
@@ -46,7 +47,7 @@ var channelType = localStorage.getItem('channelType')
 var partyOrNah = localStorage.getItem('partyRoom')
 var partyId = localStorage.getItem('partyId')
 
-if (partyOrNah === 'true'){
+if (partyOrNah === 'true' && channelType === 'DelayedChannel'){
   var consumer = new ActionCableChannel('PartyChannel', [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}, {feed_name: partyId}]); //setting up actioncable var
   console.log('partyChannel')
 }
@@ -54,6 +55,20 @@ else {
   var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
 
 }
+
+if (channelType === "LiveChannel") {
+  $scope.liveLogo = true;
+}
+else if (channelType === "DelayedChannel") {
+  $scope.liveLogo = false;
+}
+
+// display show info under nav bar //
+$http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
+  .then(function(response){
+    $scope.feedInfo = response.data;
+    console.log(response);
+  });
 
 var callback = function(post) {
 
@@ -125,7 +140,7 @@ consumer.subscribe(callback).then(function(){
     console.log("click star");
   }
 
-  $scope.submittedConf = false;
+  // $scope.submittedConf = false;
   $scope.formData = {};
   $scope.submitComment = function(post, comment){
     console.log("comment submitted");
@@ -136,8 +151,14 @@ consumer.subscribe(callback).then(function(){
       content: comment.formData.commentContent
     }
     consumer.send(comment, 'comment');
-    // console.log(consumer.send(comment, 'comment'));
-    // $scope.submittedConf = true;
+    // console.log(comment.formData.commentContent);
+    post.submittedConf = true;
+    $scope.submitDelay = function() {
+      post.submittedConf = false;
+      post.commentShow = false;
+      // comment.formData.commentContent.$setPristine());
+    }
+    $timeout($scope.submitDelay, 1200);
     console.log(comment);
   }
 
