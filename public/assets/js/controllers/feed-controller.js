@@ -46,7 +46,7 @@ var channelType = localStorage.getItem('channelType')
 var partyOrNah = localStorage.getItem('partyRoom')
 var partyId = localStorage.getItem('partyId')
 
-if (partyOrNah === 'true'){
+if (partyOrNah === 'true' && channelType === 'DelayedChannel'){
   var consumer = new ActionCableChannel('PartyChannel', [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}, {feed_name: partyId}]); //setting up actioncable var
   console.log('partyChannel')
 }
@@ -54,7 +54,7 @@ else {
   var consumer = new ActionCableChannel(channelType, [{episode_id: episodeId}, {user_id: userId}, {viewtype: viewType}]); //setting up actioncable var
 
 }
-
+console.log(consumer);
 var callback = function(post) {
 
   console.log(post);

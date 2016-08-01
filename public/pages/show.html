@@ -1,0 +1,43 @@
+<div class="showContainer">
+<i class="fa fa-chevron-left" aria-hidden="true"></i>
+    <!-- <img  class="poster" src={{show.img_url}}> -->
+  <div class="header">
+    <ul class= "showDetails" ng-show="detailHide">
+      <li class='title'>{{show.title}}</li>
+      <!-- <li class='description'><span ng-bind-as-html="show.description"></span></li> -->
+      <li class='network'>Airing on: {{show.network}}</li>
+      <li class='numberOfSeasons'>Seasons: {{show.seasons}}</li>
+    </ul>
+  </div>
+    <div class="specificButtons">
+      <div class="recentButton" ng-click=recentFunc(show)>
+      <p>Most Recent:</p>
+      <p>{{show.recent_title}}</p>
+    </div>
+      <div class="upcomingButton" ng-click=upcomingFunc(show)>
+      <p>Upcoming:</p>
+      <p>{{show.upcoming_title}}</p>
+    </div>
+    </div>
+    <img  class="poster" src={{show.img_url}}>
+
+    <div class='startChannel' ng-click="startShowChannel()"><p class="startButtonTitle">Start a {{show.title}} Channel</p>
+    <div class="seasonSelect" ng-hide="seasonHide">
+      <input class="partyRoom" type=checkbox name="partyRoom" ng-model="partyRoom" ng-trueValue="partyRoom" ng-falseValue="false">Party Room?</input>
+      <p class="seasonResults">Season
+        <select  name="seasonForm" ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
+          <option ng-repeat="season in seasons" value="{{season.season}}">{{season.season}}</option>
+        </select>
+      </p>
+      <p class="episodeResults">Episode
+        <select ng-model="data.episode" class="seasonOptions">
+          <option  ng-repeat="episode in episodes" value={{episode.episode}}>{{episode.episode}}</option>
+        </select>
+      </p>
+    </div>
+    <div class="typeOfChannel" value="all" name="all" ng-click="startAllDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>All:</p><p>See all posts from everyone!</p></div>
+    <div class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>Watching:</p><p>Only see the people you watch posts'!</p></div>
+
+
+  </div>
+</div>

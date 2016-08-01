@@ -2,17 +2,28 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
+  $scope.partyRoomHide= true;
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
   $scope.hybridRoomHide = true;
   $scope.hybridSeasonHide=true;
   $scope.hybridName = '';
-  $scope.buttonsShow = true;
+  // $scope.buttonsShow = true;
   $scope.searchBarShow=false;
   $scope.landingContentWrapperShow = true;
   $scope.delayTimerShow = false;
   var hybridChannelName = '';
   var id = JSON.parse(localStorage.getItem('id'));
+  $scope.$on('$viewContentLoaded', function(){
+    localStorage.removeItem('episodeId')
+    localStorage.removeItem('channelType')
+    localStorage.removeItem('typeOfChannel')
+    localStorage.removeItem('partyRoom')
+    localStorage.removeItem('partyId')
+    localStorage.removeItem('title')
+
+
+});
   console.log($scope.partyRoom);
 //   $scope.shows = [{
 //     showTitle: 'Game of Thrones', episodeId: 18
@@ -72,14 +83,17 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
 
   }
   $scope.upcomingFunc = function(){
-    $scope.upcomingHide=!$scope.upcomingHide;
     localStorage.setItem('channelType', 'LiveChannel')
+    $scope.startLiveRoomShow = !$scope.startLiveRoomShow
+    $scope.buttonsShow = !$scope.buttonsShow;
 
   }
   $scope.setActive = function(show){
-    localStorage.setItem('title', show.title);
+    localStorage.setItem('title', show.episode_title);
     localStorage.setItem('episodeId', show.id)
+    $scope.selected = show;
     console.log($scope.selected);
+    // $scope.buttonsShow = !$scope.buttonsShow;
   }
   $scope.setActiveDelay = function(recentShow){
     $scope.selectedShow= recentShow
@@ -96,14 +110,14 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       console.log($scope.episodes)
 
   }
-  $scope.startAllLiveRoomFunc = function(value) {
+  $scope.startAllLiveRoomFunc = function() {
     localStorage.setItem('typeOfChannel', 'all')
     $window.location.href = '#/feed'
 
   }
-  $scope.startWatchingLiveRoomFunc = function(value) {
+  $scope.startWatchingLiveRoomFunc = function() {
     localStorage.setItem('typeOfChannel', 'watching')
-    $window.location.href = '#/feed'
+     $window.location.href = '#/feed'
 
   }
   $scope.startAllDelayRoomFunc = function(value) {
@@ -135,27 +149,29 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
           })
         }
       })
-    $scope.delayCounter = 5;
-    $scope.onTimeout = function(){
-      $scope.delayCounter--;
-      delayTimeout = $timeout($scope.onTimeout,1000);
-      console.log($scope.delayCounter)
-      if ($scope.delayCounter === 0){
-        $window.location.href = '#/feed'
-        $timeout.cancel(delayTimeout);
-
-      }
-    }
-    var delayTimeout = $timeout($scope.onTimeout,1000)
-    $scope.landingContentWrapperShow = !$scope.landingContentWrapperShow;
-    $scope.delayTimerShow= true;
-
-
+  //   $scope.delayCounter = 5;
+  //   $scope.onTimeout = function(){
+  //     $scope.delayCounter--;
+  //     delayTimeout = $timeout($scope.onTimeout,1000);
+  //     console.log($scope.delayCounter)
+  //     if ($scope.delayCounter === 0){
+  //       $window.location.href = '#/feed'
+  //       $timeout.cancel(delayTimeout);
+  //
+  //     }
+  //   }
+  //   var delayTimeout = $timeout($scope.onTimeout,1000)
+  //   $scope.landingContentWrapperShow = !$scope.landingContentWrapperShow;
+  //   $scope.delayTimerShow= true;
+  //
+  //
   }
   $scope.delayedRoomFunc = function(){
   $scope.delayRoomHide = !$scope.delayRoomHide;
   $scope.showSelectHide=false;
   $scope.seasonHide= true;
+  $scope.partyRoomHide= false;
+
   localStorage.setItem('channelType', 'DelayedChannel');
   console.log($scope.partyRoom);
 
@@ -180,6 +196,11 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
 
     console.log(hybridChannelName);
   }
+  $scope.partyRoomJoinFunc = function(){
+    localStorage.setItem('partyId', $scope.partyRoomId)
+    localStorage.setItem('partyRoom', 'true')
+    console.log("PARTAY");
+  }
   $scope.watchUserFunc = function(user){
     $scope.userSelected = user.id;
     // console.log($scope.userSelected);
@@ -197,22 +218,39 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       console.log(resp)
     })
   }
-  $scope.usersSearch =[];
+  var searchShows = false
+  $scope.showSearchFunc= function(){
+    searchShows = true
+  }
+
+
   $scope.search = function(searchInput){
-    $http.get('https://wp-spoileralert.herokuapp.com/search?criteria=' + '"' + $scope.searchInput + '"')
+    if (searchShows === true){
+      $scope.popularHide = true;
+      $scope.resultsShow= true;
+      // console.log("thisWillQork")
+    $http.get('https://wp-spoileralert.herokuapp.com/search/shows?criteria=' + '"' + $scope.searchInput + '"')
       .then(function(response){
-        $scope.usersSearchResults = response.data.results
-        console.log($scope.usersSearchResults)
-        if ($scope.usersSearchResults.length > 0){
-          //$scope.usersSearch.push($scope.usersSearchResults)
-          console.log($scope.usersSearchResults);
-        }
+        $scope.showSearchResults = response.data.shows
+        console.log($scope.showSearchResults)
+        // if ($scope.usersSearchResults.length > 0){
+        //   //$scope.usersSearch.push($scope.usersSearchResults)
+        //   console.log($scope.usersSearchResults);
+        // }
         console.log(response);
       })
+    }
     console.log($scope.searchInput);
     console.log("Get request goes here to search things");
 
   };
+  $scope.setToShowFunc = function(searchResult){
+    var showNameSpaced = searchResult.title;
+    var showNameUnspaced = showNameSpaced.replace(/\s+/g, '_');
+    localStorage.setItem('showName', showNameUnspaced )
+    $window.location.href = '#/show'
+
+  }
 
 
 })

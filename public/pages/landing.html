@@ -16,25 +16,56 @@
     </ul>
   </div>
   <div class="searchBarHolder" ng-show="searchBarShow">
+      <p ng-click='searchBarFunc()'><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
       <input class="searchBar" type="text" placeholder="Search Shows & Users" ng-model="searchInput" ng-keyup="search(searchInput)"></input>
       <ul class='searchResult'>
-        <p class="popularHeader">Check out what's popular now!</p>
-        <li class="popular" ng-repeat="show in popularShows">{{show.title}}</li>
-        <li class="userOrShow" ng-repeat="user in usersSearchResults | filter:userSearch"><p class="type">{{user.type}}:<a href="#/profile" ng-click="goToProfile(user)"></p> {{user.username}}{{user.showname}}</a><button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li>
+        <p class="popularHeader" ng-hide="popularHide">Check out what's popular now!</p>
+        <p class="popularHeader" ng-show="resultsShow">Find your show and go!</p>
+        <li class="popular" ng-repeat="show in popularShows" ng-hide="popularHide" ng-click="setToShowFunc(show)">{{show.title}}</li>
+        <!-- <li class="userOrShow" ng-repeat="searchResult in showSearchResults"><p class="type">{{user.type}}:<a href="#/profile" ng-click="goToProfile(user)"></p> {{user.username}}{{user.showname}}</a><button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li> -->
+        <li class="userOrShow" ng-repeat="searchResult in showSearchResults" ng-click="setToShowFunc(searchResult)"><p class="showName">{{searchResult.title}}</li>
       <ul>
-        <!-- <ul class='show'>
-          <li ng-repeat="show in usersSearchResults">1{{show.showname}}</li>
-        <ul> -->
+
+  </div>
+  <div class="startingLiveRoom" ng-show="startLiveRoomShow">
+    <p class="setUp">Just setting up your feed!</p>
+    <i class="fa fa-spin fa-spinner" aria-hidden="true"></i>
+    <p class="back" ng-click="upcomingFunc()"><i class="fa fa-chevron-left" aria-hidden="true"></i>Go Back!</p>
+    <p class="setUpPosts">Whose posts do you want to see?</p>
+    <div class='roomSelection'>
+      <div class="allRoom" ng-click="startAllLiveRoomFunc()"><p>Everyone watching live</p></div>
+      <div class="watchRoom" ng-click="startWatchingLiveRoomFunc()"><p>Only your friends</p></div>
+    </div>
   </div>
   <div class="delayTimer" ng-show="delayTimerShow">
     <p>Your feed will start in:</p> <p class="countDown"> {{delayCounter}}</p>
   </div>
   <div class="landingContentWrapper" ng-show="landingContentWrapperShow">
+    <ul class="upcomingShows" ng-hide="buttonsShow"><p class="startSoon">Starting Soon</p>
+      <li class="upcomingShow" ng-repeat="show in upcomingShows" ng-click="setActive(show); upcomingFunc()">
+        <p class="showTitle">{{show.show}}</p>
+        <p class="epTitle">{{show.episode_title}}</p>
+        <p class="icon"><i class="fa fa-play" aria-hidden="true"></i></p>
+      </li>
+    </ul>
+    <p class="partyRoom" ng-hide="buttonsShow">Joining a Party Channel?</p>
+    <form class="partyRoomForm" ng-submit="partyRoomJoinFunc()" ng-hide="buttonsShow"><input class="partyRoomId" ng-model="partyRoomId" placeholder="Party Room Id"></input><button type="submit" class="submitPartyRoom">go</button>
+    </form>
+    <ul class="recentShows" ng-hide="buttonsShow"><p class="recentSoon">Your Recent Shows!</p>
+      <li class="recentShow" ng-repeat="recentShow in recentShows" ng-click="setActive(show)">
+        <p class="showTitle">{{recentShow.title}}</p>
+      </li>
+    </ul>
+    <div class="startDelayRoom" ng-hide="buttonsShow" ng-click='searchBarFunc(); showSearchFunc()'>
+      <p class="create">Create a Delayed Channel to catch up!</p>
+      <p class='or'>or</p>
+      <p>A Party Channel to catch up with your friends!</p>
+    </div>
 
-  <ul class="roomButtons" ng-show="buttonsShow">
-    <!-- <div class="liveButtonBg"> -->
+  <!-- <ul class="roomButtons" ng-show="buttonsShow">
+
     <li class="liveButton" ng-click="upcomingFunc()"><p>Live</p></li>
-    <!-- </div> -->
+
       <div class="upcoming" ng-hide="upcomingHide">
         <div ng-repeat="show in upcomingShows" class="upcomingDeets" ng-click="setActive(show)">
           <p class="showTitle">{{show.show}}<br><span class="epTitle">{{show.episode_title}}</span></p>
@@ -43,19 +74,16 @@
         </div>
       <div class="upcomingBumper"></div>
       </div>
-    <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p></li>
+    <li class="delayedButton" ng-click="delayedRoomFunc()"><p>Delayed</p><p class="partyRoom" ng-hide="partyRoomHide">Joining a Party Room?</p>
+      <form ng-submit="partyRoomJoinFunc()" ng-hide="partyRoomHide"><input class="partyRoomId" ng-model="partyRoomId" placeholder="Party Room Id"></input><button type="submit" class="submitPartyRoom">go</button>
+      </form>
+      </li>
       <div class="delayRoom" ng-hide="delayRoomHide">
         <p class="recentResults" ng-hide="showSelectHide">Your Recent Shows</p>
         <div class="showSelect" ng-repeat="recentShow in recentShows" ng-hide="showSelectHide" ng-click="showSelectFunc(); setActiveDelay(recentShow)">
           <p>{{recentShow.title}}</p>
         </div>
-        <!-- ng-repeat="show in shows" class="upcomingDeets" ng-click="setActive(show)">{{show.showTitle}} -->
-        <!-- <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
-          <p>The Walking Dead</p>
-        </div>
-        <div class="showSelect" ng-hide="showSelectHide" ng-click="showSelectFunc()">
-          <p>The Left Overs</p>
-        </div> -->
+
         <div class="delayBumper" ng-hide="showSelectHide"></div>
         <div class="seasonSelect" ng-hide="seasonHide">
           <input type=checkbox name="partyRoom" ng-model="partyRoom" ng-trueValue="partyRoom" ng-falseValue="false">Party Room?</input>
@@ -71,45 +99,12 @@
           </p>
           <button class="typeOfChannel" value="all" name="all" ng-click="startAllDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>All:</p><p>See all posts from everyone!</p></button><button class="typeOfChannel" value="watching" name="watching" ng-click="startWatchingDelayRoomFunc(); startDelayedFunc(data.season, data.episode)"><p>Watching:</p><p>Only see the people you watch posts'!</p></button>
 
-          <!-- <div class="startRoom">
-            <a ng-click="startDelayedFunc(data.season, data.episode)">
-              <p class="startButton">Start Channel</p>
-            </a>
-          </div> -->
+
           <div class="bumper">
           </div>
         </div>
       </div>
 
-<!--
-    <li class="hybridButton" ng-click="hybridRoomFunc()"><p>Hybrid</p></li>
-      <div class="hybridRoom" ng-hide="hybridRoomHide">
-        <input type="text" placeholder="Name your Channel" ng-model="hybridName"></input>
-        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
-          <p>Game of Thrones</p>
-        </div>
-        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
-          <p>The Walking Dead</p>
-        </div>
-        <div class="hybridSelect" ng-hide="hybridSelectHide" ng-click="hybridSelectFunc()">
-          <p>The Left Overs</p>
-        </div>
-        <p class="seasonResults" ng-hide="hybridSeasonHide">Season
-          <select class="seasonOptions">
-            <option value=1>1</option>
-          </select>
-        </p>
-        <p class="episodeResults" ng-hide="hybridSeasonHide">Episode
-          <select class="seasonOptions">
-            <option value=1>1</option>
-          </select>
-        </p>
-        <div class="startRoom" ng-click="hybridStartFunc()" ng-hide="hybridSeasonHide">
-          <a href="#/feed"><p class="startButton">Start Channel</p></a>
-        </div>
-        <div class="bumper">
-        </div>
-      </div> -->
-  </ul>
+  </ul> -->
 </div>
 </div>
