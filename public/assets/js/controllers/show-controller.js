@@ -56,8 +56,9 @@ $scope.detailHide = true;
         delayTimeout = $timeout($scope.onTimeout,1000);
         console.log($scope.delayCounter)
         if ($scope.delayCounter === 0){
-          $window.location.href = '#/feed'
           $timeout.cancel(delayTimeout);
+
+          $window.location.href = '#/feed'
 
         }
       }
@@ -71,6 +72,7 @@ $scope.detailHide = true;
     localStorage.setItem('typeOfChannel', 'watching')
     localStorage.setItem('channelType', 'Delayed')
     $scope.delayTimerShow =! $scope.delayTimerShow;
+    $scope.showContentHide =! $scope.showContentHide;
     localStorage.setItem('partyRoom', $scope.partyRoom);
 
     if ($scope.partyRoom === true){
@@ -86,8 +88,9 @@ $scope.detailHide = true;
       delayTimeout = $timeout($scope.onTimeout,1000);
       console.log($scope.delayCounter)
       if ($scope.delayCounter === 0){
-        $window.location.href = '#/feed'
         $timeout.cancel(delayTimeout);
+
+        $window.location.href = '#/feed'
 
       }
     }

@@ -47,7 +47,7 @@
     <ul class="upcomingShows" ng-hide="upcomingButtonsShow" ng-click="upcomingFunc()"><p class="startSoon">Starting Soon</p>
     </ul>
     <ul class="upcomingShowsDetails" ng-hide="upcomingShowDetails">
-      <li class="upcomingShow" ng-repeat="show in upcomingShows">
+      <li class="upcomingShow" ng-repeat="show in upcomingShows" ng-click="setActive(show)">
         <p class="showTitle">{{show.show}}</p>
         <p class="epTitle">{{show.episode_title}}</p>
         <p class="icon"><i class="fa fa-play" aria-hidden="true"></i></p>

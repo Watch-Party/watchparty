@@ -102,7 +102,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   }
   $scope.setActive = function(show){
     // localStorage.setItem('title', show.episode_title);
-    // localStorage.setItem('episodeId', show.id)
+    localStorage.setItem('episodeId', show.id)
     // $scope.selected = show;
     // console.log($scope.selected);
     $scope.startLiveRoomShow = !$scope.startLiveRoomShow
