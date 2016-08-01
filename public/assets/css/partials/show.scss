@@ -1,0 +1,164 @@
+.showContainer{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  font-family: $Font-Menu;
+  overflow-y: auto;
+
+  background-color: black;
+  color: white;
+  .delayTimer{
+    margin-top: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    p{
+      text-align: center;
+    }
+    // span{
+    //   width: 80%;
+    //   margin-left: auto;
+    //   margin-right: auto;
+    //
+    //   text-align: center;
+    // }
+    i{
+
+     font-size: 6em;
+      // text-align: center;
+      margin-top: 45px;
+    }
+    .countDown{
+      margin-top: .75em;
+      font-size: 3em;
+    }
+  }
+
+
+
+  a{
+    text-decoration: none;
+    color: black
+  }
+  .fa-chevron-left{
+    float:left;
+    color: black;
+    font-size: 1.5em;
+    margin-top: 5px;
+  }
+  .header{
+    width: 100%;
+    background: white;
+  }
+  .poster{
+    // position: absolute;
+    height: 50%;
+    width: 100%;
+
+    // opacity: .35;
+  }
+  .posterBack{
+    opacity: .15;
+  }
+  .showDetails{
+    //position: absolute;
+    //top: 50px;
+    // background-color: white;
+    color: black;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    // border-bottom: 1px solid black;
+
+
+    .title{
+      font-size: 2.25em;
+      padding-top: 25px;
+    }
+    .description{
+      font-size: 1em;
+      margin-top: 20px;
+    }
+  }
+  .specificButtons{
+    width: 90%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    .recentButton{
+      // display: inline-block;
+      width: 80%;
+      border: 1px solid black;
+      padding:8px 0px 8px 0px;
+      font-size: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-image: linear-gradient(130deg, rgb(48, 191, 175) 0%, rgb(50, 194, 177) 51%, rgb(52, 196, 179) 75%);
+
+      font-size: 1em;
+      // color: white;
+    }
+    .upcomingButton{
+      // display: inline-block;
+      width: 80%;
+      border: 1px solid black;
+      padding:8px 0px 8px 0px;
+      vertical-align: top;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-image: linear-gradient(130deg, rgb(48, 191, 175) 0%, rgb(50, 194, 177) 51%, rgb(52, 196, 179) 75%);
+      z-index: 15;
+    }
+    }
+    .startChannel{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 33%;
+      background: #c6825b;
+      color: white;
+      // border-top-left-radius: 15px;
+      // border-top-right-radius: 15px;
+      .startButtonTitle{
+        font-size: 1.33em;
+        text-align: center;
+        margin-top: 10px;
+      }
+      .seasonSelect{
+        width:40%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .partyRoom{
+        margin-top: 10px;
+        font-size: 1.15em;
+      }
+      .seasonResults{
+        margin-top: 5px;
+      }
+      .episodeResults{
+        margin-top:5px;
+        margin-bottom: 10px
+      }
+    }
+    .typeOfChannel{
+      border: none;
+      background: #f1f1f1;
+      width: 90%;
+      color: black;
+      font-size:1em;
+      border-radius: 20px;
+      padding: 5px 0px 5px 0px;
+      margin-bottom: 8px;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      // height: 30%;
+    }
+}

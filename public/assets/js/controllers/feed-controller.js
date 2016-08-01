@@ -79,6 +79,7 @@ $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
     console.log(response);
   });
 
+
 var callback = function(post) {
 
   console.log(post);
