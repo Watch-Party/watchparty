@@ -63,6 +63,15 @@ else if (channelType === "DelayedChannel") {
   $scope.liveLogo = false;
 }
 
+$scope.partyId = partyId;
+if (partyId != null) {
+  $scope.partyHide = false;
+  $scope.showHide = false;
+} else {
+  $scope.partyHide = true;
+  $scope.showHide = true;
+}
+
 // display show info under nav bar //
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
   .then(function(response){
@@ -73,6 +82,7 @@ $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
 var callback = function(post) {
 
   console.log(post);
+  console.log(post.pops);
 
   // filter out pops -- just push up posts //
   if ('content' in post) {
@@ -141,6 +151,8 @@ consumer.subscribe(callback).then(function(){
     }
     console.log(pop.post_id);
     console.log(post);
+    post.pops;
+    // console.log(post.pop);
     consumer.send(pop, 'pop');
     // console.log(consumer.send(pop, 'pop'));
   }

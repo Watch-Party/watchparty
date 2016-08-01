@@ -12,11 +12,11 @@
         <li class="bar-delayed" ng-hide="liveLogo"><img class="delayed-icon" src="assets/images/stopwatch.png"></img></li>
         <li class="bar-show-name">{{feedInfo.showname}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-season">Season {{feedInfo.season_number}}</li>
-        <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-epi">Episode {{feedInfo.episode_number}}</li>
-        <!-- <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-party">Party id: 26784</li> -->
+        <li ng-show="showHide" class="bar-season">Season {{feedInfo.season_number}}</li>
+        <li ng-show="showHide"><i class="fa fa-circle" aria-hidden="true"></i></li>
+        <li ng-show="showHide" class="bar-epi">Episode {{feedInfo.episode_number}}</li>
+        <!-- <li ng-show="showHide"><i class="fa fa-circle" aria-hidden="true"></i></li> -->
+        <li ng-hide="partyHide" class="bar-party">Party Id: {{partyId}}</li>
       </ul>
     </div>
   </nav>
