@@ -209,13 +209,13 @@ body, html {
       .entire-post {
         border-top: 1px solid #ededed;
         border-bottom: 1px solid #ededed;
-        border-left: 2px solid #ededed;
-        border-right: 2px solid #ededed;
+        border-left: 1px solid #ededed;
+        border-right: 1px solid #ededed;
         border-radius: 3.5px;
         // border-bottom: 1px solid $Main-Green;
         margin: .75em;
         background-color: #fff;
-        box-shadow: -1px 3px 6px 0 rgba(0,0,0,0.3), -1px 3px 8px 0 rgba(0,0,0,0.18);
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.19);
       ul {
         display: flex;
         // height: 10em;
@@ -320,7 +320,17 @@ body, html {
               .fa-comment-o {
                 @extend .fa-star-o;
                 font-size: 20px;
-                margin-top: 1em;
+                margin-top: .25em;
+
+              }
+            }
+            .number-pops {
+              @extend .pop-div;
+              margin-bottom: .25em;
+              margin-top: .25em;
+              p {
+                font-size: 11px;
+                color: gray;
               }
             }
           }

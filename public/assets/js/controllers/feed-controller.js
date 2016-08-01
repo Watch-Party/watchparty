@@ -85,6 +85,17 @@ var callback = function(post) {
       // console.log(post);
       // console.log($scope.allPosts)
 }
+
+if (post.pops === 1) {
+  post.popS = false;
+  console.log(post.pops);
+} else {
+  post.popS = true;
+}
+
+// if (post.pops >= 1) {
+//   post.popped = true;
+// }
   // console.log(pop);
   //not completely sure what this does yet^^ but its in the docs.
 };

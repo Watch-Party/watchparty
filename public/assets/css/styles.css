@@ -191,12 +191,12 @@ body, html {
     #container-feed .post .entire-post {
       border-top: 1px solid #ededed;
       border-bottom: 1px solid #ededed;
-      border-left: 2px solid #ededed;
-      border-right: 2px solid #ededed;
+      border-left: 1px solid #ededed;
+      border-right: 1px solid #ededed;
       border-radius: 3.5px;
       margin: .75em;
       background-color: #fff;
-      box-shadow: -1px 3px 6px 0 rgba(0, 0, 0, 0.3), -1px 3px 8px 0 rgba(0, 0, 0, 0.18); }
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.19); }
       #container-feed .post .entire-post ul {
         display: flex; }
         #container-feed .post .entire-post ul li {
@@ -247,16 +247,22 @@ body, html {
             vertical-align: text-bottom; }
         #container-feed .post .entire-post ul .list-pop {
           width: 15%; }
-          #container-feed .post .entire-post ul .list-pop .pop-div, #container-feed .post .entire-post ul .list-pop .comment-div {
+          #container-feed .post .entire-post ul .list-pop .pop-div, #container-feed .post .entire-post ul .list-pop .comment-div, #container-feed .post .entire-post ul .list-pop .number-pops {
             text-align: center; }
-            #container-feed .post .entire-post ul .list-pop .pop-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .pop-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
+            #container-feed .post .entire-post ul .list-pop .pop-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .number-pops .fa-star-o, #container-feed .post .entire-post ul .list-pop .pop-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star, #container-feed .post .entire-post ul .list-pop .number-pops .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
               color: #26988c;
               cursor: pointer;
               font-size: 22px;
               vertical-align: middle; }
           #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
             font-size: 20px;
-            margin-top: 1em; }
+            margin-top: .25em; }
+          #container-feed .post .entire-post ul .list-pop .number-pops {
+            margin-bottom: .25em;
+            margin-top: .25em; }
+            #container-feed .post .entire-post ul .list-pop .number-pops p {
+              font-size: 11px;
+              color: gray; }
       #container-feed .post .entire-post .contains-comment {
         border-top: 1px solid #d3d3d3;
         border-bottom-right-radius: 3px;
