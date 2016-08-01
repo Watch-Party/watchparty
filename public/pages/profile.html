@@ -4,7 +4,7 @@
     <img class="avatar" src="{{avatar}}"/>
 
     <!-- <form ng-submit="submitNewAvatarFunc()"> <input type="text" class="avatarUpload" ng-model="avatarNew" ng-hide=""></input><button class="submit" type="submit">Submit</button></form> -->
-    <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()" ng-show="thisUser"></i>
+    <!-- <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()" ng-show="thisUser"></i> -->
     <i class="fa fa-floppy-o" aria-hidden="true" ng-hide="editShow" ng-click="submitEditFunc()"></i>
     <ul class="names">
       <li class="firstName"><span ng-hide="userInfoHide">{{firstName}}</span><input ng-model="firstName" ng-hide="editShow" placeholder="First Name"></input></li>
@@ -18,7 +18,7 @@
     <ul class="socialStats">
       <li class="watchers"><span class="socialNumbers">{{watchers}}</span><p>Watchers</p></li>
       <li class="watching"><span class="socialNumbers">{{watching}}</span><p>Watching</p></li>
-      <li class="posts"><span class="socialNumbers">{{totalPosts}}</span><p>posts</p></li>
+      <li class="posts"><span class="socialNumbers">{{totalPosts}}</span><p>Posts</p></li>
     </ul>
   </div>
   <div class="profileDetails">
