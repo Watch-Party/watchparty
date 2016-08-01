@@ -839,6 +839,20 @@ body, html {
   overflow-y: auto;
   background-color: black;
   color: white; }
+  .showContainer .delayTimer {
+    margin-top: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em; }
+    .showContainer .delayTimer p {
+      text-align: center; }
+    .showContainer .delayTimer i {
+      font-size: 6em;
+      margin-top: 45px; }
+    .showContainer .delayTimer .countDown {
+      margin-top: .75em;
+      font-size: 3em; }
   .showContainer a {
     text-decoration: none;
     color: black; }

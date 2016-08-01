@@ -231,6 +231,12 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.partyRoomJoinFunc = function(){
     localStorage.setItem('partyId', $scope.partyRoomId)
     localStorage.setItem('partyRoom', 'true')
+    localStorage.setItem('channelType', 'DelayedChannel')
+    localStorage.setItem('typeOfChannel', 'watching')
+
+
+    $window.location.href = '#/feed'
+
     console.log("PARTAY");
   }
   $scope.watchUserFunc = function(user){
@@ -283,6 +289,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     $window.location.href = '#/show'
 
   }
+
 
 
 })
