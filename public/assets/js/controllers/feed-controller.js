@@ -56,6 +56,13 @@ else {
 
 }
 
+if (channelType === "LiveChannel") {
+  $scope.liveLogo = true;
+}
+else if (channelType === "DelayedChannel") {
+  $scope.liveLogo = false;
+}
+
 // display show info under nav bar //
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
   .then(function(response){

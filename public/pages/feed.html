@@ -8,14 +8,15 @@
     </ul>
     <div class="room-info-bar">
       <ul class="info-nav" ng-model="feedInfo">
-        <li class="bar-type"><img src="assets/images/live_logo3.png"></img></li>
+        <li class="bar-live" ng-show="liveLogo"><img src="assets/images/live_logo3.png"></img></li>
+        <li class="bar-delayed" ng-hide="liveLogo"><img class="delayed-icon" src="assets/images/stopwatch.png"></img></li>
         <li class="bar-show-name">{{feedInfo.showname}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
         <li class="bar-season">Season {{feedInfo.season_number}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
         <li class="bar-epi">Episode {{feedInfo.episode_number}}</li>
-        <li><i class="fa fa-circle" aria-hidden="true"></i></li>
-        <li class="bar-party">Party id: 26784</li>
+        <!-- <li><i class="fa fa-circle" aria-hidden="true"></i></li>
+        <li class="bar-party">Party id: 26784</li> -->
       </ul>
     </div>
   </nav>

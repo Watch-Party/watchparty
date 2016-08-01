@@ -82,11 +82,17 @@ body, html {
             letter-spacing: .75px;
             margin-left: .25em;
             margin-right: .25em;
+            vertical-align: middle;
           }
           img {
             height: 1.2em;
             width: auto;
             vertical-align: sub;
+          }
+          .delayed-icon {
+            height: 2.25em;
+            width: auto;
+            vertical-align: middle;
           }
           .fa-circle {
             font-size: 8px;
@@ -209,7 +215,7 @@ body, html {
         // border-bottom: 1px solid $Main-Green;
         margin: .75em;
         background-color: #fff;
-        box-shadow: -4px 3px 6px 0 rgba(0,0,0,0.3), -3px 3px 10px 0 rgba(0,0,0,0.18);
+        box-shadow: -1px 3px 6px 0 rgba(0,0,0,0.3), -1px 3px 8px 0 rgba(0,0,0,0.18);
       ul {
         display: flex;
         // height: 10em;
