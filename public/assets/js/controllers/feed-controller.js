@@ -84,17 +84,31 @@ var callback = function(post) {
 
   console.log(post);
   console.log(post.pops);
+  console.log($scope.userInfo.data.user.watching.length)
 
-  // filter out pops -- just push up posts //
-  if ('content' in post) {
-    $scope.allPosts.push(post);
+  // filter for all vs watching and filters out pops //
+  for (var i = 0; i < $scope.userInfo.data.user.watching.length; i++){
+    // console.log("HI")
+    if ('content' in post && channelType === "LiveChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
+      console.log('match');
+      console.log(i);
+      $scope.allPosts.push(post);
     // console.log(post);
-  }
+    }
+    else if ('content' in post){
+      $scope.allPosts.push(post);
+      console.log('else if');
+    }
     else {
-      return "true";
+      // return "true";
+      console.log('no match')
       console.log(post);
       // console.log(post);
       // console.log($scope.allPosts)
+    }
+    console.log('hellllo');
+    console.log(post.username);
+    console.log($scope.userInfo.data.user.watching[i].username);
 }
 
 if (post.pops === 1) {
