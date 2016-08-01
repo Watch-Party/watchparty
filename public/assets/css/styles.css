@@ -306,7 +306,9 @@ body, html {
   width: 100%;
   border: 1px solid black;
   font-family: "Asap", Helvetica, sans-serif;
-  overflow-y: auto; }
+  overflow-y: auto;
+  color: #191919;
+  background: #f1f1f1; }
   #landingContainer a {
     text-decoration: none; }
   #landingContainer .navMenu {
@@ -361,6 +363,12 @@ body, html {
     width: 100%;
     height: 100%;
     background-image: linear-gradient(130deg, #0c5a4e 0%, #1e776d 51%, #2b7078 75%); }
+    #landingContainer .searchBarHolder .fa-chevron-left {
+      float: left;
+      color: #30bfaf;
+      margin-left: 10px;
+      margin-top: 25px;
+      font-size: 1.7em; }
     #landingContainer .searchBarHolder .searchResult {
       margin-top: 25px; }
       #landingContainer .searchBarHolder .searchResult .popularHeader {
@@ -413,8 +421,7 @@ body, html {
     width: 80%;
     font-size: 1.25em;
     padding-top: 25px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 40px;
     border: 0;
     outline: 0;
     background: transparent;
@@ -430,199 +437,147 @@ body, html {
     #landingContainer .delayTimer .countDown {
       margin-top: 1.5em;
       font-size: 3em; }
-  #landingContainer .roomButtons {
-    position: absolute;
-    height: 100%;
-    overflow-x: scroll;
-    width: 100%; }
-    #landingContainer .roomButtons li {
-      text-align: center;
-      height: 50%;
-      margin: 0;
-      border: .1px solid transparent; }
-      #landingContainer .roomButtons li p {
-        color: white;
-        margin-top: 2%;
-        font-size: 5em;
-        letter-spacing: -5px; }
-    #landingContainer .roomButtons .liveButton {
-      background-color: #1e776d; }
-      #landingContainer .roomButtons .liveButton p {
-        color: white; }
-    #landingContainer .roomButtons .upcoming {
-      background: #1e776d;
-      margin-top: -120px; }
-      #landingContainer .roomButtons .upcoming .upcomingDeets {
-        font-size: 1.75em;
-        letter-spacing: -2px;
-        text-align: center;
-        color: white;
-        padding-top: 20px;
-        background: #4a4a4a;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 8px;
-        height: 250px;
-        width: 65%;
-        vertical-align: top; }
-        #landingContainer .roomButtons .upcoming .upcomingDeets .showTitle {
-          width: 90%;
-          margin-left: auto;
-          margin-right: auto;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #1e776d;
-          margin-bottom: 20px; }
-          #landingContainer .roomButtons .upcoming .upcomingDeets .showTitle .epTitle {
-            font-size: .75em;
-            letter-spacing: 1.5px; }
-        #landingContainer .roomButtons .upcoming .upcomingDeets .selectP {
-          font-size: .75em;
-          letter-spacing: 1.25px; }
-        #landingContainer .roomButtons .upcoming .upcomingDeets .typeOfChannel {
-          width: 49%;
-          height: 38%;
-          margin-top: 10px;
-          margin-left: auto;
-          margin-right: auto;
-          display: inline-block;
-          padding: 10px;
-          font-size: .5em;
-          border: .5px solid black;
-          vertical-align: top; }
-      #landingContainer .roomButtons .upcoming .upcomingBumper {
-        background: #1e776d;
-        height: 10px;
-        width: 100%; }
-    #landingContainer .roomButtons .delayedButton {
-      background-color: #e38c44; }
-    #landingContainer .roomButtons .delayRoom {
-      background-color: #e38c44;
+  #landingContainer .startingLiveRoom {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    margin-top: 15px;
+    text-align: center;
+    background: #30bfaf;
+    color: white; }
+    #landingContainer .startingLiveRoom .setUp {
+      font-size: 1.85em;
+      padding-top: 10px; }
+    #landingContainer .startingLiveRoom .fa-spinner {
+      margin-top: 35px;
+      font-size: 3em; }
+    #landingContainer .startingLiveRoom .setUpPosts {
+      margin-top: 15px;
+      font-size: 1.25em; }
+    #landingContainer .startingLiveRoom .back {
+      margin-top: 20px;
+      font-size: 1.25em; }
+    #landingContainer .startingLiveRoom .roomSelection {
       width: 100%;
-      margin-top: -120px; }
-      #landingContainer .roomButtons .delayRoom .recentResults {
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        text-align: center;
-        font-size: 1.25em;
-        border-bottom: 1px solid #1e776d; }
-      #landingContainer .roomButtons .delayRoom .showSelect {
-        font-size: 1.75em;
-        letter-spacing: -2px;
-        text-align: center;
-        color: white;
-        padding-top: 20px;
-        background: #4a4a4a;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 8px;
-        height: 130px;
-        width: 65%;
-        vertical-align: top; }
-      #landingContainer .roomButtons .delayRoom .delayBumper {
-        background: #e38c44;
-        height: 10px;
-        width: 100%; }
-      #landingContainer .roomButtons .delayRoom .seasonResults {
-        font-size: 1.25em;
-        color: white;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-bottom: 25px; }
-      #landingContainer .roomButtons .delayRoom .episodeResults {
-        font-size: 1.25em;
-        color: white;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-bottom: 25px; }
-      #landingContainer .roomButtons .delayRoom .startRoom a {
-        text-decoration: none; }
-        #landingContainer .roomButtons .delayRoom .startRoom a .startButton {
-          text-align: center;
-          vertical-align: middle;
-          font-size: 1.5em;
-          padding-top: 15px;
-          width: 50%;
-          height: 35px;
-          margin-left: auto;
-          margin-right: auto;
-          border: 1px solid white;
-          background: white;
-          color: #1e776d; }
-      #landingContainer .roomButtons .delayRoom .bumper {
-        height: 25px; }
-    #landingContainer .roomButtons .hybridButton {
-      background: linear-gradient(#e33f3f, #fd4747);
-      /* Standard syntax */ }
-    #landingContainer .roomButtons .hybridRoom {
-      width: 100%;
-      background: linear-gradient(#fd4747, #e33f3f);
-      /* Standard syntax */ }
-      #landingContainer .roomButtons .hybridRoom input {
-        display: block;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 20px; }
-      #landingContainer .roomButtons .hybridRoom .hybridSelect {
-        font-size: 1.75em;
-        letter-spacing: -2px;
-        text-align: center;
-        color: white;
-        padding-top: 20px;
-        background: #4a4a4a;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 8px;
-        height: 130px;
-        width: 65%;
-        vertical-align: top; }
-      #landingContainer .roomButtons .hybridRoom .seasonResults {
-        font-size: 1.25em;
-        color: white;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-bottom: 25px; }
-      #landingContainer .roomButtons .hybridRoom .episodeResults {
-        font-size: 1.25em;
-        color: white;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        margin-bottom: 25px; }
-      #landingContainer .roomButtons .hybridRoom .startRoom a {
-        text-decoration: none; }
-        #landingContainer .roomButtons .hybridRoom .startRoom a .startButton {
-          text-align: center;
-          vertical-align: middle;
-          font-size: 1.5em;
-          padding-top: 15px;
-          width: 50%;
-          height: 35px;
-          margin-left: auto;
-          margin-right: auto;
-          border: 1px solid white;
-          background: white;
-          color: #1e776d; }
-      #landingContainer .roomButtons .hybridRoom .bumper {
-        height: 25px; }
-  #landingContainer .typeOfChannel {
-    width: 49%;
-    height: 38%;
+      margin-top: 5px; }
+      #landingContainer .startingLiveRoom .roomSelection div {
+        display: inline-block;
+        width: 48%;
+        height: 50px;
+        vertical-align: top;
+        border-radius: 10px;
+        margin-bottom: 35px; }
+        #landingContainer .startingLiveRoom .roomSelection div p {
+          padding-top: 12px; }
+      #landingContainer .startingLiveRoom .roomSelection .allRoom {
+        background-color: #4894bf; }
+      #landingContainer .startingLiveRoom .roomSelection .watchRoom {
+        background: #BF3087; }
+  #landingContainer .upcomingShows {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 10px;
-    margin-left: 2px;
-    display: inline-block;
-    padding: 10px;
-    font-size: .85em;
-    vertical-align: top; }
+    height: 29%;
+    color: white;
+    background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
+    padding-top: 10px; }
+    #landingContainer .upcomingShows .startSoon {
+      text-align: center;
+      font-size: 1.75em; }
+  #landingContainer .upcomingShowsDetails {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 29%;
+    color: white;
+    padding-top: 10px; }
+    #landingContainer .upcomingShowsDetails .startSoon {
+      text-align: center;
+      font-size: 1.75em; }
+    #landingContainer .upcomingShowsDetails .upcomingShow {
+      color: white;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
+      width: 90%;
+      vertical-align: top;
+      border-radius: 20px; }
+      #landingContainer .upcomingShowsDetails .upcomingShow .showTitle {
+        text-align: center;
+        font-size: 1.33em;
+        padding-top: 8px; }
+      #landingContainer .upcomingShowsDetails .upcomingShow .epTitle {
+        margin-top: 5px;
+        text-align: center;
+        font-size: 1em; }
+      #landingContainer .upcomingShowsDetails .upcomingShow .icon {
+        width: 100%;
+        text-align: center; }
+      #landingContainer .upcomingShowsDetails .upcomingShow .fa-play {
+        margin-top: 10px;
+        font-size: 1.5em;
+        padding-bottom: 3px; }
+  #landingContainer .landingContentWrapper {
+    height: 100%; }
+    #landingContainer .landingContentWrapper .partyRoom {
+      text-align: center;
+      font-size: 1.75em;
+      margin-top: 10px;
+      height: 5%; }
+    #landingContainer .landingContentWrapper .partyRoomForm {
+      margin-top: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto; }
+      #landingContainer .landingContentWrapper .partyRoomForm .partyRoomId {
+        width: 75%; }
+      #landingContainer .landingContentWrapper .partyRoomForm .submitPartyRoom {
+        width: 22%; }
+    #landingContainer .landingContentWrapper .recentShows {
+      width: 100%;
+      height: 29%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      padding-top: 10px;
+      background: #4894bf; }
+      #landingContainer .landingContentWrapper .recentShows .recentSoon {
+        font-size: 1.75em;
+        text-align: center; }
+    #landingContainer .landingContentWrapper .recentShow {
+      display: block;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #4894bf;
+      color: white;
+      border-radius: 12px;
+      width: 90%;
+      vertical-align: top; }
+      #landingContainer .landingContentWrapper .recentShow .showTitle {
+        text-align: center;
+        font-size: 1.33em;
+        padding: 12px; }
+    #landingContainer .landingContentWrapper .startDelayRoom {
+      width: 100%;
+      height: 29%;
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background: #c6825b; }
+      #landingContainer .landingContentWrapper .startDelayRoom p {
+        font-size: 1.5em;
+        margin-bottom: 5px; }
+      #landingContainer .landingContentWrapper .startDelayRoom .create {
+        padding-top: 25px; }
+      #landingContainer .landingContentWrapper .startDelayRoom .or {
+        font-size: 1.5em; }
 
 #container-login {
   height: 100%;
@@ -874,5 +829,118 @@ body, html {
       margin-bottom: 35px;
       padding-bottom: 20px;
       border-bottom: 1px solid #1e776d; }
+
+.showContainer {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+  font-family: "Asap", Helvetica, sans-serif;
+  overflow-y: auto;
+  background-color: black;
+  color: white; }
+  .showContainer .delayTimer {
+    margin-top: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em; }
+    .showContainer .delayTimer p {
+      text-align: center; }
+    .showContainer .delayTimer i {
+      font-size: 6em;
+      margin-top: 45px; }
+    .showContainer .delayTimer .countDown {
+      margin-top: .75em;
+      font-size: 3em; }
+  .showContainer a {
+    text-decoration: none;
+    color: black; }
+  .showContainer .fa-chevron-left {
+    float: left;
+    color: black;
+    font-size: 1.5em;
+    margin-top: 5px; }
+  .showContainer .header {
+    width: 100%;
+    background: white; }
+  .showContainer .poster {
+    height: 50%;
+    width: 100%; }
+  .showContainer .posterBack {
+    opacity: .15; }
+  .showContainer .showDetails {
+    color: black;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px; }
+    .showContainer .showDetails .title {
+      font-size: 2.25em;
+      padding-top: 25px; }
+    .showContainer .showDetails .description {
+      font-size: 1em;
+      margin-top: 20px; }
+  .showContainer .specificButtons {
+    width: 90%;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px; }
+    .showContainer .specificButtons .recentButton {
+      width: 80%;
+      border: 1px solid black;
+      padding: 8px 0px 8px 0px;
+      font-size: 1em;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
+      font-size: 1em; }
+    .showContainer .specificButtons .upcomingButton {
+      width: 80%;
+      border: 1px solid black;
+      padding: 8px 0px 8px 0px;
+      vertical-align: top;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
+      z-index: 15; }
+  .showContainer .startChannel {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 33%;
+    background: #c6825b;
+    color: white; }
+    .showContainer .startChannel .startButtonTitle {
+      font-size: 1.33em;
+      text-align: center;
+      margin-top: 10px; }
+    .showContainer .startChannel .seasonSelect {
+      width: 40%;
+      margin-left: auto;
+      margin-right: auto; }
+    .showContainer .startChannel .partyRoom {
+      margin-top: 10px;
+      font-size: 1.15em; }
+    .showContainer .startChannel .seasonResults {
+      margin-top: 5px; }
+    .showContainer .startChannel .episodeResults {
+      margin-top: 5px;
+      margin-bottom: 10px; }
+  .showContainer .typeOfChannel {
+    border: none;
+    background: #f1f1f1;
+    width: 90%;
+    color: black;
+    font-size: 1em;
+    border-radius: 20px;
+    padding: 5px 0px 5px 0px;
+    margin-bottom: 8px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto; }
 
 /*# sourceMappingURL=styles.css.map */

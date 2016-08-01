@@ -19,6 +19,16 @@ watchParty.config(function($routeProvider) {
     templateUrl: 'pages/login.html',
     controller: 'loginCtrl'
   })
+  .when ('/show', {
+    templateUrl: 'pages/show.html',
+    controller: 'showCtrl',
+    resolve: {
+  auth: function($auth) {
+    return $auth.validateUser();
+    // console.log($auth.validateUser())
+  }
+}
+  })
 
   .when ('/landing', {
     templateUrl: 'pages/landing.html',
