@@ -14,6 +14,9 @@ $http.get('https://wp-spoileralert.herokuapp.com/users/'+ profileId)
     $scope.lastName = $scope.userInfo.data.user.last_name;
     $scope.screenName = $scope.userInfo.data.user.username;
     $scope.profileId = $scope.userInfo.data.user.id
+    $scope.watchers = $scope.userInfo.data.user.watched_by.length;
+    $scope.watching = $scope.userInfo.data.user.watching.length;
+    $scope.totalPosts = $scope.userInfo.data.user.total_posts;
     if (id === $scope.profileId){
       $scope.thisUser = true;
     }

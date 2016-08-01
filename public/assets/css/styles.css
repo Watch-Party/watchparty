@@ -191,12 +191,12 @@ body, html {
     #container-feed .post .entire-post {
       border-top: 1px solid #ededed;
       border-bottom: 1px solid #ededed;
-      border-left: 2px solid #ededed;
-      border-right: 2px solid #ededed;
+      border-left: 1px solid #ededed;
+      border-right: 1px solid #ededed;
       border-radius: 3.5px;
       margin: .75em;
       background-color: #fff;
-      box-shadow: -1px 3px 6px 0 rgba(0, 0, 0, 0.3), -1px 3px 8px 0 rgba(0, 0, 0, 0.18); }
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.19); }
       #container-feed .post .entire-post ul {
         display: flex; }
         #container-feed .post .entire-post ul li {
@@ -247,16 +247,22 @@ body, html {
             vertical-align: text-bottom; }
         #container-feed .post .entire-post ul .list-pop {
           width: 15%; }
-          #container-feed .post .entire-post ul .list-pop .pop-div, #container-feed .post .entire-post ul .list-pop .comment-div {
+          #container-feed .post .entire-post ul .list-pop .pop-div, #container-feed .post .entire-post ul .list-pop .comment-div, #container-feed .post .entire-post ul .list-pop .number-pops {
             text-align: center; }
-            #container-feed .post .entire-post ul .list-pop .pop-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .pop-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
+            #container-feed .post .entire-post ul .list-pop .pop-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star-o, #container-feed .post .entire-post ul .list-pop .number-pops .fa-star-o, #container-feed .post .entire-post ul .list-pop .pop-div .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-star, #container-feed .post .entire-post ul .list-pop .number-pops .fa-star, #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
               color: #26988c;
               cursor: pointer;
               font-size: 22px;
               vertical-align: middle; }
           #container-feed .post .entire-post ul .list-pop .comment-div .fa-comment-o {
             font-size: 20px;
-            margin-top: 1em; }
+            margin-top: .25em; }
+          #container-feed .post .entire-post ul .list-pop .number-pops {
+            margin-bottom: .25em;
+            margin-top: .25em; }
+            #container-feed .post .entire-post ul .list-pop .number-pops p {
+              font-size: 11px;
+              color: gray; }
       #container-feed .post .entire-post .contains-comment {
         border-top: 1px solid #d3d3d3;
         border-bottom-right-radius: 3px;
@@ -806,7 +812,7 @@ body, html {
   #profileContainer .header {
     width: 100%;
     height: 35%;
-    padding-bottom: 15px;
+    padding-bottom: 1em;
     background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%); }
     #profileContainer .header .fa-chevron-left {
       color: white;
@@ -814,14 +820,18 @@ body, html {
       display: inline-block;
       width: 12%;
       margin-top: 5px;
-      margin-left: 5px; }
+      margin-left: 5px;
+      padding-left: .25em;
+      padding-top: .25em; }
     #profileContainer .header .avatar {
       display: block;
-      margin-top: -10px;
+      margin-bottom: .5em;
       margin-right: auto;
       margin-left: auto;
-      width: 35%;
-      height: auto; }
+      width: 30%;
+      height: auto;
+      border: 1px solid #fff;
+      border-radius: 3px; }
     #profileContainer .header .avatarUpload {
       width: 50%;
       display: block;
@@ -854,48 +864,62 @@ body, html {
         font-size: 3.5em; }
     #profileContainer .header .names {
       color: white;
-      width: 70%;
       margin-left: auto;
       margin-right: auto;
-      text-align: center; }
+      text-align: center;
+      padding: .5em;
+      letter-spacing: 1px; }
       #profileContainer .header .names .firstName {
         font-size: 1.5em;
-        margin-left: -50px; }
+        margin: 0 auto;
+        margin-bottom: .25em; }
       #profileContainer .header .names .lastName {
         font-size: 1.5em;
-        margin-right: -50px; }
+        margin: 0 auto;
+        margin-bottom: .5em; }
       #profileContainer .header .names .screenName {
-        font-size: 1.5em;
-        font-size: 1em; }
+        font-size: 1em;
+        margin: 0 auto;
+        margin-bottom: 1.25em;
+        color: #1e776d;
+        font-weight: bold; }
     #profileContainer .header .socialStats {
       width: 95%;
-      margin-top: 12px; }
+      margin: 0 auto;
+      margin-top: 12px;
+      border-top: 1px solid #fff;
+      padding-top: .75em; }
       #profileContainer .header .socialStats li {
         display: inline-block;
         margin-left: 5px;
         margin-right: 5px; }
-      #profileContainer .header .socialStats .socialNumbers {
-        font-size: 2.5em; }
+        #profileContainer .header .socialStats li .socialNumbers {
+          font-size: 2.5em;
+          color: #1e776d;
+          font-weight: 700; }
+        #profileContainer .header .socialStats li p {
+          margin-top: .25em;
+          letter-spacing: 1px; }
   #profileContainer .profileDetails {
-    margin: 12px 12px 0px 12px; }
+    margin: 1em;
+    line-height: 1.25; }
     #profileContainer .profileDetails .fa-circle-thin {
       font-size: 1.33em;
-      margin-right: 35px;
+      margin-right: 5%;
       color: #30bfaf; }
     #profileContainer .profileDetails .fa-globe {
       font-size: 1.33em;
-      margin-right: 35px;
+      margin-right: 5%;
       color: #30bfaf; }
     #profileContainer .profileDetails .fa-play {
       font-size: 1.33em;
-      margin-right: 35px;
+      margin-right: 5%;
       color: #30bfaf; }
     #profileContainer .profileDetails span {
-      font-size: 1.33em;
+      font-size: 1.25em;
       color: #010202; }
     #profileContainer .profileDetails p {
-      margin-bottom: 35px;
-      padding-bottom: 20px;
+      padding-bottom: 2em;
       border-bottom: 1px solid #1e776d; }
 
 /*# sourceMappingURL=styles.css.map */
