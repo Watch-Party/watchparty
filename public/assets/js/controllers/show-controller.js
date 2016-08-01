@@ -17,6 +17,31 @@ $scope.detailHide = true;
     localStorage.setItem('episodeId', show.upcoming_id )
     localStorage.setItem('channelType', 'LiveChannel')
   }
+  $scope.seasonSelectFunc = function(season){
+    console.log(season)
+      $scope.orderedSeasons = $scope.show.seasons.reverse()
+      console.log($scope.orderedSeasons)
+      $scope.orderedEpisodes = $scope.orderedSeasons[season - 1].episodes;
+      $scope.episodes = $scope.orderedEpisodes;
+      console.log($scope.episodes);
+
+  }
+  $scope.episodeSelectFunc = function(episode,season){
+    console.log(season)
+
+    $scope.selectedEpisode = $scope.episodes[episode -1];
+    localStorage.setItem('episodeId', $scope.selectedEpisode.info.id )
+    console.log($scope.selectedEpisode)
+  }
+  $scope.startAllDelayRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'all')
+    localStorage.setItem('channelType', 'Delayed')
+  }
+  $scope.startWatchingDelayRoomFunc = function(value) {
+    localStorage.setItem('typeOfChannel', 'watching')
+    localStorage.setItem('channelType', 'Delayed')
+
+  }
 // var posterDelay = $interval(function(){
 //         $('.poster').addClass('posterBack')
 //         $('.posterBack').removeClass('poster')

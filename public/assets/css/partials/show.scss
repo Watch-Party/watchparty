@@ -8,6 +8,10 @@
 
   background-color: black;
   color: white;
+  a{
+    text-decoration: none;
+    color: black
+  }
   .fa-chevron-left{
     float:left;
     color: black;
@@ -23,7 +27,7 @@
     height: 50%;
     width: 100%;
 
-    opacity: .35;
+    // opacity: .35;
   }
   .posterBack{
     opacity: .15;
@@ -89,8 +93,8 @@
       height: 33%;
       background: #c6825b;
       color: white;
-      border-top-left-radius: 15px;
-      border-top-right-radius: 15px;
+      // border-top-left-radius: 15px;
+      // border-top-right-radius: 15px;
       .startButtonTitle{
         font-size: 1.33em;
         text-align: center;

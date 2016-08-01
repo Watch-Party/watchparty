@@ -12,6 +12,10 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.searchBarShow=false;
   $scope.landingContentWrapperShow = true;
   $scope.delayTimerShow = false;
+  $scope.recentButtonsShow = false;
+  $scope.delayButtonsShow = false;
+  $scope.upcomingShowDetails = true;
+  $scope.partyInputShow = false;
   var hybridChannelName = '';
   var id = JSON.parse(localStorage.getItem('id'));
   $scope.$on('$viewContentLoaded', function(){
@@ -84,15 +88,29 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   }
   $scope.upcomingFunc = function(){
     localStorage.setItem('channelType', 'LiveChannel')
-    $scope.startLiveRoomShow = !$scope.startLiveRoomShow
-    $scope.buttonsShow = !$scope.buttonsShow;
-
+    // $scope.startLiveRoomShow = !$scope.startLiveRoomShow
+    $scope.recentButtonsShow = !$scope.recentButtonsShow;
+    $scope.delayButtonsShow = !$scope.delayButtonsShow;
+    $scope.upcomingShowDetails =!$scope.upcomingShowDetails
+    $scope.partyInputShow =! $scope.partyInputShow
+    if($scope.upcomingShowDetails === false){
+      $('.upcomingShows').css('height', '6%')
+    }
+    else{
+      $('.upcomingShows').css('height', '29%')
+    }
   }
   $scope.setActive = function(show){
-    localStorage.setItem('title', show.episode_title);
-    localStorage.setItem('episodeId', show.id)
-    $scope.selected = show;
-    console.log($scope.selected);
+    // localStorage.setItem('title', show.episode_title);
+    // localStorage.setItem('episodeId', show.id)
+    // $scope.selected = show;
+    // console.log($scope.selected);
+    $scope.startLiveRoomShow = !$scope.startLiveRoomShow
+    // $scope.startLiveRoomShow = !$scope.startLiveRoomShow
+    $scope.upcomingShowDetails =!$scope.upcomingShowDetails
+    $scope.upcomingButtonsShow =!$scope.upcomingButtonsShow
+
+
     // $scope.buttonsShow = !$scope.buttonsShow;
   }
   $scope.setActiveDelay = function(recentShow){
@@ -103,6 +121,27 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     $scope.episodes = $scope.seasons.episodes
     console.log($scope.episodes);
     localStorage.setItem('title', recentShow.title);
+  }
+  $scope.recentShowDetails = function(){
+    $scope.recentShowHide =! $scope.recentShowHide;
+    $scope.upcomingButtonsShow =!$scope.upcomingButtonsShow
+    $scope.delayButtonsShow = !$scope.delayButtonsShow;
+    $scope.partyInputShow =! $scope.partyInputShow
+
+    if($scope.recentShowHide === true){
+      $('.recentShows').css('height', '6%')
+    }
+    else{
+      $('.recentShows').css('height', '29%')
+    }
+
+  }
+  $scope.setActiveRecent= function(recentShow){
+    $scope.selected= recentShow
+    console.log($scope.selected)
+    localStorage.setItem('showName', recentShow.title);
+    $window.location.href = '#/show'
+
   }
   $scope.seasonSelectFunc = function(season){
     console.log(season)
@@ -120,14 +159,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
      $window.location.href = '#/feed'
 
   }
-  $scope.startAllDelayRoomFunc = function(value) {
-    localStorage.setItem('typeOfChannel', 'all')
 
-  }
-  $scope.startWatchingDelayRoomFunc = function(value) {
-    localStorage.setItem('typeOfChannel', 'watching')
-
-  }
   $scope.startDelayedFunc = function(dataSeason, dataEpisode){
     localStorage.setItem('season', dataSeason);
     localStorage.setItem('episode', dataEpisode);

@@ -479,90 +479,105 @@ body, html {
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
-    height: 163px;
+    height: 29%;
     color: white;
     background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
     padding-top: 10px; }
     #landingContainer .upcomingShows .startSoon {
       text-align: center;
       font-size: 1.75em; }
-    #landingContainer .upcomingShows .upcomingShow {
+  #landingContainer .upcomingShowsDetails {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 29%;
+    color: white;
+    padding-top: 10px; }
+    #landingContainer .upcomingShowsDetails .startSoon {
+      text-align: center;
+      font-size: 1.75em; }
+    #landingContainer .upcomingShowsDetails .upcomingShow {
       color: white;
-      display: inline-block;
       margin-top: 10px;
-      margin-right: 1px;
+      margin-left: auto;
+      margin-right: auto;
       background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
-      width: 49%;
-      vertical-align: top; }
-      #landingContainer .upcomingShows .upcomingShow .showTitle {
+      width: 90%;
+      vertical-align: top;
+      border-radius: 20px; }
+      #landingContainer .upcomingShowsDetails .upcomingShow .showTitle {
         text-align: center;
         font-size: 1.33em;
         padding-top: 8px; }
-      #landingContainer .upcomingShows .upcomingShow .epTitle {
+      #landingContainer .upcomingShowsDetails .upcomingShow .epTitle {
         margin-top: 5px;
         text-align: center;
         font-size: 1em; }
-      #landingContainer .upcomingShows .upcomingShow .icon {
+      #landingContainer .upcomingShowsDetails .upcomingShow .icon {
         width: 100%;
         text-align: center; }
-      #landingContainer .upcomingShows .upcomingShow .fa-play {
+      #landingContainer .upcomingShowsDetails .upcomingShow .fa-play {
         margin-top: 10px;
         font-size: 1.5em;
         padding-bottom: 3px; }
-  #landingContainer .partyRoom {
-    text-align: center;
-    font-size: 1.75em;
-    margin-top: 10px; }
-  #landingContainer .partyRoomForm {
-    margin-top: 10px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto; }
-    #landingContainer .partyRoomForm .partyRoomId {
-      width: 75%; }
-    #landingContainer .partyRoomForm .submitPartyRoom {
-      width: 22%; }
-  #landingContainer .recentShows {
-    width: 100%;
-    height: 162px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    color: white;
-    padding-top: 10px;
-    background: #4894bf; }
-    #landingContainer .recentShows .recentSoon {
-      font-size: 1.75em;
-      text-align: center; }
-  #landingContainer .recentShow {
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    background: #4894bf;
-    color: white;
-    border-radius: 12px;
-    width: 90%;
-    vertical-align: top; }
-    #landingContainer .recentShow .showTitle {
+  #landingContainer .landingContentWrapper {
+    height: 100%; }
+    #landingContainer .landingContentWrapper .partyRoom {
       text-align: center;
-      font-size: 1.33em;
-      padding: 12px; }
-  #landingContainer .startDelayRoom {
-    width: 100%;
-    height: 173px;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    background: #c6825b; }
-    #landingContainer .startDelayRoom p {
-      font-size: 1.5em;
-      margin-bottom: 5px; }
-    #landingContainer .startDelayRoom .create {
-      padding-top: 25px; }
-    #landingContainer .startDelayRoom .or {
-      font-size: 1.5em; }
+      font-size: 1.75em;
+      margin-top: 10px;
+      height: 5%; }
+    #landingContainer .landingContentWrapper .partyRoomForm {
+      margin-top: 10px;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto; }
+      #landingContainer .landingContentWrapper .partyRoomForm .partyRoomId {
+        width: 75%; }
+      #landingContainer .landingContentWrapper .partyRoomForm .submitPartyRoom {
+        width: 22%; }
+    #landingContainer .landingContentWrapper .recentShows {
+      width: 100%;
+      height: 29%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      color: white;
+      padding-top: 10px;
+      background: #4894bf; }
+      #landingContainer .landingContentWrapper .recentShows .recentSoon {
+        font-size: 1.75em;
+        text-align: center; }
+    #landingContainer .landingContentWrapper .recentShow {
+      display: block;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #4894bf;
+      color: white;
+      border-radius: 12px;
+      width: 90%;
+      vertical-align: top; }
+      #landingContainer .landingContentWrapper .recentShow .showTitle {
+        text-align: center;
+        font-size: 1.33em;
+        padding: 12px; }
+    #landingContainer .landingContentWrapper .startDelayRoom {
+      width: 100%;
+      height: 29%;
+      color: white;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      background: #c6825b; }
+      #landingContainer .landingContentWrapper .startDelayRoom p {
+        font-size: 1.5em;
+        margin-bottom: 5px; }
+      #landingContainer .landingContentWrapper .startDelayRoom .create {
+        padding-top: 25px; }
+      #landingContainer .landingContentWrapper .startDelayRoom .or {
+        font-size: 1.5em; }
 
 #container-login {
   height: 100%;
@@ -824,6 +839,9 @@ body, html {
   overflow-y: auto;
   background-color: black;
   color: white; }
+  .showContainer a {
+    text-decoration: none;
+    color: black; }
   .showContainer .fa-chevron-left {
     float: left;
     color: black;
@@ -834,8 +852,7 @@ body, html {
     background: white; }
   .showContainer .poster {
     height: 50%;
-    width: 100%;
-    opacity: .35; }
+    width: 100%; }
   .showContainer .posterBack {
     opacity: .15; }
   .showContainer .showDetails {
@@ -882,9 +899,7 @@ body, html {
     width: 100%;
     height: 33%;
     background: #c6825b;
-    color: white;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px; }
+    color: white; }
     .showContainer .startChannel .startButtonTitle {
       font-size: 1.33em;
       text-align: center;
