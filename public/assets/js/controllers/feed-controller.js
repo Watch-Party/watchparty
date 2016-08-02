@@ -100,6 +100,12 @@ var callback = function(post) {
       $scope.allPosts.push(post);
     // console.log(post);
     }
+    else if ('content' in post && channelType === "PartyChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
+      console.log('match - party');
+      console.log(i);
+      $scope.allPosts.push(post);
+    // console.log(post);
+    }
     else if ('content' in post){
       $scope.allPosts.push(post);
       console.log('else if');
