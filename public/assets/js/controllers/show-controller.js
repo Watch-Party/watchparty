@@ -70,7 +70,7 @@ $scope.detailHide = true;
   }
   $scope.startWatchingDelayRoomFunc = function(value) {
     localStorage.setItem('typeOfChannel', 'watching')
-    localStorage.setItem('channelType', 'Delayed')
+    localStorage.setItem('channelType', 'DelayedChannel')
     $scope.delayTimerShow =! $scope.delayTimerShow;
     $scope.showContentHide =! $scope.showContentHide;
     localStorage.setItem('partyRoom', $scope.partyRoom);

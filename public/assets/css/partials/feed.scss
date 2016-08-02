@@ -24,7 +24,7 @@ body, html {
           padding-bottom: .25em;
         }
             .hamburger {
-              width: 20%;
+              width: 15%;
               text-align: left;
               i {
                 font-size: 2em;
@@ -39,8 +39,8 @@ body, html {
               }
             }
             .wp {
-              width: 60%;
-              text-align: center;
+              width: 40%;
+              text-align: right;
               h3 {
                 font-family: $Font-Header;
                 font-size: 2em;
@@ -52,8 +52,17 @@ body, html {
                 // border: 1px solid white;
               }
             }
+            .play {
+              width: 30%;
+              text-align: center;
+              .fa-play-circle {
+                font-size: 24px;
+                color: #30bfaf;
+                cursor: pointer;
+              }
+            }
             .avatar-nav {
-              width: 15%;
+              width: 10%;
               text-align: right;
               img {
                 height: 35px;
