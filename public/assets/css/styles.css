@@ -74,15 +74,25 @@ body, html {
         cursor: pointer;
         text-align: left; }
     #container-feed nav .main-nav .wp {
-      width: 60%;
-      text-align: center; }
+      width: 40%;
+      text-align: right; }
       #container-feed nav .main-nav .wp h3 {
         font-family: "Monoton", Verdana, sans-serif;
         font-size: 2em;
         color: #30bfaf;
         margin-top: .2em; }
+    #container-feed nav .main-nav .play {
+      width: 25%;
+      text-align: center; }
+      #container-feed nav .main-nav .play .fa-play-circle {
+        font-size: 28px;
+        color: #30bfaf;
+        cursor: pointer;
+        vertical-align: middle; }
+      #container-feed nav .main-nav .play .play-clicked {
+        display: none; }
     #container-feed nav .main-nav .avatar-nav {
-      width: 15%;
+      width: 10%;
       text-align: right; }
       #container-feed nav .main-nav .avatar-nav img {
         height: 35px;
@@ -114,6 +124,11 @@ body, html {
           height: 2.25em;
           width: auto;
           vertical-align: middle; }
+        #container-feed nav .room-info-bar .info-nav .fa-users {
+          color: #30bfaf;
+          font-size: 24px;
+          vertical-align: middle;
+          width: auto; }
         #container-feed nav .room-info-bar .info-nav .fa-circle {
           font-size: 8px; }
   #container-feed .sideMenu {
@@ -798,14 +813,15 @@ body, html {
       width: 10%;
       color: white;
       font-size: 1.5em;
-      float: left;
-      margin-left: 10px; }
+      float: right;
+      margin-right: 10%; }
     #profileContainer .header .fa-pencil {
       display: inline-block;
-      width: 10%;
+      width: 5%;
       color: white;
       font-size: 1.5em;
-      float: right; }
+      float: right;
+      margin-right: 10%; }
     #profileContainer .header .contact {
       margin-top: 15px; }
       #profileContainer .header .contact .contactList {
@@ -827,11 +843,14 @@ body, html {
       #profileContainer .header .names .firstName {
         font-size: 1.5em;
         margin: 0 auto;
-        margin-bottom: .25em; }
+        margin-bottom: .25em;
+        margin-left: 15%; }
       #profileContainer .header .names .lastName {
         font-size: 1.5em;
         margin: 0 auto;
         margin-bottom: .5em; }
+        #profileContainer .header .names .lastName .last-input {
+          margin-left: 21%; }
       #profileContainer .header .names .screenName {
         font-size: 1em;
         margin: 0 auto;
@@ -856,7 +875,7 @@ body, html {
           margin-top: .25em;
           letter-spacing: 1px; }
   #profileContainer .profileDetails {
-    margin: 1em;
+    margin: .5em 1em;
     line-height: 1.25; }
     #profileContainer .profileDetails .fa-circle-thin {
       font-size: 1.33em;
@@ -874,8 +893,10 @@ body, html {
       font-size: 1.25em;
       color: #010202; }
     #profileContainer .profileDetails p {
-      padding-bottom: 2em;
+      padding: .75em .5em;
       border-bottom: 1px solid #1e776d; }
+    #profileContainer .profileDetails .shows-p {
+      border-bottom: none; }
 
 .showContainer {
   position: absolute;

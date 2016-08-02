@@ -56,6 +56,8 @@ else {
 
 }
 
+console.log(consumer);
+
 if (channelType === "LiveChannel") {
   $scope.liveLogo = true;
 }
@@ -70,7 +72,10 @@ if (partyId != null) {
 } else {
   $scope.partyHide = true;
   $scope.showHide = true;
+  $scope.partyPlay = true;
 }
+
+
 
 // display show info under nav bar //
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
@@ -91,6 +96,12 @@ var callback = function(post) {
     // console.log("HI")
     if ('content' in post && channelType === "LiveChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
       console.log('match');
+      console.log(i);
+      $scope.allPosts.push(post);
+    // console.log(post);
+    }
+    else if ('content' in post && channelType === "PartyChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
+      console.log('match - party');
       console.log(i);
       $scope.allPosts.push(post);
     // console.log(post);
@@ -198,6 +209,17 @@ consumer.subscribe(callback).then(function(){
     }
     $timeout($scope.submitDelay, 1200);
     console.log(comment);
+  }
+
+  $scope.playClicked = false;
+  $scope.startParty = function(){
+    var start = {
+      content: 'start'
+    }
+    consumer.send(start, 'start');
+    console.log("start party");
+    $scope.playClicked = true;
+    $scope.partyPlay = true;
   }
 
 });

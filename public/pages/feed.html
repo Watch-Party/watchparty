@@ -3,13 +3,14 @@
     <ul class="main-nav">
       <li class="hamburger" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="wp"><h3>WP</h3></li>
+      <li class="play"><i ng-hide="partyPlay" ng-click="startParty()" class="fa fa-play-circle" aria-hidden="true"></i><i ng-class="{'fa fa-play-circle play-clicked': playClicked}" aria-hidden="true"></i></li>
       <li class="avatar-nav"><a href="#/profile"><img src="{{avatarThumb}}"></img></a></li>
       <!-- <li class="refresh" ng-click="refreshPosts()"><i class="fa fa-refresh" aria-hidden="true"></i><p class="newPostsRefresh">{{newPostsRefresh}}</p></li> -->
     </ul>
     <div class="room-info-bar">
       <ul class="info-nav" ng-model="feedInfo">
         <li class="bar-live" ng-show="liveLogo"><img src="assets/images/live_logo3.png"></img></li>
-        <li class="bar-delayed" ng-hide="liveLogo"><img class="delayed-icon" src="assets/images/stopwatch.png"></img></li>
+        <li class="bar-delayed" ng-hide="liveLogo"><img ng-hide="playClicked" class="delayed-icon" src="assets/images/stopwatch.png"></img><i ng-show="playClicked" class="fa fa-users" aria-hidden="true"></i></li>
         <li class="bar-show-name">{{feedInfo.showname}}</li>
         <li><i class="fa fa-circle" aria-hidden="true"></i></li>
         <li ng-show="showHide" class="bar-season">Season {{feedInfo.season_number}}</li>

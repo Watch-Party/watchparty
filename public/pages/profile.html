@@ -4,11 +4,13 @@
     <img class="avatar" src="{{avatar}}"/>
 
     <!-- <form ng-submit="submitNewAvatarFunc()"> <input type="text" class="avatarUpload" ng-model="avatarNew" ng-hide=""></input><button class="submit" type="submit">Submit</button></form> -->
-    <!-- <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()" ng-show="thisUser"></i> -->
-    <i class="fa fa-floppy-o" aria-hidden="true" ng-hide="editShow" ng-click="submitEditFunc()"></i>
+    <i class="fa fa-pencil" aria-hidden="true" ng-click="editProfileFunc()" ng-show="thisUser"></i>
+
     <ul class="names">
       <li class="firstName"><span ng-hide="userInfoHide">{{firstName}}</span><input ng-model="firstName" ng-hide="editShow" placeholder="First Name"></input></li>
-      <li class="lastName"><span ng-hide="userInfoHide">{{lastName}}</span><input ng-model="lastName" ng-hide="editShow" placeholder="First Name"></input></li>
+      <li><i class="fa fa-floppy-o" aria-hidden="true" ng-hide="editShow" ng-click="submitEditFunc()"></i></li>
+      <li class="lastName"><span ng-hide="userInfoHide">{{lastName}}</span><input class="last-input" ng-model="lastName" ng-hide="editShow" placeholder="First Name"></input></li>
+
       <li class="screenName">{{screenName}}</li>
     <ul>
       <ul class="contact" ng-show="contactShow">
@@ -24,6 +26,6 @@
   <div class="profileDetails">
     <p><i class="fa fa-circle-thin" aria-hidden="true"></i><span class="bio">I am just a David Grayboff with a Predator Head. Does anyone code like me? Does anyone code like MEEEEEE?</span></p>
     <p><i class="fa fa-globe" aria-hidden="true"></i><span class="location">Raleigh, NC</span></p>
-    <p><i class="fa fa-play" aria-hidden="true"></i><span class="shows">Mostly Predator</span></p>
+    <p class="shows-p"><i class="fa fa-play" aria-hidden="true"></i><span class="shows">Mostly Predator</span></p>
   </div>
 </div>
