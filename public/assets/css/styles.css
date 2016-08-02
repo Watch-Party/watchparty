@@ -63,7 +63,7 @@ body, html {
       vertical-align: middle;
       padding-bottom: .25em; }
     #container-feed nav .main-nav .hamburger {
-      width: 15%;
+      width: 20%;
       text-align: left; }
       #container-feed nav .main-nav .hamburger i {
         font-size: 2em;
@@ -82,7 +82,7 @@ body, html {
         color: #30bfaf;
         margin-top: .2em; }
     #container-feed nav .main-nav .play {
-      width: 30%;
+      width: 25%;
       text-align: center; }
       #container-feed nav .main-nav .play .fa-play-circle {
         font-size: 24px;

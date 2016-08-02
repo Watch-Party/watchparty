@@ -56,6 +56,8 @@ else {
 
 }
 
+console.log(consumer);
+
 if (channelType === "LiveChannel") {
   $scope.liveLogo = true;
 }
@@ -70,7 +72,10 @@ if (partyId != null) {
 } else {
   $scope.partyHide = true;
   $scope.showHide = true;
+  $scope.partyPlay = true;
 }
+
+
 
 // display show info under nav bar //
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
@@ -198,6 +203,14 @@ consumer.subscribe(callback).then(function(){
     }
     $timeout($scope.submitDelay, 1200);
     console.log(comment);
+  }
+
+  $scope.startParty = function(){
+    var start = {
+      content: 'start'
+    }
+    consumer.send(start, 'start');
+    console.log("start party");
   }
 
 });
