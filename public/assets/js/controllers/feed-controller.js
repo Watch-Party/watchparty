@@ -219,6 +219,7 @@ consumer.subscribe(callback).then(function(){
     consumer.send(start, 'start');
     console.log("start party");
     $scope.playClicked = true;
+    $scope.partyPlay = true;
   }
 
 });
