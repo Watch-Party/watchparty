@@ -75,7 +75,15 @@ if (partyId != null) {
   $scope.partyPlay = true;
 }
 
-
+//function to display avatar
+  var id = JSON.parse(localStorage.getItem('id'));
+  console.log(id);
+  $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
+    .then(function(response){
+      $scope.userInfo = response;
+      $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
+      console.log(response)
+    })
 
 // display show info under nav bar //
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
@@ -84,31 +92,37 @@ $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
     console.log(response);
   });
 
-
 var callback = function(post) {
 
   console.log(post);
   console.log(post.pops);
-  console.log($scope.userInfo.data.user.watching.length)
+  // console.log($scope.userInfo.data.user.watching.length)
 
   // filter for all vs watching and filters out pops //
   for (var i = 0; i < $scope.userInfo.data.user.watching.length; i++){
     // console.log("HI")
-    if ('content' in post && channelType === "LiveChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
+    if ('content' in post && channelType === "LiveChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username) {
       console.log('match');
       console.log(i);
-      $scope.allPosts.push(post);
+      console.log(channelType)
+      return $scope.allPosts.push(post);
     // console.log(post);
     }
-    else if ('content' in post && channelType === "PartyChannel" && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username || post.username === $scope.userInfo.data.user.username) {
+    else if ('content' in post && channelType === "LiveChannel" && viewType === "watching" && post.username != $scope.userInfo.data.user.watching[i].username) {
+      console.log('nada');
+      return;
+    }
+
+    else if ('content' in post && partyOrNah === 'true' && viewType === "watching" && post.username === $scope.userInfo.data.user.watching[i].username) {
       console.log('match - party');
       console.log(i);
-      $scope.allPosts.push(post);
+      return $scope.allPosts.push(post);
     // console.log(post);
     }
     else if ('content' in post){
-      $scope.allPosts.push(post);
       console.log('else if');
+       return $scope.allPosts.push(post);
+
     }
     else {
       // return "true";
@@ -119,7 +133,7 @@ var callback = function(post) {
     }
     console.log('hellllo');
     console.log(post.username);
-    console.log($scope.userInfo.data.user.watching[i].username);
+    // console.log($scope.userInfo.data.user.watching[i].username);
 }
 
 if (post.pops === 1) {
@@ -242,15 +256,7 @@ consumer.subscribe(callback).then(function(){
         console.log(resp)
       })
   }
-//function to display avatar
-  var id = JSON.parse(localStorage.getItem('id'));
-  console.log(id);
-  $http.get('https://wp-spoileralert.herokuapp.com/users/'+ id)
-    .then(function(response){
-      $scope.userInfo = response;
-      $scope.avatarThumb = $scope.userInfo.data.user.avatar_thumb;
-      console.log(response)
-    })
+
 
 
 });
