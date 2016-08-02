@@ -78,18 +78,21 @@ if (partyId != null) {
 
 
 // display show info under nav bar //
+if (episodeId =! null) {
 $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
   .then(function(response){
     $scope.feedInfo = response.data;
     console.log(response);
   });
-
+} else {
+  console.log('nope');
+}
 
 var callback = function(post) {
 
   console.log(post);
   console.log(post.pops);
-  console.log($scope.userInfo.data.user.watching.length)
+  // console.log($scope.userInfo.data.user.watching.length)
 
   // filter for all vs watching and filters out pops //
   for (var i = 0; i < $scope.userInfo.data.user.watching.length; i++){
