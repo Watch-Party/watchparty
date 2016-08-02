@@ -352,7 +352,8 @@ body, html {
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto;
   color: #191919;
-  background: #f1f1f1; }
+  background: #f1f1f1;
+  padding-bottom: 100px; }
   #landingContainer a {
     text-decoration: none; }
   #landingContainer .navMenu {
@@ -905,7 +906,6 @@ body, html {
   border: 1px solid black;
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto;
-  background-color: black;
   color: white; }
   .showContainer .delayTimer {
     margin-top: 150px;
@@ -928,10 +928,11 @@ body, html {
     float: left;
     color: black;
     font-size: 1.5em;
-    margin-top: 5px; }
+    margin-top: 15px; }
   .showContainer .header {
     width: 100%;
-    background: white; }
+    background: white;
+    margin-left: 12px; }
   .showContainer .poster {
     height: 50%;
     width: 100%; }
@@ -945,36 +946,58 @@ body, html {
     padding: 10px; }
     .showContainer .showDetails .title {
       font-size: 2.25em;
-      padding-top: 25px; }
+      margin-left: 8px; }
+    .showContainer .showDetails .network {
+      margin-left: 8px; }
     .showContainer .showDetails .description {
-      font-size: 1em;
+      font-size: .95em;
       margin-top: 20px; }
   .showContainer .specificButtons {
-    width: 90%;
+    width: 100%;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px; }
+    margin-top: 20px; }
     .showContainer .specificButtons .recentButton {
       width: 80%;
-      border: 1px solid black;
       padding: 8px 0px 8px 0px;
-      font-size: 1em;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 12px;
       text-align: center;
+      border-radius: 20px;
       background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
       font-size: 1em; }
+      .showContainer .specificButtons .recentButton .recent {
+        font-size: 1.25em;
+        padding-bottom: 3px;
+        width: 38%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px; }
+      .showContainer .specificButtons .recentButton .recentTitle {
+        font-size: 1.15em; }
     .showContainer .specificButtons .upcomingButton {
       width: 80%;
-      border: 1px solid black;
       padding: 8px 0px 8px 0px;
       vertical-align: top;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      border-radius: 20px;
       background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
       z-index: 15; }
+      .showContainer .specificButtons .upcomingButton .upcoming {
+        font-size: 1.25em;
+        padding-bottom: 3px;
+        width: 38%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px; }
+      .showContainer .specificButtons .upcomingButton .upcomingTitle {
+        font-size: 1.15em; }
   .showContainer .startChannel {
     position: absolute;
     bottom: 0;

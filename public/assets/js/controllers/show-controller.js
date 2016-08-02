@@ -1,4 +1,4 @@
-watchParty.controller('showCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window, $interval, $timeout){
+watchParty.controller('showCtrl', function($scope, $http, $compile, $location, $anchorScroll, ActionCableChannel, $auth, $window, $interval, $timeout, $sce){
 var showName = localStorage.getItem('showName');
 $scope.detailHide = true;
 
@@ -6,6 +6,8 @@ $scope.detailHide = true;
      $http.get('https://wp-spoileralert.herokuapp.com/'+ showName +'/info')
     .then(function(response){
       $scope.show = response.data.show;
+      $scope.description = response.data.show.description
+      $scope.safeDescription = $sce.trustAsHtml($scope.description)
     console.log(response);
   });
   $scope.recentFunc= function(show){

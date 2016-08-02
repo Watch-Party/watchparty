@@ -1,4 +1,4 @@
-watchParty.controller('landingController', function($scope, $http, $auth, $window, $timeout, showFactory){
+watchParty.controller('landingController', function($scope, $http, $auth, $window, $timeout, showFactory, $route){
   $scope.menuShow = true;
   $scope.upcomingHide = true;
   $scope.delayRoomHide= true;
@@ -78,7 +78,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       localStorage.setItem('profileId', id)
     }
   $scope.searchBarFunc = function(){
-    $scope.buttonsShow = !$scope.buttonsShow;
+    $scope.landingContentWrapperShow = !$scope.landingContentWrapperShow;
     $scope.searchBarShow= !$scope.searchBarShow;
 
   }
@@ -159,6 +159,9 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
      $window.location.href = '#/feed'
 
   }
+  $scope.goBack = function(){
+    $route.reload();
+  }
 
   $scope.startDelayedFunc = function(dataSeason, dataEpisode){
     localStorage.setItem('season', dataSeason);
@@ -181,6 +184,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
           })
         }
       })
+
+
   //   $scope.delayCounter = 5;
   //   $scope.onTimeout = function(){
   //     $scope.delayCounter--;
@@ -231,11 +236,11 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.partyRoomJoinFunc = function(){
     localStorage.setItem('partyId', $scope.partyRoomId)
     localStorage.setItem('partyRoom', 'true')
-    localStorage.setItem('channelType', 'DelayedChannel')
-    localStorage.setItem('typeOfChannel', 'watching')
-
-
-    $window.location.href = '#/feed'
+    localStorage.setItem('channelType', 'PartyChannel')
+    // localStorage.setItem('typeOfChannel', 'watching')
+    $scope.startLiveRoomShow = !$scope.startLiveRoomShow;
+    $scope.landingContentWrapperShow =! $scope.landingContentWrapperShow;
+    // $window.location.href = '#/feed'
 
     console.log("PARTAY");
   }
@@ -259,8 +264,19 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   var searchShows = false
   $scope.showSearchFunc= function(){
     searchShows = true
+    searchUsers = false
   }
-
+  $scope.searchUsersFunc = function(){
+    searchUsers = true
+    searchShows = false
+    $scope.popularHide = true;
+    $scope.menuShow =! $scope.menuShow;
+    $scope.searchBarShow = !$scope.searchBarShow;
+    $scope.landingContentWrapperShow =! $scope.landingContentWrapperShow;
+  }
+  $scope.clearSearchFunc = function(){
+    $route.reload()
+  }
 
   $scope.search = function(searchInput){
     if (searchShows === true){
@@ -271,6 +287,22 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
       .then(function(response){
         $scope.showSearchResults = response.data.shows
         console.log($scope.showSearchResults)
+        // if ($scope.usersSearchResults.length > 0){
+        //   //$scope.usersSearch.push($scope.usersSearchResults)
+        //   console.log($scope.usersSearchResults);
+        // }
+        console.log(response);
+      })
+    }
+    if (searchUsers === true){
+      $scope.popularHide = true;
+      $scope.resultsShow= true;
+      // console.log("thisWillQork")
+    $http.get('https://wp-spoileralert.herokuapp.com/search/users?criteria=' + '"' + $scope.searchInput + '"')
+      .then(function(response){
+        $scope.userResults = response.data.users
+        // $scope.showSearchResults = response.data.shows
+        // console.log($scope.showSearchResults)
         // if ($scope.usersSearchResults.length > 0){
         //   //$scope.usersSearch.push($scope.usersSearchResults)
         //   console.log($scope.usersSearchResults);

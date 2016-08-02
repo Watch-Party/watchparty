@@ -4,25 +4,25 @@
       <li class="menu" ng-click="menuFunc()"><i class="fa fa-bars" aria-hidden="true"></i></li>
       <li class="avatar"><img src="{{avatarThumb}}"/></li>
       <li class="logo">WP</li>
-      <li class="search" ng-click="searchBarFunc()"><i class="fa fa-search" aria-hidden="true"></i></li>
+      <!-- <li class="search" ng-click="searchBarFunc()"><i class="fa fa-search" aria-hidden="true"></i></li> -->
   </div>
   <div class="sideMenu" ng-hide="menuShow">
     <ul class="menuButton">
       <a href="#/profile" ng-click="profileSet()"><li><p>Profile<p><i class="fa fa-cog" aria-hidden="true"></i></li></a>
       <li ng-click="logOut()"><p>Log Out<p><i class="fa fa-sign-out fa-rotate-180" aria-hidden="true"></i></li>
-      <li><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
+      <li ng-click="searchUsersFunc()"><p>Find Friends<p><i class="fa fa-users" aria-hidden="true"></i></li>
       <li><p>Message<p><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
 
     </ul>
   </div>
   <div class="searchBarHolder" ng-show="searchBarShow">
-      <p ng-click='searchBarFunc()'><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
-      <input class="searchBar" type="text" placeholder="Search Shows & Users" ng-model="searchInput" ng-keyup="search(searchInput)"></input>
+      <p ng-click='clearSearchFunc()'><i class="fa fa-chevron-left" aria-hidden="true"></i></p>
+      <input class="searchBar" type="text" placeholder="Search" ng-model="searchInput" ng-keyup="search(searchInput)"></input>
       <ul class='searchResult'>
         <p class="popularHeader" ng-hide="popularHide">Check out what's popular now!</p>
         <p class="popularHeader" ng-show="resultsShow">Find your show and go!</p>
         <li class="popular" ng-repeat="show in popularShows" ng-hide="popularHide" ng-click="setToShowFunc(show)">{{show.title}}</li>
-        <!-- <li class="userOrShow" ng-repeat="searchResult in showSearchResults"><p class="type">{{user.type}}:<a href="#/profile" ng-click="goToProfile(user)"></p> {{user.username}}{{user.showname}}</a><button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li> -->
+        <li class="userOrShow" ng-repeat="user in userResults"><a href="#/profile" ng-click="goToProfile(user)"></p> {{user.screen_name}}</a><button ng-click="watchUserFunc(user)" class="watchButton">Watch!</button></li>
         <li class="userOrShow" ng-repeat="searchResult in showSearchResults" ng-click="setToShowFunc(searchResult)"><p class="showName">{{searchResult.title}}</li>
       <ul>
 
@@ -30,7 +30,7 @@
   <div class="startingLiveRoom" ng-show="startLiveRoomShow">
     <p class="setUp">Just setting up your feed!</p>
     <i class="fa fa-spin fa-spinner" aria-hidden="true"></i>
-    <p class="back" ng-click="upcomingFunc()"><i class="fa fa-chevron-left" aria-hidden="true"></i>Go Back!</p>
+    <p class="back" ng-click="goBack()"><i class="fa fa-chevron-left" aria-hidden="true"></i>Go Back!</p>
     <p class="setUpPosts">Whose posts do you want to see?</p>
     <div class='roomSelection'>
       <div class="allRoom" ng-click="startAllLiveRoomFunc()"><p>Everyone watching live</p></div>
