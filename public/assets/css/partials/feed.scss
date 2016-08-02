@@ -56,9 +56,13 @@ body, html {
               width: 25%;
               text-align: center;
               .fa-play-circle {
-                font-size: 24px;
+                font-size: 28px;
                 color: #30bfaf;
                 cursor: pointer;
+                vertical-align: middle;
+              }
+              .play-clicked {
+                display: none;
               }
             }
             .avatar-nav {
@@ -102,6 +106,12 @@ body, html {
             height: 2.25em;
             width: auto;
             vertical-align: middle;
+          }
+          .fa-users {
+            color: #30bfaf;
+            font-size: 24px;
+            vertical-align: middle;
+            width: auto;
           }
           .fa-circle {
             font-size: 8px;

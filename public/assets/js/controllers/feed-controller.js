@@ -211,12 +211,14 @@ consumer.subscribe(callback).then(function(){
     console.log(comment);
   }
 
+  $scope.playClicked = false;
   $scope.startParty = function(){
     var start = {
       content: 'start'
     }
     consumer.send(start, 'start');
     console.log("start party");
+    $scope.playClicked = true;
   }
 
 });
