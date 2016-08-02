@@ -78,7 +78,7 @@ $scope.detailHide = true;
     localStorage.setItem('partyRoom', $scope.partyRoom);
 
     if ($scope.partyRoom === true){
-
+      var epId = localStorage.getItem('episodeId')
       $http.get('https://wp-spoileralert.herokuapp.com/party/' + epId)
       .then(function(response){
         localStorage.setItem('partyId', response.data.feed_name)
