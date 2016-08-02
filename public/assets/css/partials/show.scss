@@ -6,7 +6,7 @@
   font-family: $Font-Menu;
   overflow-y: auto;
 
-  background-color: black;
+  // background-color: black;
   color: white;
   .delayTimer{
     margin-top: 150px;
@@ -46,11 +46,12 @@
     float:left;
     color: black;
     font-size: 1.5em;
-    margin-top: 5px;
+    margin-top: 15px;
   }
   .header{
     width: 100%;
     background: white;
+    margin-left: 12px;
   }
   .poster{
     // position: absolute;
@@ -76,44 +77,73 @@
 
     .title{
       font-size: 2.25em;
-      padding-top: 25px;
+      margin-left: 8px;
+      // padding-top: 25px;
+    }
+    .network{
+      margin-left: 8px;
     }
     .description{
-      font-size: 1em;
+      font-size: .95em;
       margin-top: 20px;
     }
   }
   .specificButtons{
-    width: 90%;
+    width: 100%;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     .recentButton{
       // display: inline-block;
       width: 80%;
-      border: 1px solid black;
+      // border: 1px solid black;
       padding:8px 0px 8px 0px;
-      font-size: 1em;
       margin-left: auto;
       margin-right: auto;
+      margin-bottom: 12px;
       text-align: center;
+      border-radius: 20px;
       background-image: linear-gradient(130deg, rgb(48, 191, 175) 0%, rgb(50, 194, 177) 51%, rgb(52, 196, 179) 75%);
-
       font-size: 1em;
+      .recent{
+        font-size: 1.25em;
+        padding-bottom: 3px;
+        width: 38%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px
+      }
+      .recentTitle {
+        font-size: 1.15em;
+      }
       // color: white;
     }
     .upcomingButton{
       // display: inline-block;
       width: 80%;
-      border: 1px solid black;
+      // border: 1px solid black;
       padding:8px 0px 8px 0px;
       vertical-align: top;
       margin-left: auto;
       margin-right: auto;
       text-align: center;
+      border-radius: 20px;
       background-image: linear-gradient(130deg, rgb(48, 191, 175) 0%, rgb(50, 194, 177) 51%, rgb(52, 196, 179) 75%);
       z-index: 15;
+      .upcoming{
+        font-size: 1.25em;
+        padding-bottom: 3px;
+        width: 38%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid white;
+        margin-bottom: 5px
+      }
+      .upcomingTitle {
+        font-size: 1.15em;
+      }
     }
     }
     .startChannel{
