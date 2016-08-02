@@ -236,7 +236,7 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $scope.partyRoomJoinFunc = function(){
     localStorage.setItem('partyId', $scope.partyRoomId)
     localStorage.setItem('partyRoom', 'true')
-    localStorage.setItem('channelType', 'PartyChannel')
+    localStorage.setItem('channelType', 'DelayedChannel')
     // localStorage.setItem('typeOfChannel', 'watching')
     $scope.startLiveRoomShow = !$scope.startLiveRoomShow;
     $scope.landingContentWrapperShow =! $scope.landingContentWrapperShow;
