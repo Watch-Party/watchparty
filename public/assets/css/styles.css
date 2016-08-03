@@ -371,7 +371,8 @@ body, html {
     #landingContainer .navMenu .menu {
       float: left;
       font-size: 2em;
-      padding-left: 10px; }
+      padding-left: 10px;
+      cursor: pointer; }
     #landingContainer .navMenu .avatar {
       float: right;
       padding-right: 5px; }
