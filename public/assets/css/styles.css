@@ -532,7 +532,8 @@ body, html {
     padding-top: 10px; }
     #landingContainer .upcomingShows .startSoon {
       text-align: center;
-      font-size: 1.75em; }
+      font-size: 1.75em;
+      cursor: pointer; }
   #landingContainer .upcomingShowsDetails {
     width: 100%;
     margin-left: auto;
@@ -552,7 +553,9 @@ body, html {
       background-image: linear-gradient(130deg, #30bfaf 0%, #32c2b1 51%, #34c4b3 75%);
       width: 90%;
       vertical-align: top;
-      border-radius: 20px; }
+      border-radius: 20px;
+      padding-top: .5em;
+      padding-bottom: .5em; }
       #landingContainer .upcomingShowsDetails .upcomingShow .showTitle {
         text-align: center;
         font-size: 1.33em;
@@ -560,7 +563,8 @@ body, html {
       #landingContainer .upcomingShowsDetails .upcomingShow .epTitle {
         margin-top: 5px;
         text-align: center;
-        font-size: 1em; }
+        font-size: 1em;
+        color: #1e776d; }
       #landingContainer .upcomingShowsDetails .upcomingShow .icon {
         width: 100%;
         text-align: center; }
