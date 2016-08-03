@@ -50,12 +50,15 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
     });
     $http.get('https://wp-spoileralert.herokuapp.com/recent')
       .then(function(response){
-        $scope.recentShows = response.data.recent_shows
-        console.log($scope.recentShows);
+        // $scope.recentShows = response.data.recent_shows
+        // console.log($scope.recentShows);
       })
       $http.get('https://wp-spoileralert.herokuapp.com/search/init')
         .then(function(response){
-          $scope.popularShows = response.data.popular
+
+          $scope.popularShows = response.data.recent
+          $scope.recentShows = response.data.popular
+
           // popularShows.push(response.data.popular);
           console.log(response)
         });
