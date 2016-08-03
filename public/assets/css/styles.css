@@ -353,6 +353,8 @@ body, html {
   overflow-y: auto;
   color: #191919;
   background: #f1f1f1; }
+  #landingContainer input {
+    font-size: 16px; }
   #landingContainer a {
     text-decoration: none; }
   #landingContainer .navMenu {
@@ -629,6 +631,8 @@ body, html {
   background-image: linear-gradient(130deg, #0c5a4e 0%, #1e776d 51%, #2b7078 75%);
   position: absolute;
   overflow: scroll; }
+  #container-login input {
+    font-size: 16px; }
   #container-login header {
     margin: 0 auto;
     padding-top: 30%; }
@@ -780,6 +784,8 @@ body, html {
   height: 100%;
   width: 100%;
   font-family: "Asap", Helvetica, sans-serif; }
+  #profileContainer input {
+    font-size: 16px; }
   #profileContainer .header {
     width: 100%;
     height: 35%;
@@ -907,6 +913,8 @@ body, html {
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto;
   color: white; }
+  .showContainer input {
+    font-size: 16px; }
   .showContainer .delayTimer {
     margin-top: 150px;
     width: 90%;
