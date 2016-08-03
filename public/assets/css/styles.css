@@ -346,13 +346,14 @@ body, html {
 
 #landingContainer {
   position: absolute;
-  height: 110%;
+  height: 100%;
   width: 100%;
   border: 1px solid black;
   font-family: "Asap", Helvetica, sans-serif;
   overflow-y: auto;
   color: #191919;
-  background: #f1f1f1; }
+  background: #f1f1f1;
+  overflow: scroll; }
   #landingContainer input {
     font-size: 16px; }
   #landingContainer a {
