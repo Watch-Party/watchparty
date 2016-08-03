@@ -246,6 +246,7 @@
     .startSoon{
       text-align: center;
       font-size: 1.75em;
+      cursor: pointer;
       // margin-top: 25%;
     }
 
@@ -278,6 +279,8 @@
       width: 90%;
       vertical-align: top;
       border-radius: 20px;
+      padding-top: .5em;
+      padding-bottom: .5em;
 
       .showTitle{
         text-align: center;
@@ -288,6 +291,7 @@
         margin-top: 5px;
         text-align: center;
         font-size: 1em;
+        color: $Main-Green;
       }
       .icon{
         width: 100%;
