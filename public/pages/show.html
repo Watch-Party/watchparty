@@ -30,7 +30,7 @@
 
     <div class='startChannel' ng-click="startShowChannel()"><p class="startButtonTitle">Start a {{show.title}} Channel</p>
     <div class="seasonSelect" ng-hide="seasonHide">
-      <input class="partyRoom" type=checkbox name="partyRoom" ng-model="partyRoom" ng-trueValue="partyRoom" ng-falseValue="false">Party Room?</input>
+      <input class="partyRoom" type=checkbox name="partyRoom" ng-model="partyRoom" ng-trueValue="partyRoom" ng-falseValue="false">Party Channel?</input>
       <p class="seasonResults">Season
         <select  name="seasonForm" ng-model="data.season" ng-change='seasonSelectFunc(data.season)'class="seasonOptions">
           <option ng-repeat="season in show.seasons" value="{{season.season}}">{{season.season}}</option>
