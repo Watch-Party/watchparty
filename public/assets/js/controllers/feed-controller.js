@@ -86,12 +86,13 @@ if (partyId != null) {
     })
 
 // display show info under nav bar //
-
-// $http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
-//   .then(function(response){
-//     $scope.feedInfo = response.data;
-//     console.log(response);
-//   });
+if (partyOrNah != 'true') {
+$http.get('https://wp-spoileralert.herokuapp.com/episodes/' + episodeId )
+  .then(function(response){
+    $scope.feedInfo = response.data;
+    console.log(response);
+  });
+}
 
 
 var callback = function(post) {
