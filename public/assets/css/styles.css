@@ -1019,7 +1019,8 @@ body, html {
     width: 100%;
     height: 33%;
     background: #c6825b;
-    color: white; }
+    color: white;
+    overflow: scroll; }
     .showContainer .startChannel .startButtonTitle {
       font-size: 1.33em;
       text-align: center;

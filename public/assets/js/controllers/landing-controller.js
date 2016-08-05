@@ -45,7 +45,8 @@ watchParty.controller('landingController', function($scope, $http, $auth, $windo
   $http.get('https://wp-spoileralert.herokuapp.com/upcoming')
     .then(function(response){
       $scope.upcomingShows = response.data.upcoming;
-
+      $scope.currentlyLive = response.data.currently_live;
+      console.log(response.data)
       console.log($scope.upcomingShows);
     });
     $http.get('https://wp-spoileralert.herokuapp.com/recent')
